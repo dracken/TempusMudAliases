@@ -1,0 +1,2535 @@
+#NOP Directions File for TempusMUD by Dracken - derek@sanctuary.org
+#NOP https://github.com/dracken/TempusMudAliases/
+#SH { <afc>******************************************************************************************<099> };
+#SH { <afc>*                            Directions Script Loaded!                                   *<099> };
+#SH { <afc>******************************************************************************************<099> };
+#SH { <afc>*<099>                                                                                        <afc>*<099>};
+#SH { <afc>*<F0FF> Usage:<099> travel <plane> <zone>                                                           <afc>*<099>};
+#SH { <afc>*<FFF0> Example:<099> travel planes 9                                                               <afc>*<099>};
+#SH { <afc>*<099>      Travel to the Elemental Plane of Smoke                                            <afc>*<099>};
+#SH { <afc>*<FFF0> Example:<099> travel 2 15                                                                   <afc>*<099>};
+#SH { <afc>*<099>      Travel to the Future's EC Universty                                               <afc>*<099>};
+#SH { <afc>*<099>                                                                                        <afc>*<099>};
+#SH { <afc>*<FF0F> Recommendations:<099> Make an alias in your own scriping config for locations you use       <afc>*<099> };
+#SH { <afc>*<099>    regularly!                                                                          <afc>*<099> };
+#SH { <afc>******************************************************************************************<099> };
+
+
+#NOP ----- vvvv EDIT THESE VARS ONLY! vvvv -----
+
+#VAR {myStartingRoomName} {The Beginning of Misery};
+#ALIAS {directionsToHolySquare} {north;look modrian;north;north};
+#ALIAS {directionsToStarPlaza} {north;look ec};
+#ALIAS {directionsToSlaveSquare} {north;look skullport};
+#ALIAS {diretionsToAstralManse} {north;look astral};
+
+#NOP ----- ^^^^ EDIT THESE VARS ONLY! ^^^^ -----
+
+#NOP ----------------------------------------------------------------------------------------------
+#NOP                                    Display Possible Directions
+
+
+#VAR {PastLocations[gotoAbandonedKeep]} {};
+#VAR {PastLocations[gotoOldMonastery]} {};
+#VAR {PastLocations[gotoCastleSilvendark]} {};
+#VAR {PastLocations[gotoChessboardOfAraken]} {};
+#VAR {PastLocations[gotoDismalDelve]} {};
+#VAR {PastLocations[gotoDraconiansAndDragonHighlord]} {};
+#VAR {PastLocations[gotoDukeAraken]} {};
+#VAR {PastLocations[gotoElvenVillage]} {};
+#VAR {PastLocations[gotoForgottenValley]} {};
+#VAR {PastLocations[gotoFontOfModrian]} {};
+#VAR {PastLocations[gotoFrozenTundras]} {};
+#VAR {PastLocations[gotoGlacialRift]} {};
+#VAR {PastLocations[gotoGreatPyramid]} {};
+#VAR {PastLocations[gotoGuiharianFestivalOfLights]} {};
+#VAR {PastLocations[gotoHalflingVillage]} {};
+#VAR {PastLocations[gotoHarpellHouse]} {};
+#VAR {PastLocations[gotoHighTowerOfMagic]} {};
+#VAR {PastLocations[gotoHillGiantSteadin]} {};
+#VAR {PastLocations[gotoHobgoblins]} {};
+#VAR {PastLocations[gotoHolyGrail]} {};
+#VAR {PastLocations[gotoIstan]} {};
+#VAR {PastLocations[gotoKoboldTunnels]} {};
+#VAR {PastLocations[gotoLearander]} {};
+#VAR {PastLocations[gotoCrystalFortress]} {};
+#VAR {PastLocations[gotoMalevolentCircle]} {};
+#VAR {PastLocations[gotoMavernal]} {};
+#VAR {PastLocations[gotoNeverwhere]} {};
+#VAR {PastLocations[gotoOgreEncampment]} {};
+#VAR {PastLocations[gotoOldThalos]} {};
+#VAR {PastLocations[gotoPitFiend]} {};
+#VAR {PastLocations[gotoPoolOfEvil]} {};
+#VAR {PastLocations[gotoReedSwamp]} {};
+#VAR {PastLocations[gotoSewersOfModrian]} {};
+#VAR {PastLocations[gotoShade]} {};
+#VAR {PastLocations[gotoSilverTower]} {};
+#VAR {PastLocations[gotoSolaceCove]} {};
+#VAR {PastLocations[gotoSkullport]} {};
+#VAR {PastLocations[gotoTempleOfAncients]} {};
+#VAR {PastLocations[gotoTowerOfTheRenegadeMage]} {};
+#VAR {PastLocations[gotoUndermountain]} {};
+#VAR {PastLocations[gotoWemicPlains]} {};
+#VAR {PastLocations[gotoZhengisCastle]} {};
+
+#VAR {FutureLocations[gotoAPollutedVillage]} {};
+#VAR {FutureLocations[gotoArcheologicalDig]} {};
+#VAR {FutureLocations[gotoBlastedSwamp]} {};
+#VAR {FutureLocations[gotoColony]} {};
+#VAR {FutureLocations[gotoCybertechLabs]} {};
+#VAR {FutureLocations[gotoCybertechPreparatorySchool]} {};
+#VAR {FutureLocations[gotoDeathRow]} {};
+#VAR {FutureLocations[gotoDracharnos]} {};
+#VAR {FutureLocations[gotoDrugDealer]} {};
+#VAR {FutureLocations[gotoECJunkyard]} {};
+#VAR {FutureLocations[gotoECMilitary]} {};
+#VAR {FutureLocations[gotoECVamps]} {};
+#VAR {FutureLocations[gotoECNuclearPower]} {};
+#VAR {FutureLocations[gotoECPowerAndPlumbing]} {};
+#VAR {FutureLocations[gotoECUniversity]} {};
+#VAR {FutureLocations[gotoElectronicsSchool]} {};
+#VAR {FutureLocations[gotoElectronicsShop]} {};
+#VAR {FutureLocations[gotoFailFamilyLegacy]} {};
+#VAR {FutureLocations[gotoGenCloneBioMechanicalLabs]} {};
+#VAR {FutureLocations[gotoKiddieKandy]} {#LIST {directions} {add} {4n2wn;open gate n;n;}};
+#VAR {FutureLocations[gotoKromguard]} {};
+#VAR {FutureLocations[gotoLuxare]} {};
+#VAR {FutureLocations[gotoMerquryCity]} {};
+#VAR {FutureLocations[gotoNETWORKCommunicationsTower]} {};
+#VAR {FutureLocations[gotoReinforcer]} {};
+#VAR {FutureLocations[gotoRuinsOfHTOM]} {};
+#VAR {FutureLocations[gotoRuinsOfTheSilverTower]} {};
+#VAR {FutureLocations[gotoSimeonTheCybernetic]} {};
+#VAR {FutureLocations[gotoTriskinAsylum]} {};
+#VAR {FutureLocations[gotoVirtualWorldOfNETWORK]} {};
+#VAR {FutureLocations[gotoZulDane]} {};
+
+#VAR {PlanesLocations[gotoAbyssUnholyModrian]} {};
+#VAR {PlanesLocations[gotoAmoria]} {};
+#VAR {PlanesLocations[gotoAvernusHell]} {};
+#VAR {PlanesLocations[gotoElementalPlaneOfAir]} {};
+#VAR {PlanesLocations[gotoElementalPlaneOfEarth]} { };
+#VAR {PlanesLocations[gotoElementalPlaneOfFire]} {};
+#VAR {PlanesLocations[gotoElementalPlaneOfIce]} {};
+#VAR {PlanesLocations[gotoElementalPlaneOfOoze]} {};
+#VAR {PlanesLocations[gotoElementalPlaneOfSmoke]} {};
+#VAR {PlanesLocations[gotoElementalPlaneOfWater]} {};
+#VAR {PlanesLocations[gotoLuniaHeaven]} {};
+#VAR {PlanesLocations[gotoImmoth]} {};
+#VAR {PlanesLocations[gotoCastleMahlhevik]} {};
+
+
+#ALIAS {travel %1 %2} {
+	#FORMAT {travelInput1} {%1} {%l};
+
+	#IF {{"$travelInput1"}  === {"past"} || {%1} === {1}} {
+		#SWITCH {"%2"} {
+			#CASE {"1"} { gotoAbandonedKeep; };
+			#CASE {"2"} { gotoOldMonastery; };
+	        #CASE {"3"} { gotoCastleSlivendark; };
+			#CASE {"4"} { gotoChessboardOfAraken; };
+			#CASE {"5"} { gotoDismalDelve; };
+			#CASE {"6"} { gotoDraconiansAndDragonHighlord; };
+			#CASE {"7"} { gotoDukeAraken; };
+			#CASE {"8"} { gotoElvenVillage; };
+			#CASE {"9"} { gotoForgottenValley; };
+			#CASE {"10"} { gotoFontOfModrian; };
+			#CASE {"11"} { gotoFrozenTundras; };
+			#CASE {"12"} { gotoGlacialRift; };
+			#CASE {"13"} { gotoGreatPyramid };
+			#CASE {"14"} { gotoGuiharianFestivalOfLights; };
+			#CASE {"15"} { gotoHalflingVillage; };
+			#CASE {"16"} { gotoHarpellHouse; };
+			#CASE {"17"} { gotoHighTowerOfMagic; };
+			#CASE {"18"} { gotoHillGiantSteading; };
+			#CASE {"19"} { gotoHobgoblins; };
+			#CASE {"20"} { gotoHolyGrail; };
+			#CASE {"21"} { gotoIstan; };
+			#CASE {"22"} { gotoKoboldTunnels; };
+			#CASE {"23"} { gotoLearander; };
+			#CASE {"24"} { gotoCrystalFortress; };
+			#CASE {"25"} { gotoMalevolentCircle; };
+			#CASE {"26"} { gotoMavernal; };
+			#CASE {"27"} { gotoNeverwhere; };
+			#CASE {"28"} { gotoOgreEncampment; };
+			#CASE {"29"} { gotoOldThalos; };
+			#CASE {"30"} { gotoPitFiend; };
+			#CASE {"31"} { gotoPoolOfEvil; };
+			#CASE {"32"} { gotoReedSwamp; };
+			#CASE {"33"} { gotoSewersOfModrian; };
+			#CASE {"34"} { gotoShade; };
+			#CASE {"35"} { gotoSilverTower; };
+			#CASE {"36"} { gotoSolaceCove; };
+			#CASE {"37"} { gotoSkullport; };
+			#CASE {"38"} { gotoTempleOfAncients; };
+			#CASE {"39"} { gotoTowerOfTheRenegadeMage; };
+			#CASE {"40"} { gotoTheTreetopsOfArachna; };
+			#CASE {"41"} { gotoUndermountain; };
+			#CASE {"42"} { gotoWemicPlains; };
+			#CASE {"43"} { gotoZhengisCastle; };
+			#DEFAULT {
+				#VAR {travelerror} {1};
+			#SH {Invalid Destination Combination '<FF00>%1<099>' and '<FF00>%2<099>'};
+			};
+		};
+	};
+
+	#ELSEIF {{"$travelInput1"} === {"future"} || {%1} === {2}} {
+		#SWITCH {"%2"} {
+			#CASE {"1"} { gotoAPollutedVillage };
+			#CASE {"2"} { gotoArcheologicalDig };
+			#CASE {"3"} { gotoBlastedSwamp };
+			#CASE {"4"} { gotoColony };
+			#CASE {"5"} { gotoCybertechLabs };
+			#CASE {"6"} { gotoCybertechPreparatorySchool };
+			#CASE {"7"} { gotoDeathRow };
+			#CASE {"8"} { gotoDracharnos };
+			#CASE {"9"}  { gotoDrugDealer };
+			#CASE {"10"} { gotoECJunkyard };
+			#CASE {"11"} { gotoECMilitary };
+			#CASE {"12"} { gotoECVamps };
+			#CASE {"13"} { gotoECNuclearPower };
+			#CASE {"14"} { gotioECPowerAndPlumbing };
+			#CASE {"15"} { gotoECSecurityCompound };
+			#CASE {"16"} { gotoECUniversity };
+			#CASE {"17"} { gotoElectronicsSchool };
+			#CASE {"18"} { gotoElectronicsShop };
+			#CASE {"19"} { gotoFailFamilyLegacy };
+			#CASE {"20"} { gotoGenCloneBioMechanicalLabs };
+			#CASE {"21"} { gotoKiddieKandy };
+			#CASE {"22"} { gotoKromguard };
+			#CASE {"23"} { gotoLuxare };
+			#CASE {"24"} { gotoMerquryCity };
+			#CASE {"25"} { gotoNETWORKCommunicationsTower };
+			#CASE {"26"} { gotoReinforcer };
+			#CASE {"27"} { gotoRuinsOfHTOM };
+			#CASE {"28"} { gotoRuinsOfTheSilverTower };
+			#CASE {"29"} { gotoSimeonTheCybernetic };
+			#CASE {"30"} { gotoTriskinAsylum };
+			#CASE {"31"} { gotoVirtualWorldOfNETWORK };
+			#CASE {"32"} { gotoZulDane };
+			#DEFAULT {
+	            #VAR {travelerror} {1};
+	    #SH {Invalid Destination Combination '<FF00>%1<099>' and '<FF00>%2<099>'};
+	        };
+		};
+	};
+
+	#ELSEIF {{"$travelInput1"} === {"planes"} || {%1} === {3}} {
+        #SWITCH {"%2"} {
+		    #CASE {"1"} { gotoAbyssUnholyModrian; };
+		    #CASE {"2"} { gotoAmoria; };
+		    #CASE {"3"} { gotoAvernusHell; };
+		    #CASE {"4"} { gotoElementalPlaneOfAir; };
+		    #CASE {"5"} { gotoElementalPlaneOfEarth; };
+		    #CASE {"6"} { gotoElementalPlaneOfFire; };
+		    #CASE {"7"} { gotoElementalPlaneOfIce; };
+		    #CASE {"8"} { gotoElementalPlaneOfOoze; };
+		    #CASE {"9"} { gotoElementalPlaneOfSmoke; };
+		    #CASE {"10"} { gotoElementalPlaneOfWater; };
+		    #CASE {"11"} { gotoLuniaHeaven };
+			#CASE {"12"} { gotoImmoth };
+			#CASE {"13"} { gotoCastleMahlhevik; };
+			#DEFAULT {
+				#VAR {travelerror} {1};
+			#SH {Invalid Destination Combination '<FF00>%1<099>' and '<FF00>%2<099>'};
+				};
+			};
+		};
+
+		#ELSEIF {{"$travelInput1"} === {"trainers"} || {%1} === {4}} {
+			#SWITCH {"%2"} {
+				#CASE {"1"} { gotoCharismaTrainer;};
+				#CASE {"2"} { gotoConstitutionTrainer; };
+				#CASE {"3"} { gotoDexterityTrainer; };
+				#CASE {"4"} { gotoIntelligenceTrainer; };
+				#CASE {"5"} { gotoStrengthTrainer; };
+				#CASE {"6"} { gotoWisdomTrainer; };
+				#CASE {"7"} { gotoWeaponEnhancer };
+				#CASE {"8"} { gotoWeaponSpecializer };
+				#CASE {"9"} { gotoWeaponUnSpecializer };
+				#CASE {"10"} { gotoGainer };
+				#CASE {"11"} { gotoElectronicsSchool };
+				#DEFAULT {
+					#VAR {travelerror} {1};
+			#SH {Invalid Destination Combination '<FF00>%1<099>' and '<FF00>%2<099>'};
+				};
+			};
+		};
+
+		#ELSEIF {{"$travelInput1"} === {"guilds"} || {%1} === {5}} {
+			#SWITCH {"%2"} {
+				#CASE {"1"} { gotoBarbarianGuildmsater;};
+				#CASE {"2"} { gotoBardGuildmaster; };
+				#CASE {"3"} { gotoClericEvilGuildmaster; };
+				#CASE {"4"} { gotoClericGoodGuildmaster; };
+				#CASE {"5"} { gotoCyborgGuildmaster; };
+				#CASE {"6"} { gotoKnightEvilGuildmaster; };
+				#CASE {"7"} { gotoKnightGoodGuildmaster; };
+				#CASE {"8"} { gotoMageGuildmaster; };
+				#CASE {"9"} { gotoMercenaryGuildmaster; };
+				#CASE {"10"} { gotoMonkGuildmaster; };
+				#CASE {"11"} { gotoPhysicGuildmaster; };
+				#CASE {"12"} { gotoPsionicistGuildmaster; };
+				#CASE {"13"} { gotoRangerGuildmaster; };
+				#CASE {"14"} { gotoThiefGuildmaster; };
+				#DEFAULT {
+					#VAR {travelerror} {1};
+			#SH {Invalid Destination Combination '<FF00>%1<099>' and '<FF00>%2<099>'};
+				};
+			};
+		};
+
+		#ELSEIF {{"$travelInput1"} === {"underdark"} || {%1} === {6}} {
+			#SWITCH {"%2"} {
+				#CASE {"1"} { gotoHeadShrinker };
+				#CASE {"2"} { gotoLizardCaverns };
+				#CASE {"3"} { gotoWyllowwood };
+				#DEFAULT {
+					#VAR {travelerror} {1};
+			#SH {Invalid Destination Combination '<FF00>%1<099>' and '<FF00>%2<099>'};
+				};
+			};
+		};
+
+
+		#ELSEIF {{"$travelInput1"} === {"all"} || {%1} === {7}} {
+			#NOP //Todo - Use the different lists to formulate a list of available directions
+		};
+
+		#ELSE {
+			#VARIABLE {travelerror} {1};
+		#SH {Invalid Planar Destination '<FF00>%1<099>'};
+		};
+	}
+	{3}
+
+	#ALIAS {travel %1} {
+		#FORMAT {travelInput1} {%1} {%l};
+		#FORMAT {travelInput1Upper} {%1} {%u};
+		#IF {debug} {
+			#SH {Travel Destination: '$travelInput1'};
+			#SH {Travel Destination Upper: '$travelInput1Upper};
+		};
+        #IF {{"$travelInput1"} === {"help"}} {
+            #SH { <afc>******************************************************************************************<099> };
+            #SH { <afc>*                                Directions Help!                                        *<099> };
+            #SH { <afc>******************************************************************************************<099> };
+            #SH { <afc>*<099>                                                                                        <afc>*<099>};
+            #SH { <afc>*<F0FF> Usage:<099> travel <plane> <zone>                                                           <afc>*<099>};
+            #SH { <afc>*<FFF0> Example:<099> travel planes 9                                                               <afc>*<099>};
+            #SH { <afc>*<099>      Travel to the Elemental Plane of Smoke                                            <afc>*<099>};
+            #SH { <afc>*<FFF0> Example:<099> travel 2 15                                                                   <afc>*<099>};
+            #SH { <afc>*<099>      Travel to the Future's EC Universty                                               <afc>*<099>};
+            #SH { <afc>*<099>                                                                                        <afc>*<099>};
+            #SH { <afc>*<FF0F> Recommendations:<099> Make an alias in your own scriping config for locations you use       <afc>*<099> };
+            #SH { <afc>*<099>    regularly!                                                                          <afc>*<099> };
+            #SH { <afc>******************************************************************************************<099> };
+        };
+
+		#ELSEIF {{"$travelInput1"}  === {"past"} || {%1} === {1}}
+		{
+			#SH { <acf>┌------------------------------------------------------------------------------┐<099> };
+			#SH { <acf>|                           <F0FF>Past Locations<099>                                     <acf>|<099> };
+			#SH { <acf>├------------------------------------------------------------------------------┤<099> };
+			#SH { <acf>|  <F0FF>1)<099> Abandoned Keep       <F0FF>2)<099> Old Monastery        <F0FF>3)<099> Castle Slivendark        <acf>|<099> };
+			#SH { <acf>|  <F0FF>4)<099> Chessboard of Araken <F0FF>5)<099> Dismal Delve         <F0FF>6)<099> Draconians and Highlords <acf>|<099> };
+			#SH { <acf>|  <F0FF>7)<099> Duke Araken          <F0FF>8)<099> Elven Village        <F0FF>9)<099> Forgotten Valley         <acf>|<099> };
+			#SH { <acf>| <F0FF>10)<099> Font of Modrian     <F0FF>11)<099> Frozen Tundras      <F0FF>12)<099> Glacial Rift             <acf>|<099> };
+			#SH { <acf>| <F0FF>13)<099> Great Pyramid       <F0FF>14)<099> Guiharian Festival  <F0FF>15)<099> Halfling Village         <acf>|<099> };
+			#SH { <acf>| <F0FF>16)<099> Harpell House       <F0FF>17)<099> High Tower of Magic <F0FF>18)<099> Hill Giant Steading      <acf>|<099> };
+			#SH { <acf>| <F0FF>19)<099> Hobgoblins          <F0FF>20)<099> Holy Grail          <F0FF>21)<099> Istan                    <acf>|<099> };
+			#SH { <acf>| <F0FF>22)<099> Kobold Tunnels      <F0FF>23)<099> Caves of Learander  <F0FF>24)<099> Crystal Fortress         <acf>|<099> };
+			#SH { <acf>| <F0FF>25)<099> Malevolent Circle   <F0FF>26)<099> Mavernal            <F0FF>27)<099> Neverwhere               <acf>|<099> };
+			#SH { <acf>| <F0FF>28)<099> Ogre Encampment     <F0FF>29)<099> Old Thalos          <F0FF>30)<099> Pit Fiend                <acf>|<099> };
+			#SH { <acf>| <F0FF>31)<099> Pool of Evil        <F0FF>32)<099> Reed Swamp/Lizards  <F0FF>33)<099> Sewers of Modrian        <acf>|<099> };
+			#SH { <acf>| <F0FF>34)<099> Shade               <F0FF>35)<099> Silver Tower        <F0FF>36)<099> Solace Cove              <acf>|<099> };
+			#SH { <acf>| <F0FF>37)<099> Skullport (River)   <F0FF>38)<099> Temple of Ancients  <F0FF>39)<099> Tower of Renegade Mage   <acf>|<099> };
+			#SH { <acf>| <F0FF>40)<099> Treetops of Arachna <F0FF>41)<099> Undermountain       <F0FF>42)<099> Wemic Plains             <acf>|<099> };
+			#SH { <acf>| <F0FF>43)<099> Zhengi's Castle                                                          <acf>|<099> };
+			#SH { <acf>|                                                                              <acf>|<099> };
+			#SH { <acf>└------------------------------------------------------------------------------┘<099> }; 
+		};
+
+		#ELSEIF {{"$travelInput1"} === {"future"} || {%1} === {2}}
+		{
+			#SH { <acf>┌------------------------------------------------------------------------------┐<099> };
+			#SH { <acf>|                           <afc>Future Locations<099>                                   <acf>|<099> };
+			#SH { <acf>├------------------------------------------------------------------------------┤<099> };
+			#SH { <acf>|  <F0FF>1)<099> Polluted Village    <F0FF>2)<099> Archeolgial Dig      <F0FF>3)<099> Blasted Swamp             <acf>|<099> };
+			#SH { <acf>|  <F0FF>4)<099> Colony              <F0FF>5)<099> Cybertech Labs       <F0FF>6)<099> Cybertech Preparatory     <acf>|<099> };
+			#SH { <acf>|  <F0FF>7)<099> Death Row           <F0FF>8)<099> Dracharnos           <F0FF>9)<099> Drug Dealer               <acf>|<099> };
+			#SH { <acf>| <F0FF>10)<099> EC Junkyard        <F0FF>11)<099> EC Military          <F0FF>12)<099> EC Vampires              <acf>|<099> };
+			#SH { <acf>| <F0FF>13)<099> EC Nuclear Power   <F0FF>14)<099> EC Power & Plubming  <F0FF>15)<099> EC Security Compound     <acf>|<099> };
+            #SH { <acf>| <F0FF>16)<099> Electronics School <F0FF>17)<099> Electronics Shop     <F0FF>18)<099> GenClone Bio Labs        <acf>|<099> };
+            #SH { <acf>| <F0FF>19)<099> Fail Family Legacy <F0FF>20)<099> Kromguard            <F0FF>21)<099> Luxare                   <acf>|<099> };
+            #SH { <acf>| <F0FF>22)<099> Merqury City       <F0FF>23)<099> NETWORK Tower        <F0FF>24)<099> Reinforcer               <acf>|<099> };
+            #SH { <acf>| <F0FF>25)<099> Ruins of HTOM      <F0FF>26)<099> Silver Tower Ruins   <F0FF>27)<099> Simeon the Cybernetic    <acf>|<099> };
+            #SH { <acf>| <F0FF>28)<099> <FF00>Triskin Asylum<099><F0FF>     29)<099> Virtual World        <F0FF>30)<099> Weapon Enhancer          <acf>|<099> };
+			#SH { <acf>| <F0FF>31)<099> Zul'Dane                                                                 <acf>|<099> };
+			#SH { <acf>|                                                                              <acf>|<099> };
+			#SH { <acf>└------------------------------------------------------------------------------┘<099> };
+		};
+
+		#ELSEIF {{"$travelInput1"} === {"planes"} || {%1} === {3}}
+		{
+			#SH { <acf>┌------------------------------------------------------------------------------┐<099> };
+			#SH { <acf>|                           <fac>Planes Locations<099>                                   <acf>|<099> };
+			#SH { <acf>├------------------------------------------------------------------------------┤<099> };
+			#SH { <acf>|  <F0FF>1)<099> Abyss/Unholy Mod    <F0FF>2)<099> Amoria                <F0FF>3)<099> Avernus, Hell Level 1    <acf>|<099> };
+			#SH { <acf>|  <F0FF>4)<099> Plane of Air        <F0FF>5)<099> Plane of Earth        <F0FF>6)<099> Plane of Fire            <acf>|<099> };
+			#SH { <acf>|  <F0FF>7)<099> Plane of Ice        <F0FF>8)<099> Plane of Ooze         <F0FF>9)<099> Plane of Smoke           <acf>|<099> };
+			#SH { <acf>| <F0FF>10)<099> Plane of Water     <F0FF>11)<099> Lunia, Heaven Level 1<F0FF>12)<099>Immoth                    <acf>|<099> };
+		#SH { <acf>| <F0FF>13)<099> Castle Mahlhevik   <F0FF><099>                         <F0FF><099>                             <acf>|<099> };
+		#SH { <acf>|                                                                              <acf>|<099> };
+		#SH { <acf>└------------------------------------------------------------------------------┘<099> };
+	};
+	
+	#ELSEIF {{"$travelInput1"} === {"trainers"} || {%1} === {4}}
+	{
+		#SH { <acf>┌------------------------------------------------------------------------------┐<099> };
+		#SH { <acf>|                          <FFF0>Trainers Locations<099>                                  <acf>|<099> };
+		#SH { <acf>├------------------------------------------------------------------------------┤<099> };
+		#SH { <acf>|  <F0FF>1)<099> Charisma           <F0FF>2)<099> Constitution           <F0FF>3)<099> Dexterity                <acf>|<099> };
+		#SH { <acf>|  <F0FF>4)<099> Intelligence       <F0FF>5)<099> Strength               <F0FF>6)<099> Wisdom                   <acf>|<099> };
+		#SH { <acf>|  <F0FF>7)<099> Weapon Enhancer    <F0FF>8)<099> Weapon Specializer     <F0FF>9)<099> Weapon Un-Specializer    <acf>|<099> };
+		#SH { <acf>| <F0FF>10)<099> The Gainer        <F0FF>11)<099> Electronics School                                                       <acf>|<099> };
+		#SH { <acf>|                                                                              <acf>|<099> };
+		#SH { <acf>└------------------------------------------------------------------------------┘<099> };
+	};
+
+	#ELSEIF {{"$travelInput1"} === {"guilds"} || {%1} === {5}}
+	{
+        #SH { <acf>┌------------------------------------------------------------------------------┐<099> };
+        #SH { <acf>|                          <FF0F>Guilds Locations<099>                                    <acf>|<099> };
+        #SH { <acf>├------------------------------------------------------------------------------┤<099> };
+        #SH { <acf>|  <F0FF>1)<099> Barbarian         <F0FF>2)<099> Bard                    <F0FF>3)<099> Cleric (<FF00>Evil<099>)            <acf>|<099> };
+		#SH { <acf>|  <F0FF>4)<099> Cleric (<F00F>Good<099>)     <F0FF>5)<099> Cyborg                  <F0FF>6)<099> Knight (<FF00>Evil<099>)            <acf>|<099> };
+		#SH { <acf>|  <F0FF>7)<099> Knight (<F00F>Good<099>)     <F0FF>8)<099> Mage                    <F0FF>9)<099> Mercenary                <acf>|<099> };
+		#SH { <acf>| <F0FF>10)<099> Monk             <F0FF>11)<099> Physic                 <F0FF>12)<099> Psionicist               <acf>|<099> };
+		#SH { <acf>| <F0FF>13)<099> Ranger           <F0FF>14)<099> Thief                  <F0FF><099>                             <acf>|<099> };
+		#SH { <acf>|                                                                              <acf>|<099> };
+        #SH { <acf>└------------------------------------------------------------------------------┘<099> };
+	};
+
+	#ELSEIF {{"$travelInput1"} === {"underdark"} || {%1} === {6}}
+	{
+		#SH { <acf>┌------------------------------------------------------------------------------┐<099> };
+		#SH { <acf>|                        <007>Underdark<099>                                              <acf>|<099> };
+		#SH { <acf>├------------------------------------------------------------------------------┤<099> };
+		#SH { <acf>|  <F0FF>1)<099> Head Shrinker <F0FF>2)<099> Lizard Caverns  <F0FF>3)<099> Wyllowwood<099> };
+		#SH { <acf>|                                                                              <acf>|<099> };
+		#SH { <acf>└------------------------------------------------------------------------------┘<099> };
+	};
+
+
+	#ELSEIF {{"$travelInput1"} === {"all"} || {%1} === {7}}
+	{
+		#SH { <acf>┌------------------------------------------------------------------------------┐<099> };
+		#SH { <acf>|                          <179> ALL Locations<099>                                      <acf>|<099> };
+		#SH { <acf>├------------------------------------------------------------------------------┤<099> };
+		#SH { <acf>|                                                                              <acf>|<099> };
+		#SH { <acf>|                          <FF00>Under Construction<099>                                  <acf>|<099> };
+		#SH { <acf>|                                                                              <acf>|<099> };
+		#SH { <acf>└------------------------------------------------------------------------------┘<099> };
+	};
+
+	#ELSE {
+		#SH { <FF00>Travel Warning:<099> The value '<fac>%1<099>' is not a valid travel destination. };
+	}
+}
+{4}
+
+#ALIAS {travel} {
+	#SH { <acf>┌------------------------------------------------------------------------------┐<099> };
+	#SH { <acf>|                          <fca> Where To Travel<099>                                    <acf>|<099> };
+	#SH { <acf>├------------------------------------------------------------------------------┤<099> };
+	#SH { <acf>|                                                                              |<099> };
+	#SH { <acf>|<099>               1) <F0FF>Past<099>      2) <afc>Future<099>      3) <fac>Planes<099>                          <acf>|<099> };
+	#SH { <acf>|<099>               4) <FFF0>Trainers<099>  5) <FF0F>Guilds<099>      6) <007>Underdark<099>                       <acf>|<099> }; 
+	#SH { <acf>|<099>                               7) <179>All<099>                                         <acf>|<099> };
+	#SH { <acf>|                                                                              <acf>|<099> };
+	#SH { <acf>└------------------------------------------------------------------------------┘<099> };
+
+}
+{5}
+
+#NOP ----------------------------------------------------------------------------------------------
+#NOP                                      Anchor Start Locations
+
+
+#ACTION {^You are located: %1}
+{
+	#VAR {currentRoom} {%1};
+}
+{1}
+
+#ALIAS {resettravel} {
+	#VAR {travelerror}{0};
+	#VAR {travelling}{0};
+}
+{5}
+
+#ALIAS {gotohs} {
+	fly;
+	where;
+	#DELAY {1} {
+		#IF {{$currentRoom} === {$myStartingRoomName}}
+		{
+			#VAR {travelling} {1};
+			directionsToHolySquare;
+		};
+		#ELSE {
+			#SH {<FF00>Warning!<FBBB> The current starting room is <FF00>NOT<FBBB> your default start room '$myStartingRoomName'!};
+			#VAR {travelerror} {1};
+			#VAR {travelling} {0};
+		}
+	}
+}
+{5}
+
+#ALIAS {gotoskull} {
+	fly;
+    where;
+	#DELAY {1} {
+		#IF {{$currentRoom} === {$myStartingRoomName}}
+		{
+			#VAR {travelling} {1};
+			directionsToSlaveSquare;
+		};
+	    #ELSE {
+	        #SH {<FF00>Warning!<FBBB> The current starting room is <FF00>NOT<FBBB> your default start room '$myStartingRoomName'!};
+			#VAR {travelerror} {1};
+			#VAR {travelling} {0};
+	    }
+	}
+}
+{5}
+
+#ALIAS {gotostar} {
+	fly;
+	where;
+	#DELAY {1} {
+		#IF {{$currentRoom} === {$myStartingRoomName}}
+		{
+			#VAR {travelling} {1};
+			directionsToStarPlaza;
+		};
+		#ELSE {
+			#SH {<FF00>Warning!<FBBB> The current starting room is <FF00>NOT<FBBB> your default start room '$myStartingRoomName'!};
+			#VAR {travelerror} {1};
+			#VAR {travelling} {0};
+		}
+	}
+}
+{5}
+
+#ALIAS {gotoastral} {
+	fly;
+	where;
+	#DELAY {1} {
+        #IF {{$currentRoom} === {$myStartingRoomName}}
+        {
+            #VAR {travelling} {1};
+			diretionsToAstralManse;
+        };
+		#ELSE {
+    	#SH {<FF00>Warning!<FBBB> The current starting room is <FF00>NOT<FBBB> your default start room '$myStartingRoomName'!};
+            #VAR {travelerror} {1};
+            #VAR {travelling} {0};		
+		}
+	}
+}
+{5}
+
+#NOP ----------------------------------------------------------------------------------------------
+#NOP                                       Past Locations
+
+#ALIAS {gotoAbandonedKeep} {
+	gotohs;
+	#SH {<cfa>Okay!<099> Travelling to the <FFF0>Abandoned Keep<099>!};
+	#DELAY {2} {
+		#IF {!$travelerror}{
+			21w14s2w;wind winch;
+			where;
+		};
+		#ELSE {
+	        resettravel;
+	    };
+	};
+}
+{5}
+
+#ALIAS {gotoOldMonastery} {
+    gotohs;
+	#SH {<cfa>Okay!<099> Travelling to the <FFF0>Old Monastery<099>!};
+	#DELAY {2} {
+	    #IF {!$travelerror}{
+			12n7en;
+			where;
+		};
+		#ELSE {
+	        resettravel;
+	    };
+	};
+}
+{5}
+
+#ALIAS {gotoCastleSlivendark} {
+	gotohs;
+	#SH {<cfa>Okay!<099> Travelling to the <FFF0>Castle Slivendark<099>!};
+	#DELAY {2} {
+		#IF {!$travelerror}{
+			32w4sw2s2w3sese3sw3sd;
+			where;
+	    };
+		#ELSE {
+	        resettravel;
+	    };
+	};
+}
+{5}
+
+#ALIAS {gotoChessboardOfAraken} {
+    gotohs;
+	#SH {<cfa>Okay!<099> Travelling to the <FFF0>Chessboard of Araken<099>!};
+	#DELAY {2} {
+	    #IF {!$travelerror}{
+			9w8s;open porticullis;s;open door;2swsw2se;
+			where;
+	    };
+		#ELSE {
+	        resettravel;
+    	};
+	};
+}
+{5}
+
+#ALIAS {gotoCrystalFortress} {
+	gotohs;
+	#SH {<cfa>Okay!<099> Travelling to the <FFF0>Crystal Fortress<099>!};
+	#DELAY {2} {
+		#IF {!$travelerror} {
+			46w24su5s10w3s4d2en2n2wn2w2s;open rock;2se2swswsese;pull lever;2w3s
+			where;
+		};
+		#ELSE {
+			resettravel;
+		};
+	};
+}
+{5}
+
+#ALIAS {gotoDismalDelve} {
+	gotohs;
+	#SH {<cfa>Okay!<099> Travelling to the <FFF0>Dismal Delve<099>!};
+	#DELAY {2} {
+	    #IF {!$travelerror}{
+			67w12seseds6wndnd;enter portal;nw2n2ed;
+			where;
+	    };
+		#ELSE {
+	        resettravel;
+		}
+    }	
+}
+{5}
+
+#ALIAS {gotoDraconiansAndDragonHighlord} {
+    gotohs;
+	#SH {<cfa>Okay!<099> Travelling to the <FFF0>Draconians a:nd Dragon Highlords<099>!};
+	#DELAY {2} {
+	    #IF {!$travelerror}{
+			32wswsw2se2s2w2sw2sws2w4sws2w;
+			where;
+	    };
+		#ELSE {
+	        resettravel;
+		}
+    };
+}
+{5}
+
+#ALIAS {gotoDukeAraken} {
+	gotohs;
+	#SH {<cfa>Okay!<099> Travelling to the <FFF0>Duke Araken<099>!};
+	#DELAY {2} {
+	    #IF {!$travelerror}{
+			9w8s;open porticullis;s;open door;2sese4sw2se3sw3u3s;
+			where;
+		};
+		#ELSE {
+    	    resettravel;
+		}
+    }	
+}
+{5}
+
+#ALIAS {gotoElvenVillage} {
+    gotohs;
+	#SH {<cfa>Okay!<099> Travelling to the <FFF0>Elven Village<099>!};
+	#DELAY {2} {
+	    #IF {!$travelerror}{
+			22n4e5n;
+			where;
+		};
+		#ELSE {
+    	    resettravel;
+		}
+    };
+}
+{5}
+
+#ALIAS {gotoForgottenValley} {
+    gotohs;
+	#SH {<cfa>Okay!<099> Travelling to the <FFF0>Forgotten Valley<099>!};
+	#DELAY {2} {
+	    #IF {!$travelerror}{
+			60n2e3nwnwn3e4s2d;
+			where;
+		};
+		#ELSE {
+	        resettravel;
+	    }
+	};
+}
+{5}
+
+#ALIAS {gotoFontOfModrian} {
+    gotohs;
+	#SH {<cfa>Okay!<099> Travelling to the <FFF0>Font of Modrian<099>!};
+	#DELAY {2} {
+	    #IF {!$travelerror}{
+			7e4ne;enter font;
+			where;
+		};
+		#ELSE {
+    	    resettravel;
+	    }
+	};
+}
+{5}
+
+#ALIAS {gotoFrozenTundras} {
+    gotohs;
+	#SH {<cfa>Okay!<099> Travelling to the <FFF0>Frozen Tundras<099>!};
+	#DELAY {2} {
+	    #IF {!$travelerror}{
+			37e41n;open gate;8n;open gate;17n3w2nw9n7e3nw2ue2wunwndw2nwue3n3w5ne2n;
+			where;
+		};
+		#ELSE {
+	        resettravel;
+    	}
+	};
+}
+{5}
+
+#ALIAS {gotoGlacialRift} {
+    gotohs;
+	#SH {<cfa>Okay!<099> Travelling to the <FFF0>Glacial Rift<099>!};
+	#DELAY {2} {
+	    #IF {!$travelerror}{
+			37e41n;open gate;8n;open gate;17n3w2nw9n7e3nw2ue2wunwndw2nwue3n3w5ne2n 4n2wnwn2w3nd;
+			where;
+		};
+		#ELSE {
+    	    resettravel;
+	    }
+	};
+}
+{5}
+
+#ALIAS {gotoGreatPyramid} {
+    gotohs;
+	#SH {<cfa>Okay!<099> Travelling to the <FFF0>Great Pyramid<099>!};
+	#DELAY {2} {
+	    #IF {!$travelerror}{
+			74w7s3e9s3wuenu;
+			where;
+		};
+		#ELSE {
+	        resettravel;
+	    }
+	};
+}
+{5}
+
+#ALIAS {gotoGainer} {
+    gotohs;
+	#SH {<cfa>Okay!<099> Travelling to the <FFF0>Gainer<099>!};
+	#SH {Nohunger & Nothirst:	The portal to him is 1w of the Grand Mistress at the top of HTOM};
+	#DELAY {2} {
+	    #IF {!$travelerror}{
+			where;
+		};
+		#ELSE {
+	        resettravel;
+	    }
+	};
+}
+{5}
+
+#ALIAS {gotoGuiharianFestivalOfLights} {
+    gotohs;
+	#SH {<cfa>Okay!<099> Travelling to the <FFF0>Guiharian Festival of Lights<099>!};
+	#DELAY {2} {
+	    #IF {!$travelerror}{
+			4w3se4s;
+			where;
+		};
+		#ELSE {
+	        resettravel;
+	    }
+	};
+}
+{5}
+
+#ALIAS {gotoHalflingVillage} {
+    gotohs;
+	#SH {<cfa>Okay!<099> Travelling to the <FFF0>Halfling Village<099>!};
+	#DELAY {2} {
+	    #IF {!$travelerror}{
+			15e10s4e;
+			where;
+		};
+		#ELSE {
+	        resettravel;
+	    }
+	};
+}
+{5}
+
+#ALIAS {gotoHarpellHouse} {
+    gotohs;
+	#SH {<cfa>Okay!<099> Travelling to the <FFF0>Harpell House<099>!};
+	#DELAY {2} {
+	    #IF {!$travelerror}{
+			19e2n;enter house;
+			where;
+		};
+		#ELSE {
+	        resettravel;
+    	}
+	};
+}
+{5}
+
+#ALIAS {gotoHighTowerOfMagic} {
+    gotohs;
+	#SH {<cfa>Okay!<099> Travelling to the <FFF0>High Tower of Magic<099>!};
+	#DELAY {2} {
+	    #IF {!$travelerror}{
+			34w3nw3n;
+			where;
+		};
+		#ELSE {
+	        resettravel;
+    	}
+	};
+}
+{5}
+
+#ALIAS {gotoHillGiantSteading} {
+    gotohs;
+	#SH {<cfa>Okay!<099> Travelling to the <FFF0>Hill Giant Steading<099>!};
+	#DELAY {2} {
+	    #IF {!$travelerror}{
+			37e41n;open gate;8n;open gate;17nenw;open door w;w;
+			where;
+		};
+		#ELSE {
+	        resettravel;
+	    }
+	};
+}
+{5}
+
+#ALIAS {gotoHobgoblins} {
+    gotohs;
+	#SH {<cfa>Okay!<099> Travelling to the <FFF0>Hobgolbin Tunnels<099>!};
+	#DELAY {2} {
+	    #IF {!$travelerror}{
+			15n2ese;open door n;n;
+			where;
+		};
+		#ELSE {
+	        resettravel;
+    	}
+	};
+}
+{5}
+
+#ALIAS {gotoHolyGrail} {
+    gotohs;
+	#SH {<cfa>Okay!<099> Travelling to the <FFF0>Holy Grail<099>!};
+	#DELAY {2} {
+	    #IF {!$travelerror}{
+			38w2nw3nw8nw3n2wn3ed2nednd2ndn2e3n2e3nwu;
+			where;
+		};
+		#ELSE {
+    	    resettravel;
+	    }
+	};
+}
+{5}
+
+#ALIAS {gotoIstan} {
+    gotohs;
+	#SH {<cfa>Okay!<099> Travelling to the <FFF0>City of Istan<099>!};
+	#DELAY {2} {
+	    #IF {!$travelerror}{
+			37e41n;
+			where;
+		};
+		#ELSE {
+	        resettravel;
+	    }
+	};
+}
+{5}
+
+#ALIAS {gotoKoboldTunnels} {
+    gotohs;
+	#SH {<cfa>Okay!<099> Travelling to the <FFF0>Kobold Tunnels<099>!};
+	#DELAY {2} {
+	    #IF {!$travelerror}{
+			3w8swse10s3e2s4en;
+			where;
+		};
+		#ELSE {
+	        resettravel;
+	    }
+	};
+}
+{5}
+
+#ALIAS {gotoLearander} {
+    gotohs;
+	#SH {<cfa>Okay!<099> Travelling to the <FFF0>Caves of Learander<099>!};
+	#DELAY {2} {
+	    #IF {!$travelerror}{
+			56w27s6ws10w3s4d2e;
+			where;
+		};
+		#ELSE {
+	        resettravel;
+	    }
+	};
+}
+{5}
+
+#ALIAS {gotoMalevolentCircle} {
+    gotohs;
+	#SH {<cfa>Okay!<099> Travelling to the <FFF0>Malevolent Circle<099>!};
+	#DELAY {2} {
+	    #IF {!$travelerror}{
+			39e21s3es3es2eswses2e;
+			where;
+		};
+		#ELSE {
+	        resettravel;
+	    }
+	};
+}
+{5}
+
+#ALIAS {gotoMavernal} {
+    gotohs;
+	#SH {<cfa>Okay!<099> Travelling to the <FFF0>City of Mavernal<099>!};
+	#DELAY {2} {
+	    #IF {!$travelerror}{
+			26n15e1n3e1n1e2n5es;open gate e;
+			where;
+		};
+		#ELSE {
+	        resettravel;
+	    }
+	};
+}
+{5}
+
+#ALIAS {gotoNeverwhere} {
+    gotohs;
+	#SH {<cfa>Okay!<099> Travelling to the <FFF0>Realm of Neverwhere<099>!};
+	#DELAY {2} {
+	    #IF {!$travelerror}{
+			50w9s4w2s6w11s3e2s2e2und;
+			where;
+		};
+		#ELSE {
+	        resettravel;
+		}
+    };
+}
+{5}
+
+#ALIAS {gotoOgreEncampment} {
+    gotohs;
+	#SH {<cfa>Okay!<099> Travelling to the <FFF0>Ogre Encampment<099>!};
+	#DELAY {2} {
+	    #IF {!$travelerror}{
+			7w4n17ws3w3ne2nene2nw3n7e5nw2n2w;
+			where;
+		};
+		#ELSE {
+	        resettravel;
+    	}
+	};
+}
+{5}
+
+#ALIAS {gotoOldThalos} {
+    gotohs;
+	#SH {<cfa>Okay!<099> Travelling to the <FFF0>City of Old Thalos<099>!};
+	#DELAY {2} {
+	    #IF {!$travelerror}{
+			67w22s12w;
+			where;
+		};
+		#ELSE {
+	        resettravel;
+	    }
+	};
+}
+{5}
+
+#ALIAS {gotoPitFiend} {
+    gotohs;
+	#SH {<cfa>Okay!<099> Travelling to the <FFF0>Pit Fiend<099>!};
+	#DELAY {2} {
+	    #IF {!$travelerror}{
+			13w4s2w2s3w;
+			where;
+		};
+		#ELSE {
+	        resettravel;
+	    }
+	};
+}
+{5}
+
+#ALIAS {gotoPoolOfEvil} {
+    gotohs;
+	#SH {<cfa>Okay!<099> Travelling to the <FFF0>Pool of Evil<099>!};
+	#DELAY {2} {
+	    #IF {!$travelerror}{
+			3w8swse10s3e2s4e5nw3n2es;
+			where;
+		};
+		#ELSE {
+	        resettravel;
+    	}
+	};
+}
+{5}
+
+#ALIAS {gotoReedSwamp} {
+    gotohs;
+	#SH {<cfa>Okay!<099> Travelling to the <FFF0>Reed Swamp<099>!};
+	#DELAY {2} {
+	    #IF {!$travelerror}{
+			32w4sws;
+			where;
+		};
+		#ELSE {
+	        resettravel;
+	    }
+	};
+}
+{5}
+
+#ALIAS {gotoSewersOfModrian} {
+    gotohs;
+	#SH {<cfa>Okay!<099> Travelling to the <FFF0>Sewers of Modrian<099>!};
+	#DELAY {2} {
+	    #IF {!$travelerror}{
+			2n3w;open grate;d;
+			where;
+		};
+		#ELSE {
+	        resettravel;
+    	}
+	};
+}
+{5}
+
+#ALIAS {gotoShade} {
+    gotohs;
+	#SH {<cfa>Okay!<099> Travelling to the <FFF0>Shadow City of Shade<099>!};
+	#DELAY {2} {
+	    #IF {!$travelerror}{
+			61n2e2n8e;
+			where;
+		};
+		#ELSE {
+	        resettravel;
+    	}
+	};
+}
+{5}
+
+#ALIAS {gotoSilverTower} {
+    gotohs;
+	#SH {<cfa>Okay!<099> Travelling to the <FFF0>Silver Tower<099>!};
+	#DELAY {2} {
+	    #IF {!$travelerror}{
+			7e11s;
+			where;
+		};
+		#ELSE {
+	        resettravel;
+	    }
+	};
+}
+{5}
+
+#ALIAS {gotoSolaceCove} {
+    gotohs;
+	#SH {<cfa>Okay!<099> Travelling to the <FFF0>City of Solace Cove<099>!};
+	#DELAY {2} {
+	    #IF {!$travelerror}{
+			104w;
+			where;
+		};
+		#ELSE {
+	        resettravel;
+    	}
+	};
+}
+{5}
+
+#ALIAS {gotoSkullport} {
+    gotohs;
+	#SH {<cfa>Okay!<099> Travelling to the <FFF0>City of Skullport<099>!};
+	#DELAY {2} {
+	    #IF {!$travelerror}{
+			17e7s2w8sd6e7nen2e2nw3ne6ne6n4e7nw3n2wne5nse9n;
+			where;
+		};
+		#ELSE {
+	        resettravel;
+	    }
+	};
+}
+{5}
+
+#ALIAS {gotoTempleOfAncients} {
+    gotohs;
+	#SH {<cfa>Okay!<099> Travelling to the <FFF0>Temple of Ancients<099>!};
+	#DELAY {2} {
+	    #IF {!$travelerror}{
+			39e25s;
+			where;
+		};
+		#ELSE {
+	        resettravel;
+	    }
+	};
+}
+{5}
+
+#ALIAS {gotoTowerOfTheRenegadeMage} {
+    gotohs;
+	#SH {<cfa>Okay!<099> Travelling to the <FFF0>Tower of the Renegade Mage<099>!};
+	#DELAY {2} {
+	    #IF {!$travelerror}{
+			125w3n9ws4e;
+			where;
+		};
+		#ELSE {
+	        resettravel;
+    	}
+	};
+}
+{5}
+
+#ALIAS {gotoTowerOfTheRenegadeMageBlue} {
+	enter blue;
+	3w3s3ewwsw;
+	pull lever;
+	push blue library;
+	where;
+}
+{5}
+
+#ALIAS {gotoTheTreetopsOfArachna} {
+    gotohs;
+	#SH {<cfa>Okay!<099> Travelling to the <FFF0>Treetops of Arachna<099>!};
+	#DELAY {2} {
+	    #IF {!$travelerror}{
+			7w2n2w2n13w2s2wn3wu;continue to the Drow area;2w2n1e1n1e1n1e1u;
+			where;
+		};
+		#ELSE {
+	        resettravel;
+	    }
+	};
+}
+{5}
+
+#ALIAS {gotoUndermountain} {
+    gotohs;
+	#SH {<cfa>Okay!<099> Travelling to the <FFF0>Undermountain<099>!};
+	#DELAY {2} {
+	    #IF {!$travelerror}{
+			37e41n;open gate;3nesend;
+			where;
+		};
+		#ELSE {
+	        resettravel;
+    	}
+	};
+}
+{5}
+
+#ALIAS {gotoVaporRats} {
+    gotohs;
+	#SH {<cfa>Okay!<099> Travelling to the <FFF0>Vapor Rats of EPOW<099>!};
+	#DELAY {2} {
+	    #IF {!$travelerror}{
+			8e4ne;enter font;3u;
+			where;
+		};
+		#ELSE {
+	        resettravel;
+    	}
+	};
+}
+{5}
+
+#ALIAS {gotoWemicPlains} {
+    gotohs;
+	#SH {<cfa>Okay!<099> Travelling to the <FFF0>Wemic Plains<099>!};
+	#DELAY {2} {
+	    #IF {!$travelerror}{
+			81wn;
+			where;
+		};
+		#ELSE {
+	        resettravel;
+	    }
+	};
+}
+{5}
+
+#ALIAS {gotoZhengisCastle} {
+    gotohs;
+	#SH {<cfa>Okay!<099> Travelling to the <FFF0>Zhengi's Castle<099>!};
+	#DELAY {2} {
+	    #IF {!$travelerror}{
+			39w3s3w4s1u2w2s9w;
+			where;
+		};
+		#ELSE {
+	        resettravel;
+	    }
+	};
+}
+{5}
+
+
+#NOP ----------------------------------------------------------------------------------------------
+#NOP                                     Future Directions
+#ALIAS {gotoAPollutedVillage} {
+    gotostar;
+	#SH {<cfa>Okay!<099> Travelling to the <FFF0>Polluted Village<099>!};
+	#DELAY {2} {
+	    #IF {!$travelerror}{
+			10w2sw2s5w;
+			where;
+	    };
+	    #ELSE {
+	        resettravel;
+	    }
+	};
+}
+{5}
+
+#ALIAS {gotoArcheologicalDig} {
+    gotostar;
+	#SH {<cfa>Okay!<099> Travelling to the <FFF0>Archeological Dig<099>!};
+	#DELAY {2} {
+	    #IF {!$travelerror}{
+			22n8e5s;
+			where;
+	    };
+	    #ELSE {
+	        resettravel;
+	    }
+	};
+}
+{5}
+
+#ALIAS {gotoBlastedSwamp} {
+    gotostar;
+	#SH {<cfa>Okay!<099> Travelling to the <FFF0>Blasted Swamp<099>!};
+	#DELAY {2} {
+	    #IF {!$travelerror}{
+			16w8n;
+			where;
+	    };
+	    #ELSE {
+	        resettravel;
+	    }
+	};
+}
+{5}
+
+#ALIAS {gotoColony} {
+    gotostar;
+	#SH {<cfa>Okay!<099> Travelling to the <FFF0>Colony<099>!};
+	#DELAY {2} {
+	    #IF {!$travelerror}{
+			e4swe7s2e4sd13e2n;
+			where;
+	    };
+	    #ELSE {
+	        resettravel;
+	    }
+	};
+}
+{5}
+
+#ALIAS {gotoCybertechLabs} {
+    gotostar;
+	#SH {<cfa>Okay!<099> Travelling to the <FFF0>Cybertech Labs<099>!};
+	#DELAY {2} {
+	    #IF {!$travelerror}{
+			5e3s2w1s;
+			where;
+	    };
+	    #ELSE {
+	        resettravel;
+	    }
+	};
+}
+{5}
+
+#ALIAS {gotoCybertechPreparatorySchool} {
+	gotostar;
+	#SH {<cfa>Okay!<099> Travelling to the <FFF0>Cybertech Preparatory School<099>!};
+    #DELAY {2} {
+        #IF {!$travelerror}{
+            5e3s2w4n;look pedestal;
+			where;
+        };
+        #ELSE {
+            resettravel;
+        }
+    };
+}
+{5}
+
+#ALIAS {gotoDeathRow} {
+    gotostar;
+	#SH {<cfa>Okay!<099> Travelling to the <FFF0>Death Row<099>!};
+	#DELAY {2} {
+	    #IF {!$travelerror}{
+			8n;w;duck tape;
+			where;
+	    };
+	    #ELSE {
+	        resettravel;
+	    }
+	};
+}
+{5}
+
+#ALIAS {gotoDracharnos} {
+    gotostar;
+	#SH {<cfa>Okay!<099> Travelling to the <FFF0>Dracharnos<099>!};
+	#DELAY {2} {
+	    #IF {!$travelerror}{
+			25wnuwununend2n3ed2nw;open grate;u;
+			where;
+	    };
+	    #ELSE {
+	        resettravel;
+	    }
+	};
+}
+{5}
+
+#ALIAS {gotoDrugDealer} {
+    gotostar;
+	#SH {<cfa>Okay!<099> Travelling to the <FFF0>Drug Dealer<099>!};
+	#DELAY {2} {
+	    #IF {!$travelerror}{
+			8w5n4w;enter chevy;d3s2e;
+			where;
+	    };
+	    #ELSE {
+	        resettravel;
+	    }
+	};
+}
+{5}
+
+#ALIAS {gotoECJunkyard} {
+    gotostar;
+	#SH {<cfa>Okay!<099> Travelling to the <FFF0>Junk Yard<099>!};
+	#DELAY {2} {
+	    #IF {!$travelerror}{
+			8w2n;
+			where;
+	    };
+	    #ELSE {
+	        resettravel;
+	    }
+	};
+}
+{5}
+
+#ALIAS {gotoECMilitary} {
+    gotostar;
+	#SH {<cfa>Okay!<099> Travelling to the <FFF0>E.C. Military<099>!};
+	#DELAY {2} {
+	    #IF {!$travelerror}{
+			9w3sw;push button;e2se;
+			where;
+	    };
+	    #ELSE {
+	        resettravel;
+	    }
+	};
+}
+{5}
+
+#ALIAS {gotoECVamps} {
+    gotostar;
+	#SH {<cfa>Okay!<099> Travelling to the <FFF0>E.C. Vampires<099>!};
+	#DELAY {2} {
+	    #IF {!$travelerror}{
+			5e11n;open door e;6es;open cub;s;look latch;2se2nwsw2n2e;look wall;e2nw;look book;2d3n;
+			where;
+	    };
+	    #ELSE {
+	        resettravel;
+    	}
+	};
+}
+{5}
+
+#ALIAS {gotoECNuclearPower} {
+    gotostar;
+	#SH {<cfa>Okay!<099> Travelling to the <FFF0>E.C. Nuclear Power Plant<099>!};
+	#DELAY {2} {
+	    #IF {!$travelerror}{
+			17n3e;open gate e;e;
+			where;
+	    };
+	    #ELSE {
+	        resettravel;
+	    }
+	};
+}
+{5}
+
+#ALIAS {gotoECPowerAndPlumbing} {
+    gotostar;
+	#SH {<cfa>Okay!<099> Travelling to the <FFF0>E.C. Power and Plumbing<099>!};
+	#DELAY {2} {
+	    #IF {!$travelerror}{
+			10en;
+			where;
+	    };
+	    #ELSE {
+	        resettravel;
+    	}
+	};
+}
+{5}
+
+#ALIAS {gotoECSecurityCompound} {
+	gotostar;
+	#SH {<cfa>Olay1<099> Traveling to the <FFF0>E.C. Security Compound<099>!};
+	#DELAY {2} {
+		#IF {!$travelerror}{
+			9w3s;
+			where;
+		};
+		#ELSE {
+			resettravel;
+		};
+	};
+}
+{5}
+
+#ALIAS {gotoECUniversity} {
+    gotostar;
+	#SH {<cfa>Okay!<099> Travelling to the <FFF0>E.C. University<099>!};
+	#DELAY {2} {
+	    #IF {!$travelerror}{
+			4w6s2ws;
+			where;
+	    };
+	    #ELSE {
+    	    resettravel;
+	    }
+	};
+}
+{5}
+
+#ALIAS {gotoElectronicsSchool} {
+    gotostar;
+	#SH {<cfa>Okay!<099> Travelling to the <FFF0>Electronics School<099>!};
+	#DELAY {2} {
+	    #IF {!$travelerror}{
+			4w4n1w1n;
+			where;
+    	};
+	    #ELSE {
+	        resettravel;
+	    }
+	};
+}
+{5}
+
+#ALIAS {gotoElectronicsShop} {
+    gotostar;
+	#SH {<cfa>Okay!<099> Travelling to the <FFF0>Electronics Shop<099>!};
+	#DELAY {2} {
+	    #IF {!$travelerror}{
+			5nes;
+			where;
+	    };
+	    #ELSE {
+    	    resettravel;
+	    }
+	};
+}
+{5}
+
+#ALIAS {gotoFailFamilyLegacy} {
+    gotostar;
+	#SH {<cfa>Okay!<099> Travelling to the <FFF0>Fail Family Legacy<099>!};
+	#DELAY {2} {
+	    #IF {!$travelerror}{
+			e9s3e;
+			where;
+			#SH {At entrance of fail: e;e;n;n;n;open door n;n;search coat;s;d;unlock door w;open door w;w;n;e;n;e;e;n;w;push button;n;n;w;u;push 11;listen;e;s;s;w;n;enter tube;push blue};
+	    };
+    	#ELSE {
+	        resettravel;
+	    }
+	};
+}
+{5}
+
+#ALIAS {gotoGenCloneBioMechanicalLabs} {
+	gotostar;
+	#SH {<cfa>Okay!<099> Travelling to the <FFF0>GenClone BioMechanical Labs<099>!};
+	#DELAY {2} {
+		#IF {!$travelerror}{
+			16w9nen4w8n;
+			where;
+		};
+		#ELSE {
+			resettravel;
+		};
+	};
+}
+{5}
+
+#ALIAS {gotoHitpointIncreaser} {
+    gotostar;
+	#SH {<cfa>Okay!<099> Travelling to the <FFF0>Hitpoints Increaser<099>!};
+	#DELAY {2} {
+	    #IF {!$travelerror}{
+			#NOP (Xrr!yth);
+			3n1e;open door s;1s1u;
+			where;
+	    };
+	    #ELSE {
+	        resettravel;
+	    }
+	};
+}
+{5}
+
+#ALIAS {gotoImplantChamber} {
+    gotostar;
+	#SH {<cfa>Okay!<099> Travelling to the <FFF0>Implant Chamber<099>!};
+	#DELAY {2} {
+	    #IF {!$travelerror}{
+			4w3n3w;
+			where;
+	    };
+	    #ELSE {
+	        resettravel;
+	    }
+	};
+}
+{5}
+
+#ALIAS {gotoKiddieKandy} {
+	gotostar;
+	#SH {<cfa>Okay!<099> Travelling to the <FFF0>Kiddie Kandy Incorporated<099>!};
+	#DELAY {2} {
+		#IF {!$travelerror} {
+			4n2wn;open gate n;n;
+			where;
+		};
+		#ELSE {
+			resettravel;
+		}
+	}
+}
+{5}
+
+#ALIAS {gotoKromguard} {
+    gotostar;
+	#SH {<cfa>Okay!<099> Travelling to the <FFF0>Kromguard<099>!};
+	#DELAY {2} {
+	    #IF {!$travelerror}{
+			19w3n;enter tube;4u;enter port;
+			where;
+	    };
+	    #ELSE {
+	        resettravel;
+    	}
+	};
+}
+{5}
+
+#ALIAS {gotoLuxare} {
+    gotostar;
+	#SH {<cfa>Okay!<099> Travelling to the <FFF0>Luxare<099>!};
+	#DELAY {2} {
+	    #IF {!$travelerror}{
+			4w4nen;
+			where;
+	    };
+	    #ELSE {
+	        resettravel;
+    	}
+	};
+}
+{5}
+
+#ALIAS {gotoMerquryCity} {
+    gotostar;
+	#SH {<cfa>Okay!<099> Travelling to the <FFF0>Merqury City<099>!};
+	#DELAY {2} {
+	    #IF {!$travelerror}{
+			19w3n;enter tube;
+			where;
+	    };
+	    #ELSE {
+	        resettravel;
+    	}
+	};
+}
+{5}
+
+#ALIAS {gotoNETWORKCommunicationsTower} {
+    gotostar;
+	#SH {<cfa>Okay!<099> Travelling to the <FFF0>NETWORK Communications Tower<099>!};
+	#DELAY {2} {
+	    #IF {!$travelerror}{
+			4w4ne;open door s;s;
+			where;
+	    };
+	    #ELSE {
+    	    resettravel;
+	    }
+	};
+}
+{5}
+
+#ALIAS {gotoReinforcer} {
+    gotostar;
+	#SH {<cfa>Okay!<099> Travelling to the <FFF0>Reinforcer<099>!};
+	#DELAY {2} {
+	    #IF {!$travelerror}{
+			4w5n2w;
+			where;
+	    };
+	    #ELSE {
+	        resettravel;
+    	}
+	};
+}
+{5}
+
+#ALIAS {gotoRuinsOfHTOM} {
+    gotostar;
+	#SH {<cfa>Okay!<099> Travelling to the <FFF0>Ruins of the High Tower of Magic<099>!};
+	#DELAY {2} {
+	    #IF {!$travelerror}{
+			34w3n2w7n;
+			where;
+	    };
+	    #ELSE {
+	        resettravel;
+	    }
+	};
+}
+{5}
+
+#ALIAS {gotoRuinsOfTheSilverTower} {
+    gotostar;
+	#SH {<cfa>Okay!<099> Travelling to the <FFF0>Ruins of the Silver Tower<099>!};
+	#DELAY {2} {
+	    #IF {!$travelerror}{
+			9e11s;
+			where;
+	    };
+	    #ELSE {
+	        resettravel;
+	    }
+	};
+}
+{5}
+
+#ALIAS {gotoSimeonTheCybernetic} {
+    gotostar;
+	#SH {<cfa>Okay!<099> Travelling to the <FFF0>Simeon the Cybernetic<099>!};
+	#DELAY {2} {
+	    #IF {!$travelerror}{
+			4w3n1e;
+			where;
+	    };
+	    #ELSE {
+	        resettravel;
+    	}
+	};
+}
+{5}
+
+#ALIAS {gotoTriskinAsylum} {
+    gotostar;
+			#SHOME {ZONE CLOSED};
+	#DELAY {2} {
+	    #IF {!$travelerror}{
+			where;
+	    };
+	    #ELSE {
+	        resettravel;
+	    }
+	};
+}
+{5}
+
+#ALIAS {gotoVirtualWorldOfNETWORK} {
+    gotostar;
+	#SH {<cfa>Okay!<099> Travelling to the <FFF0>Virtual World of NETWORK<099>!};
+	#DELAY {2} {
+	    #IF {!$travelerror}{
+			4w4ne;open door s;3s;push 25;1n;kill secretary;push button;open door n;1n1e;push button;push 0316;1w1s;tweak nose;1e;pull latch;wear app;push button;
+			where;
+	    };
+	    #ELSE {
+	        resettravel;
+	    }
+	};
+}
+{5}
+
+#ALIAS {gotoWeaponEnhancer} {
+    gotostar;
+	#SH {<cfa>Okay!<099> Travelling to the <FFF0>Weapons Enhancer<099>!};
+	#DELAY {2} {
+	    #IF {!$travelerror}{
+			5n2w1s1e;
+			where;
+	    };
+	    #ELSE {
+	        resettravel;
+	    }
+	};
+}
+{5}
+
+#ALIAS {gotoWeaponSpecializer} {
+    gotoskull;
+	#SH {<cfa>Okay!<099> Travelling to the <FFF0>Weapon Specializer<099>!};
+	#DELAY {2} {
+	    #IF {!$travelerror}{
+			4sd2enen2e4nw3nen2w2n2e2n2e2un4eu;open ebony;ws2w;open door w;2w2ne2n2w;open door s;s;open tap;
+			where;
+	    };
+	    #ELSE {
+	        resettravel;
+	    }
+	};
+}
+{5}
+
+#ALIAS {gotoWeaponUnSpecializer} {
+    gotostar;
+	#SH {<cfa>Okay!<099> Travelling to the <FFF0>Weapon UNSpecializer<099>!};
+	#DELAY {2} {
+	    #IF {!$travelerror}{
+			3n1e;open door s;1s1u1e;
+			where;
+	    };
+	    #ELSE {
+	        resettravel;
+	    }
+	};
+}
+{5}
+
+#ALIAS {gotoZulDane} {
+    gotostar;
+	#SH {<cfa>Okay!<099> Travelling to the <FFF0>City of Zul'Dane<099>!};
+	#DELAY {2} {
+	    #IF {!$travelerror} {
+			26n4e;
+			where;
+	    };
+	    #ELSE {
+	        resettravel;
+	    };
+	};
+}
+{5}
+
+
+#NOP ----------------------------------------------------------------------------------------------
+#NOP                             Underdark Directions
+
+#ALIAS {gotoUndeadShark} {
+	gotoskull;
+	#NOP from slave square: sharkskin pants -2es2u open plank e es open door s 3s open door w ws3ene3n2en2en5esese4s open door s s open door s 6s open water e en2e2s open door s 2s2e
+	#SH {<cfa>Okay!<099> Travelling to the <FFF0>Undead Shark<099>!};
+	#DELAY {2} {
+		#IF {!$travelerror}
+		{
+			2es2u;open plant e;es;open door s;3s;open door w;ws3ene3n2en2en5esese4s;open door s;s;open door s;6s;open water e;en2e2s;open door s;2s2e;
+		};
+		#ELSE {
+			resettravel;
+		};
+	}
+}
+{5}
+
+#ALIAS {gotoHeadShrinker} {
+	gotoskull;
+	#SH {<cfa>Okay!<099> Travelling to the <FFF0>head Shrinker<099>!};
+	#DELAY {2} {
+		#IF {!$travelerror} {
+			11s2wdnund2sundwun2d3ws;open hide;1w;
+			where;
+		};
+		#ELSE {
+			resettravel;
+		};
+	};
+}
+{5}
+
+#ALIAS {gotoLizardCaverns} {
+	gotoskull;
+	#SH {<cfa>Okay!<099> Travelling to the <FFF0>Lizard Caverns<099>!};
+	#DELAY {2} {
+		#IF {!$travelerror} {
+			11s2wdnund2sundwun2dw4n;move lizard;take key;unlock door e;open door e;drop key;e;
+			where;
+		};
+		#ELSE {
+			resettravel;
+		};
+	};
+}
+{5}
+
+#ALIAS {gotoWyllowwood} {
+	gotoskull;
+	#SH {<cfa>Okay!<099> Travelling to the <FFF0>Wyllowwood<099>!};
+	#DELAY {2} {
+		#IF {!$travelerror} {
+			6s2w4sedwun2dw4n;move lizard;get key;unlock door e;bash door e;open door e;drop key;2e2nes2en;enter arch;
+			where;
+		};
+		#ELSE {
+			resettravel;
+		};
+	};
+}
+{5}
+
+
+#NOP ----------------------------------------------------------------------------------------------
+#NOP                                  Outer Planes Directions
+
+#ALIAS {gotoAbyssUnholyModrian} {
+    gotoastral;
+	#SH {<cfa>Okay!<099> Travelling to the <FFF0>City of Unholy Modrian<099>!};
+    #DELAY {2} {
+        #IF {!$travelerror} {
+       		5nu3w;enter pool;
+			where;
+        };
+        #ELSE {
+            resettravel;
+        };
+    };
+}
+{5}
+
+#ALIAS {gotoAmoria} {
+    gotoastral;
+	#SH {<cfa>Okay!<099> Travelling to the <FFF0>Amoria<099>!};
+    #DELAY {2} {
+        #IF {!$travelerror} {
+			5n3u2n3e;enter pool;
+			where;
+        };
+        #ELSE {
+            resettravel;
+        };
+    };
+}
+{5}
+
+#ALIAS {gotoLuniaHeaven} {
+    gotoastral;
+	#SH {<cfa>Okay!<099> Travelling to the <FFF0>Lunia Heaven 1<099>!};
+    #DELAY {2} {
+        #IF {!$travelerror} {
+			5n3d2sw;enter pool;
+			#ACTION {^You step into a gold color pool.}
+				helpHeaven;{
+			};
+			where;
+
+        };
+        #ELSE {
+            resettravel;
+        };
+    };
+}
+{5}
+
+#ALIAS {helpHeaven}
+{
+	#SH { <fca>------------------------<F0FF>Help Heaven<fca>---------------------------------<099>};
+	#SH { <fca>To Thor<099>: nenenu5wn2wse - Use <170>gotoThor<099>};
+    #SH { <fca>Then to Diancecht<099>: 2w2n4esene3ne3nws - Use <170>gotoDiancecht<099>};
+    #SH { <fca>Then to Ptah<099>: ne7s2edeu4w2n4u - Use <170>gotoPtah<099>};
+	#SH { <fca>Finally to Ixlilton<099> 4d2s4edsu2e4n - Use <170>gotoIxlilton<099>};
+	#SH { <fca>--------------------------------------------------------------------<099>};
+
+}
+{5}
+
+#ALIAS {gotoThor} {
+	where;
+	#DELAY {2} {
+		#IF {{$currentRoom} === {In the Silver Sea}}
+		{
+			#SH {<cfa>Okay!<099> Travelling to <FFF0>Thor, God of Lightning<099>!};
+			nenenu5wn2wse;
+		};
+		#ELSE
+		{
+			#SH {<FF00>Error<099>: You're not in the correct room 'In the Silver Sea'!};
+		};
+	};
+}
+{5}
+
+#ALIAS {gotoDiancecht}
+{
+	where;
+	#DELAY {2} {
+		#IF {{$currentRoom} === {Before a Palatial Estate}}
+		{
+			#SH {<cfa>Okay!<099> Travelling to <FFF0>Diancecht<099>!};
+			2w2n4esene3ne3nws;
+		};
+		#ELSE
+		{
+			#SH {<FF00>Error<099>: You're not in the correct room 'Before the Palatial Estate'!};
+		};
+	};
+}
+{5}
+
+#ALIAS {gotoPtah}
+{
+	where;
+	#DELAY {2} {
+		#IF {{$currentRoom} === {Before a Spiraling Tower}}
+		{
+			#SH {<cfa>Okay!<099> Travelling to <FFF0>Ptah<099>!};
+			ne7s2edeu4w2n4u;
+		};
+		#ELSE
+		{
+			#SH {<FF00>Error<099>: You're not in the correct room 'Before a Spiraling Tower'!}
+		};
+	};
+}
+{5}
+
+#ALIAS {gotoIxlilton}
+{
+	where;
+	#DELAY {2} {
+		#IF {{$currentRoom} === {A Garden Plateau}}
+		{
+			#SH {<cfa>Okay!<099> Travelling to <FFF0>Ixlilton<099>!};
+			4d2s4edsu2e4n;
+		};
+		#ELSE
+		{
+			#SH {<FF00>Error<099>: You're not in the correct room 'A Garden Plateau'!};
+		};
+	};
+}
+{5}
+
+#ALIAS {gotoAvernusHell} {
+    gotoastral;
+	#SH {<cfa>Okay!<099> Travelling to the <FFF0>Level 1 Hell: Avernus<099>!};
+    #DELAY {2} {
+        #IF {!$travelerror} {
+			 5wdes;enter pool;
+			 where;
+        };
+        #ELSE {
+            resettravel;
+        };
+    };
+}
+{5}
+
+#ALIAS {gotoImmoth} {
+	gotohs;
+	#SH {<cfa>Okay!<099> Travelling to the <FFF0>Immoth Hallow<099>!};
+	#DELAY {2} {
+		#IF {!$travelerror} {
+		    2nu;open door west;w;read title73;
+			where;
+		};
+		#ELSE {
+			resettravel;
+		};
+	};
+}
+{5}
+
+#ALIAS {gotoElementalPlaneOfAir} {
+	gotohs;
+	#SH {<cfa>Okay!<099> Travelling to the <FFF0>Elemental Plane of Air<099>!};
+	#DELAY {2} {
+	    #IF {!$travelerror}{
+			7e4ne;enter font;uw4nwu4s3wnwsws4w;
+			#SH {<FF00>Warning!<099> Lots of flows.};
+			where;
+		};
+		#ELSE {
+	        resettravel;
+		}
+    }
+}
+{5}
+
+#ALIAS {gotoElementalPlaneOfEarth} {
+    gotohs;
+	#SH {<cfa>Okay!<099> Travelling to the <FFF0>Elemental Plane of Earth<099>!};
+	#DELAY {2} {
+	    #IF {!$travelerror}{
+			67w12seseds6wndnd;enter portal;
+			where;
+		};
+		#ELSE {
+	        resettravel;
+		}
+    }
+}
+{5}
+
+#ALIAS {gotoElementalPlaneOfFire} {
+    gotohs;
+	#SH {<cfa>Okay!<099> Travelling to the <FFF0>Elemental Plane of Fire<099>!};
+	#DELAY {2} {
+	    #IF {!$travelerror}{
+			7e4ne;enter font;uw4nwu4s3wnwsws18wd2s4w;
+			#SH {<FF00>Warning!<099> Lots of flows.};
+			where;
+		};
+		#ELSE {
+	        resettravel;
+		}
+    }
+}
+{5}
+
+#ALIAS {gotoElementalPlaneOfIce} {
+    gotohs;
+	#SH {<cfa>Okay!<099> Travelling to the <FFF0>Elemental Plane of Ice<099>!};
+	#DELAY {2} {
+	    #IF {!$travelerror}{
+			7e4ne;enter font;uw4nwu4s3wne;
+			where;
+		};
+		#ELSE {
+	        resettravel;
+		}
+    }
+}
+{5}
+
+#ALIAS {gotoElementalPlaneOfOoze} {
+    gotohs;
+	#SH {<cfa>Okay!<099> Travelling to the <FFF0>Elemental Plane of Ooze<099>!};
+	#DELAY {2} {
+	    #IF {!$travelerror}{
+			7e4ne;enter font;3ese;
+			where;
+		};
+		#ELSE {
+        	resettravel;
+	    }
+	}
+}
+{5}
+
+#ALIAS {gotoElementalPlaneOfSmoke} {
+    gotohs;
+	#SH {<cfa>Okay!<099> Travelling to the <FFF0>Elemental Plane of Smoke<099>!};
+	#DELAY {2} {
+	    #IF {!$travelerror}{
+			7e4ne;enter font;uw4nwu4s3wnwsws13w;
+			#SH {<FF00>Warning!<099> Lots of flows.};
+			where;
+		};
+		#ELSE {
+    	    resettravel;
+		}
+    }
+}
+{5}
+
+#ALIAS {gotoElementalPlaneOfWater} {
+    gotohs;
+	#SH {<cfa>Okay!<099> Travelling to the <FFF0>Elemental Plane of Water<099>!};
+	#DELAY {2} {
+	    #IF {!$travelerror}{
+			7e3n2enw;enter sphere;
+			where;
+		};
+		#ELSE {
+	        resettravel;
+		}
+    };
+}
+{5}
+
+#ALIAS {gotoCastleMahlhevik} {
+    #NOP gotohs;
+	#SH { Directions Pending. };
+    #DELAY {2} {
+	    #IF {!$travelerror}{
+			where;
+		};
+		#ELSE {
+	        resettravel;
+		}
+    };
+}
+{5}
+
+#NOP ----------------------------------------------------------------------------------------------
+#NOP                                 Class Practice Teachers
+
+#ALIAS {gotoBarbarianGuildmaster} {
+	gotohs;
+	#SH {<cfa>Okay!<099> Travelling to the <FFF0>Barbarian Guildmaster<099>!};
+	#DELAY {2} {
+		#IF {!$travelerror} {
+			57w11n;
+			where;
+		};
+		#ELSE {
+			resettravel;
+		};
+	};
+}
+{5}
+
+#ALIAS {gotoBardGuildmaster} {
+    gotohs;
+	#SH {<cfa>Okay!<099> Travelling to the <FFF0>Bard Guildmaster<099>!};
+    #DELAY {2} {
+        #IF {!$travelerror} {
+			3w2swn;
+			where;
+        };
+        #ELSE {
+            resettravel;
+        };
+    };
+}
+{5}
+
+#ALIAS {gotoClericEvilGuildmaster} {
+    gotoskull;
+	#SH {<cfa>Okay!<099> Travelling to the <FFF0>Evil Cleric Guildmaster<099>!};
+    #DELAY {2} {
+        #IF {!$travelerror} {
+			7n2w;open door w;2w;
+			where;
+        };
+        #ELSE {
+            resettravel;
+        };
+    };
+}
+{5}
+
+#ALIAS {gotoClericGoodGuildmaster} {
+    gotohs;
+	#SH {<cfa>Okay!<099> Travelling to the <FFF0>Good Cleric Guildmaster<099>!};
+    #DELAY {2} {
+        #IF {!$travelerror} {
+			6e11s;open door s;3s;5u2s;#SH {Guildmaster wanders in this area.};
+			where;
+        };
+        #ELSE {
+            resettravel;
+        };
+    };
+}
+{5}
+
+#ALIAS {gotoCyborgGuildmaster} {
+    gotostar;
+	#SH {<cfa>Okay!<099> Travelling to the <FFF0>Cyborg Guildmaster<099>!};
+    #DELAY {2} {
+        #IF {!$travelerror} {
+			4w2nws;login;
+			where;
+        };
+        #ELSE {
+            resettravel;
+        };
+    };
+}
+{5}
+
+#ALIAS {gotoKnightEvilGuildmaster} {
+    gotoskull;
+	#SH {<cfa>Okay!<099> Travelling to the <FFF0>Evil Knight Guildmaster<099>!};
+    #DELAY {2} {
+        #IF {!$travelerror} {
+			2w2ne;
+			where;
+        };
+        #ELSE {
+            resettravel;
+        };
+    };
+}
+{5}
+
+	#ALIAS {gotoKnightGoodGuildmaster} {
+    gotohs;
+	#SH {<cfa>Okay!<099> Travelling to the <FFF0>Good Knight Guildmaster<099>!};
+    #DELAY {2} {
+        #IF {!$travelerror} {
+			2nunw;open tap;4wn3e;
+			where;
+        };
+        #ELSE {
+            resettravel;
+        };
+    };
+}
+{5}
+
+#ALIAS {gotoMageGuildmaster} {
+    gotohs;
+	#SH {<cfa>Okay!<099> Travelling to the <FFF0>Mage Guildmaster<099>!};
+    #DELAY {2} {
+        #IF {!$travelerror} {
+			4nu;open door west;w;read title31;e;open door east;
+			where;
+        };
+        #ELSE {
+            resettravel;
+        };
+    };
+}
+{5}
+
+#ALIAS {gotoMercenaryGuildmaster} {
+    gotostar;
+	#SH {<cfa>Okay!<099> Travelling to the <FFF0>Mercenary Guildmaster<099>!};
+    #DELAY {2} {
+        #IF {!$travelerror} {
+			2d4e5nes;
+			where;
+        };
+        #ELSE {
+            resettravel;
+        };
+    };
+}
+{5}
+
+#ALIAS {gotoMonkGuildmaster} {
+    gotohs;
+	#SH {<cfa>Okay!<099> Travelling to the <FFF0>Monk Guildmaster<099>!};
+    #DELAY {2} {
+        #IF {!$travelerror} {
+			37e41n;open gate n;4n3w;open gate w;11w8ne3nws;
+			where;
+        };
+        #ELSE {
+            resettravel;
+        };
+    };
+}
+{5}
+
+#ALIAS {gotoPhysicGuildmaster} {
+    gotostar;
+	#SH {<cfa>Okay!<099> Travelling to the <FFF0>Physics Guildmaster<099>!};
+    #DELAY {2} {
+        #IF {!$travelerror} {
+			3s2uswn;
+			where;
+        };
+        #ELSE {
+            resettravel;
+        };
+    };
+}
+{5}
+
+#ALIAS {gotoPsionicistGuildmaster} {
+    gotohs;
+	#SH {<cfa>Okay!<099> Travelling to the <FFF0>Psionic Guildmaster<099>!};
+    #DELAY {2} {
+        #IF {!$travelerror} {
+			 2nune;open tapestry;3w;open gate w;11w8ne3nws;
+			 where;
+        };
+        #ELSE {
+            resettravel;
+        };
+    };
+}
+{5}
+
+#ALIAS {gotoRangerGuildmaster} {
+    gotohs;
+	#SH {<cfa>Okay!<099> Travelling to the <FFF0>Ranger Guildmaster<099>!};
+    #DELAY {2} {
+        #IF {!$travelerror} {
+			nnune;open tapestry;ssswwse;
+			where;
+        };
+        #ELSE {
+            resettravel;
+        };
+    };
+}
+{5}
+
+#ALIAS {gotoThiefGuildmaster} {
+    gotoskull;
+	#SH {<cfa>Okay!<099> Travelling to the <FFF0>Thief Guildmaster<099>!};
+    #DELAY {2} {
+        #IF {!$travelerror} {
+			4e;open portrait;2ene2s;open door e;8e;
+			where;
+        };
+        #ELSE {
+            resettravel;
+        };
+    };
+}
+{5}
+
+#NOP ----------------------------------------------------------------------------------------------
+#NOP                                    Stats Increaser
+
+#ALIAS {gotoCharismaTrainer} {
+    gotostar;
+	#SH {<cfa>Okay!<099> Travelling to the <FFF0>Charisma Trainer<099>!};
+    #DELAY {2} {
+        #IF {!$travelerror} {
+			 3n1e;open door s;1s1w;
+			 where;
+        };
+        #ELSE {
+            resettravel;
+        };
+    };
+}
+{5}
+
+#ALIAS {gotoConstitutionTrainer} {
+    gotohs;
+	#SH {<cfa>Okay!<099> Travelling to the <FFF0>Constitution Trainer<099>!};
+    #DELAY {2} {
+        #IF {!$travelerror} {
+			 2nunw;open tapestry;3e4ne;
+			 where;
+        };
+        #ELSE {
+            resettravel;
+        };
+    };
+}
+{5}
+
+#ALIAS {gotoDexterityTrainer} {
+    gotohs;
+	#SH {<cfa>Okay!<099> Travelling to the <FFF0>Dexterity Trainer<099>!};
+    #DELAY {2} {
+        #IF {!$travelerror} {
+			nnwwww;open grate;dessesusseuswnw;#SH {<acf>Kill the Assassin and go two west!<000>};
+			where;
+        };
+        #ELSE {
+            resettravel;
+        };
+    };
+}
+{5}
+
+#ALIAS {gotoIntelligenceTrainer} {
+    gotohs;
+	#SH {<cfa>Okay!<099> Travelling to the <FFF0>Intelligence Trainer<099>!};
+    #DELAY {2} {
+        #IF {!$travelerror} {
+			4nu;open door west;w;read title31;e;open door east;2e2n2ed4s2w;open door south;s;
+			where;
+        };
+        #ELSE {
+            resettravel;
+        };
+    };
+}
+{5}
+
+#ALIAS {gotoStrengthTrainer} {
+    gotohs;
+		#SH {<cfa>Okay!<099> Travelling to the <FFF0>Strength Trainer<099>!};
+    #DELAY {2} {
+        #IF {!$travelerror} {
+			2nune;open tapestry;3nen;
+			where;
+        };
+        #ELSE {
+            resettravel;
+        };
+    };
+}
+{5}
+
+#ALIAS {gotoWisdomTrainer} {
+    gotohs;
+		#SH {<cfa>Okay!<099> Travelling to the <FFF0>Wisdom Trainer<099>!};
+    #DELAY {2} {
+        #IF {!$travelerror} {
+			6e11s;open door s;3s1u2s1e;open door s;2s1w1u;
+			where;
+        };
+        #ELSE {
+            resettravel;
+        };
+    };
+}
+{5}
+
+
+#NOP ----------------------------------------------------------------------------------------------
+#NOP                                 Language Trainers
+
+#ALIAS {gotoModriadicTrainer} {
+    gotohs;
+		#SH {<cfa>Okay!<099> Travelling to the <FFF0>Modriadic Trainer<099>!};
+    #DELAY {2} {
+        #IF {!$travelerror} {
+			where;
+        };
+        #ELSE {
+            resettravel;
+        };
+    };
+}
+{5}
+
+#ALIAS {gotoElvishTrainer} {
+    gotohs;
+		#SH {<cfa>Okay!<099> Travelling to the <FFF0>Elvish Trainer<099>!};
+    #DELAY {2} {
+        #IF {!$travelerror} {
+			22n4e9n3w;offer elvish;
+			where;
+        };
+        #ELSE {
+            resettravel;
+        };
+    };
+}
+{5}
+
+#ALIAS {gotoOrcishTrainer} {
+    gotostar;
+		#SH {<cfa>Okay!<099> Travelling to the <FFF0>Orcish Trainer<099>!};
+    #DELAY {2} {
+        #IF {!$travelerror} {
+			where;
+        };
+        #ELSE {
+            resettravel;
+        };
+    };
+}
+{5}
+
+#ALIAS {gotoHobbishTrainer} {
+	gotohs;
+		#SH {<cfa>Okay!<099> Travelling to the <FFF0>Hobbish Trainer<099>!};
+	#DELAY {2} {
+		#IF {!$travelerror} {
+		    15e10s6e3n;open door north;2n;offer hobbish;
+			where;
+		};
+		#ELSE {
+			resettravel;
+		};
+	};
+}
+{5}
+
+#NOP #ALIAS {goto} {
+#NOP    goto;
+#NOP    #DELAY {2} {
+#NOP        #IF {!$travelerror} {
+#NOP		#SH {<cfa>Okay!<099> Travelling to the <FFF0><099>!};
+#NOP        };
+#NOP        #ELSE {
+#NOP            resettravel;
+#NOP        };
+#NOP    };
+#NOP }
+#NOP {5}
+
+
+
+#NOP ----------------------------------------------------------------------------------------------
+
+#NOP ----------------------------------------------------------------------------------------------
+#NOP                                    Utilities
+
+#ALIAS {showcolors} {#SH <FF00>'FF00' Red <F0F0>'F0F0' Green <F00F>'F00F' Blue <FFF0>'FFF0' Yellow <F0FF>'F0FF' Cyan <FF0F>'FF0F' Purple <acf>'acf' Azure <afc>'afc' Jade <caf>'caf' Violet <cfa>'cfa' Lime <fac>'fac' Pink <fca>'fca' Orange<000>}
+#ACTION {^In the area: %1}
+{
+	#VAR {travelling}{0};
+}
+{5}
+#VAR {travelerror} {0}
+#VAR {travelling} {0};
