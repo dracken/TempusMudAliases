@@ -311,7 +311,7 @@
 			#SH {Travel Destination: '$travelInput1'};
 			#SH {Travel Destination Upper: '$travelInput1Upper};
 		};
-        #IF {{"$travelInput1"} === {"help"}} {
+        #IF {{"$travelInput1"} === {"help"}} || {"$travelInput1"} === {"?"}}
             #SH { <afc>******************************************************************************************<099> };
             #SH { <afc>*                                Directions Help!                                        *<099> };
             #SH { <afc>******************************************************************************************<099> };
@@ -361,12 +361,12 @@
 			#SH { <acf>|  <F0FF>7)<099> Death Row           <F0FF>8)<099> Dracharnos           <F0FF>9)<099> Drug Dealer               <acf>|<099> };
 			#SH { <acf>| <F0FF>10)<099> EC Junkyard        <F0FF>11)<099> EC Military          <F0FF>12)<099> EC Vampires              <acf>|<099> };
 			#SH { <acf>| <F0FF>13)<099> EC Nuclear Power   <F0FF>14)<099> EC Power & Plubming  <F0FF>15)<099> EC Security Compound     <acf>|<099> };
-            #SH { <acf>| <F0FF>16)<099> Electronics School <F0FF>17)<099> Electronics Shop     <F0FF>18)<099> GenClone Bio Labs        <acf>|<099> };
-            #SH { <acf>| <F0FF>19)<099> Fail Family Legacy <F0FF>20)<099> Kromguard            <F0FF>21)<099> Luxare                   <acf>|<099> };
-            #SH { <acf>| <F0FF>22)<099> Merqury City       <F0FF>23)<099> NETWORK Tower        <F0FF>24)<099> Reinforcer               <acf>|<099> };
-            #SH { <acf>| <F0FF>25)<099> Ruins of HTOM      <F0FF>26)<099> Silver Tower Ruins   <F0FF>27)<099> Simeon the Cybernetic    <acf>|<099> };
-            #SH { <acf>| <F0FF>28)<099> <FF00>Triskin Asylum<099><F0FF>     29)<099> Virtual World        <F0FF>30)<099> Weapon Enhancer          <acf>|<099> };
-			#SH { <acf>| <F0FF>31)<099> Zul'Dane                                                                 <acf>|<099> };
+			#SH { <acf>| <F0FF>16)<099> EC University      <F0FF>17)<099> Electronics School   <F0FF>18)<099> Electronics Shop         <acf>|<099> };
+			#SH { <acf>| <F0FF>19)<099> Fail Family Legacy <F0FF>20)<099> GenClone Bio Labs    <F0FF>21)<099> Kiddie Kandy, Inc.       <acf>|<099> };
+			#SH { <acf>| <F0FF>22)<099> Kromguard          <F0FF>23)<099> Luxare               <F0FF>24)<099> Merqury City             <acf>|<099> };
+			#SH { <acf>| <F0FF>25)<099> NETWORK  Tower     <F0FF>26)<099> Equipment Reinforcer <F0FF>27)<099> Ruins of HTOM            <acf>|<099> };
+			#SH { <acf>| <F0FF>28)<099> Silver Tower  Ruins<F0FF>29)<099> Simeon the Cybernetic<F0FF>30)<099><FF00>Triskin Asylum<099><F0FF>       <acf>|<099> };
+			#SH { <acf>| <F0FF>31)<099> Virtual  World     <F0FF>32)<099> Zul’Dane                              <acf>|<099> };
 			#SH { <acf>|                                                                              <acf>|<099> };
 			#SH { <acf>└------------------------------------------------------------------------------┘<099> };
 		};
