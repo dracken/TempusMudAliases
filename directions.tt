@@ -553,6 +553,7 @@
 		#IF {!$travelerror}{
 			21w14s2w;wind winch;
 			where;
+			challenge area;
 		};
 		#ELSE {
 	        resettravel;
@@ -568,6 +569,7 @@
 	    #IF {!$travelerror}{
 			12n7en;
 			where;
+			challenge area;
 		};
 		#ELSE {
 	        resettravel;
@@ -583,6 +585,7 @@
 		#IF {!$travelerror}{
 			32w4sw2s2w3sese3sw3sd;
 			where;
+			challenge area;
 	    };
 		#ELSE {
 	        resettravel;
@@ -598,6 +601,7 @@
 	    #IF {!$travelerror}{
 			9w8s;open porticullis;s;open door;2swsw2se;
 			where;
+			challenge area;
 	    };
 		#ELSE {
 	        resettravel;
@@ -613,6 +617,7 @@
 		#IF {!$travelerror} {
 			46w24su5s10w3s4d2en2n2wn2w2s;open rock;2se2swswsese;pull lever;2w3s
 			where;
+			challenge area;
 		};
 		#ELSE {
 			resettravel;
@@ -628,6 +633,7 @@
 	    #IF {!$travelerror}{
 			67w12seseds6wndnd;enter portal;nw2n2ed;
 			where;
+			challenge area;
 	    };
 		#ELSE {
 	        resettravel;
@@ -643,6 +649,7 @@
 	    #IF {!$travelerror}{
 			32wswsw2se2s2w2sw2sws2w4sws2w;
 			where;
+			challenge area;
 	    };
 		#ELSE {
 	        resettravel;
@@ -658,6 +665,7 @@
 	    #IF {!$travelerror}{
 			9w8s;open porticullis;s;open door;2sese4sw2se3sw3u3s;
 			where;
+			challenge area;
 		};
 		#ELSE {
     	    resettravel;
@@ -673,6 +681,7 @@
 	    #IF {!$travelerror}{
 			22n4e5n;
 			where;
+			challenge area;
 		};
 		#ELSE {
     	    resettravel;
@@ -688,6 +697,7 @@
 	    #IF {!$travelerror}{
 			60n2e3nwnwn3e4s2d;
 			where;
+			challenge area;
 		};
 		#ELSE {
 	        resettravel;
@@ -703,6 +713,7 @@
 	    #IF {!$travelerror}{
 			7e4ne;enter font;
 			where;
+			challenge area;
 		};
 		#ELSE {
     	    resettravel;
@@ -718,6 +729,7 @@
 	    #IF {!$travelerror}{
 			37e41n;open gate;8n;open gate;17n3w2nw9n7e3nw2ue2wunwndw2nwue3n3w5ne2n;
 			where;
+			challenge area;
 		};
 		#ELSE {
 	        resettravel;
@@ -733,6 +745,7 @@
 	    #IF {!$travelerror}{
 			37e41n;open gate;8n;open gate;17n3w2nw9n7e3nw2ue2wunwndw2nwue3n3w5ne2n 4n2wnwn2w3nd;
 			where;
+			challenge area;
 		};
 		#ELSE {
     	    resettravel;
@@ -748,6 +761,7 @@
 	    #IF {!$travelerror}{
 			74w7s3e9s3wuenu;
 			where;
+			challenge area;
 		};
 		#ELSE {
 	        resettravel;
@@ -763,6 +777,7 @@
 	#DELAY {2} {
 	    #IF {!$travelerror}{
 			where;
+			challenge area;
 		};
 		#ELSE {
 	        resettravel;
@@ -778,6 +793,7 @@
 	    #IF {!$travelerror}{
 			4w3se4s;
 			where;
+			challenge area;
 		};
 		#ELSE {
 	        resettravel;
@@ -793,6 +809,7 @@
 	    #IF {!$travelerror}{
 			15e10s4e;
 			where;
+			challenge area;
 		};
 		#ELSE {
 	        resettravel;
@@ -808,6 +825,7 @@
 	    #IF {!$travelerror}{
 			19e2n;enter house;
 			where;
+			challenge area;
 		};
 		#ELSE {
 	        resettravel;
@@ -823,6 +841,7 @@
 	    #IF {!$travelerror}{
 			34w3nw3n;
 			where;
+			challenge area;
 		};
 		#ELSE {
 	        resettravel;
@@ -838,6 +857,7 @@
 	    #IF {!$travelerror}{
 			37e41n;open gate;8n;open gate;17nenw;open door w;w;
 			where;
+			challenge area;
 		};
 		#ELSE {
 	        resettravel;
@@ -853,6 +873,7 @@
 	    #IF {!$travelerror}{
 			15n2ese;open door n;n;
 			where;
+			challenge area;
 		};
 		#ELSE {
 	        resettravel;
@@ -868,6 +889,7 @@
 	    #IF {!$travelerror}{
 			38w2nw3nw8nw3n2wn3ed2nednd2ndn2e3n2e3nwu;
 			where;
+			challenge area;
 		};
 		#ELSE {
     	    resettravel;
@@ -883,6 +905,7 @@
 	    #IF {!$travelerror}{
 			37e41n;
 			where;
+			challenge area;
 		};
 		#ELSE {
 	        resettravel;
@@ -898,6 +921,7 @@
 	    #IF {!$travelerror}{
 			3w8swse10s3e2s4en;
 			where;
+			challenge area;
 		};
 		#ELSE {
 	        resettravel;
@@ -913,6 +937,7 @@
 	    #IF {!$travelerror}{
 			56w27s6ws10w3s4d2e;
 			where;
+			challenge area;
 		};
 		#ELSE {
 	        resettravel;
@@ -928,6 +953,7 @@
 	    #IF {!$travelerror}{
 			39e21s3es3es2eswses2e;
 			where;
+			challenge area;
 		};
 		#ELSE {
 	        resettravel;
@@ -943,6 +969,7 @@
 	    #IF {!$travelerror}{
 			26n15e1n3e1n1e2n5es;open gate e;
 			where;
+			challenge area;
 		};
 		#ELSE {
 	        resettravel;
@@ -958,6 +985,7 @@
 	    #IF {!$travelerror}{
 			50w9s4w2s6w11s3e2s2e2und;
 			where;
+			challenge area;
 		};
 		#ELSE {
 	        resettravel;
@@ -973,6 +1001,7 @@
 	    #IF {!$travelerror}{
 			7w4n17ws3w3ne2nene2nw3n7e5nw2n2w;
 			where;
+			challenge area;
 		};
 		#ELSE {
 	        resettravel;
@@ -988,6 +1017,7 @@
 	    #IF {!$travelerror}{
 			67w22s12w;
 			where;
+			challenge area;
 		};
 		#ELSE {
 	        resettravel;
@@ -1003,6 +1033,7 @@
 	    #IF {!$travelerror}{
 			13w4s2w2s3w;
 			where;
+			challenge area;
 		};
 		#ELSE {
 	        resettravel;
@@ -1018,6 +1049,7 @@
 	    #IF {!$travelerror}{
 			3w8swse10s3e2s4e5nw3n2es;
 			where;
+			challenge area;
 		};
 		#ELSE {
 	        resettravel;
@@ -1033,6 +1065,7 @@
 	    #IF {!$travelerror}{
 			32w4sws;
 			where;
+			challenge area;
 		};
 		#ELSE {
 	        resettravel;
@@ -1048,6 +1081,7 @@
 	    #IF {!$travelerror}{
 			2n3w;open grate;d;
 			where;
+			challenge area;
 		};
 		#ELSE {
 	        resettravel;
@@ -1063,6 +1097,7 @@
 	    #IF {!$travelerror}{
 			61n2e2n8e;
 			where;
+			challenge area;
 		};
 		#ELSE {
 	        resettravel;
@@ -1078,6 +1113,7 @@
 	    #IF {!$travelerror}{
 			7e11s;
 			where;
+			challenge area;
 		};
 		#ELSE {
 	        resettravel;
@@ -1093,6 +1129,7 @@
 	    #IF {!$travelerror}{
 			104w;
 			where;
+			challenge area;
 		};
 		#ELSE {
 	        resettravel;
@@ -1108,6 +1145,7 @@
 	    #IF {!$travelerror}{
 			17e7s2w8sd6e7nen2e2nw3ne6ne6n4e7nw3n2wne5nse9n;
 			where;
+			challenge area;
 		};
 		#ELSE {
 	        resettravel;
@@ -1123,6 +1161,7 @@
 	    #IF {!$travelerror}{
 			39e25s;
 			where;
+			challenge area;
 		};
 		#ELSE {
 	        resettravel;
@@ -1138,6 +1177,7 @@
 	    #IF {!$travelerror}{
 			125w3n9ws4e;
 			where;
+			challenge area;
 		};
 		#ELSE {
 	        resettravel;
@@ -1162,6 +1202,7 @@
 	    #IF {!$travelerror}{
 			7w2n2w2n13w2s2wn3wu;continue to the Drow area;2w2n1e1n1e1n1e1u;
 			where;
+			challenge area;
 		};
 		#ELSE {
 	        resettravel;
@@ -1177,6 +1218,7 @@
 	    #IF {!$travelerror}{
 			37e41n;open gate;3nesend;
 			where;
+			challenge area;
 		};
 		#ELSE {
 	        resettravel;
@@ -1192,6 +1234,7 @@
 	    #IF {!$travelerror}{
 			8e4ne;enter font;3u;
 			where;
+			challenge area;
 		};
 		#ELSE {
 	        resettravel;
@@ -1207,6 +1250,7 @@
 	    #IF {!$travelerror}{
 			81wn;
 			where;
+			challenge area;
 		};
 		#ELSE {
 	        resettravel;
@@ -1222,6 +1266,7 @@
 	    #IF {!$travelerror}{
 			39w3s3w4s1u2w2s9w;
 			where;
+			challenge area;
 		};
 		#ELSE {
 	        resettravel;
@@ -1240,6 +1285,7 @@
 	    #IF {!$travelerror}{
 			10w2sw2s5w;
 			where;
+			challenge area;
 	    };
 	    #ELSE {
 	        resettravel;
@@ -1255,6 +1301,7 @@
 	    #IF {!$travelerror}{
 			22n8e5s;
 			where;
+			challenge area;
 	    };
 	    #ELSE {
 	        resettravel;
@@ -1270,6 +1317,7 @@
 	    #IF {!$travelerror}{
 			16w8n;
 			where;
+			challenge area;
 	    };
 	    #ELSE {
 	        resettravel;
@@ -1285,6 +1333,7 @@
 	    #IF {!$travelerror}{
 			e4swe7s2e4sd13e2n;
 			where;
+			challenge area;
 	    };
 	    #ELSE {
 	        resettravel;
@@ -1300,6 +1349,7 @@
 	    #IF {!$travelerror}{
 			5e3s2w1s;
 			where;
+			challenge area;
 	    };
 	    #ELSE {
 	        resettravel;
@@ -1315,6 +1365,7 @@
         #IF {!$travelerror}{
             5e3s2w4n;look pedestal;
 			where;
+			challenge area;
         };
         #ELSE {
             resettravel;
@@ -1330,6 +1381,7 @@
 	    #IF {!$travelerror}{
 			8n;w;duck tape;
 			where;
+			challenge area;
 	    };
 	    #ELSE {
 	        resettravel;
@@ -1345,6 +1397,7 @@
 	    #IF {!$travelerror}{
 			25wnuwununend2n3ed2nw;open grate;u;
 			where;
+			challenge area;
 	    };
 	    #ELSE {
 	        resettravel;
@@ -1360,6 +1413,7 @@
 	    #IF {!$travelerror}{
 			8w5n4w;enter chevy;d3s2e;
 			where;
+			challenge area;
 	    };
 	    #ELSE {
 	        resettravel;
@@ -1375,6 +1429,7 @@
 	    #IF {!$travelerror}{
 			8w2n;
 			where;
+			challenge area;
 	    };
 	    #ELSE {
 	        resettravel;
@@ -1390,6 +1445,7 @@
 	    #IF {!$travelerror}{
 			9w3sw;push button;e2se;
 			where;
+			challenge area;
 	    };
 	    #ELSE {
 	        resettravel;
@@ -1405,6 +1461,7 @@
 	    #IF {!$travelerror}{
 			5e11n;open door e;6es;open cub;s;look latch;2se2nwsw2n2e;look wall;e2nw;look book;2d3n;
 			where;
+			challenge area;
 	    };
 	    #ELSE {
 	        resettravel;
@@ -1420,6 +1477,7 @@
 	    #IF {!$travelerror}{
 			17n3e;open gate e;e;
 			where;
+			challenge area;
 	    };
 	    #ELSE {
 	        resettravel;
@@ -1435,6 +1493,7 @@
 	    #IF {!$travelerror}{
 			10en;
 			where;
+			challenge area;
 	    };
 	    #ELSE {
 	        resettravel;
@@ -1450,6 +1509,7 @@
 		#IF {!$travelerror}{
 			9w3s;
 			where;
+			challenge area;
 		};
 		#ELSE {
 			resettravel;
@@ -1465,6 +1525,7 @@
 	    #IF {!$travelerror}{
 			4w6s2ws;
 			where;
+			challenge area;
 	    };
 	    #ELSE {
     	    resettravel;
@@ -1480,6 +1541,7 @@
 	    #IF {!$travelerror}{
 			4w4n1w1n;
 			where;
+			challenge area;
     	};
 	    #ELSE {
 	        resettravel;
@@ -1495,6 +1557,7 @@
 	    #IF {!$travelerror}{
 			5nes;
 			where;
+			challenge area;
 	    };
 	    #ELSE {
     	    resettravel;
@@ -1510,6 +1573,7 @@
 	    #IF {!$travelerror}{
 			e9s3e;
 			where;
+			challenge area;
 			#SH {At entrance of fail: e;e;n;n;n;open door n;n;search coat;s;d;unlock door w;open door w;w;n;e;n;e;e;n;w;push button;n;n;w;u;push 11;listen;e;s;s;w;n;enter tube;push blue};
 	    };
     	#ELSE {
@@ -1526,6 +1590,7 @@
 		#IF {!$travelerror}{
 			16w9nen4w8n;
 			where;
+			challenge area;
 		};
 		#ELSE {
 			resettravel;
@@ -1542,6 +1607,7 @@
 			#NOP (Xrr!yth);
 			3n1e;open door s;1s1u;
 			where;
+			challenge area;
 	    };
 	    #ELSE {
 	        resettravel;
@@ -1557,6 +1623,7 @@
 	    #IF {!$travelerror}{
 			4w3n3w;
 			where;
+			challenge area;
 	    };
 	    #ELSE {
 	        resettravel;
@@ -1572,6 +1639,7 @@
 		#IF {!$travelerror} {
 			4n2wn;open gate n;n;
 			where;
+			challenge area;
 		};
 		#ELSE {
 			resettravel;
@@ -1587,6 +1655,7 @@
 	    #IF {!$travelerror}{
 			19w3n;enter tube;4u;enter port;
 			where;
+			challenge area;
 	    };
 	    #ELSE {
 	        resettravel;
@@ -1602,6 +1671,7 @@
 	    #IF {!$travelerror}{
 			4w4nen;
 			where;
+			challenge area;
 	    };
 	    #ELSE {
 	        resettravel;
@@ -1617,6 +1687,7 @@
 	    #IF {!$travelerror}{
 			19w3n;enter tube;
 			where;
+			challenge area;
 	    };
 	    #ELSE {
 	        resettravel;
@@ -1632,6 +1703,7 @@
 	    #IF {!$travelerror}{
 			4w4ne;open door s;s;
 			where;
+			challenge area;
 	    };
 	    #ELSE {
     	    resettravel;
@@ -1647,6 +1719,7 @@
 	    #IF {!$travelerror}{
 			4w5n2w;
 			where;
+			challenge area;
 	    };
 	    #ELSE {
 	        resettravel;
@@ -1662,6 +1735,7 @@
 	    #IF {!$travelerror}{
 			34w3n2w7n;
 			where;
+			challenge area;
 	    };
 	    #ELSE {
 	        resettravel;
@@ -1677,6 +1751,7 @@
 	    #IF {!$travelerror}{
 			9e11s;
 			where;
+			challenge area;
 	    };
 	    #ELSE {
 	        resettravel;
@@ -1692,6 +1767,7 @@
 	    #IF {!$travelerror}{
 			4w3n1e;
 			where;
+			challenge area;
 	    };
 	    #ELSE {
 	        resettravel;
@@ -1721,6 +1797,7 @@
 	    #IF {!$travelerror}{
 			4w4ne;open door s;3s;push 25;1n;kill secretary;push button;open door n;1n1e;push button;push 0316;1w1s;tweak nose;1e;pull latch;wear app;push button;
 			where;
+			challenge area;
 	    };
 	    #ELSE {
 	        resettravel;
@@ -1781,6 +1858,7 @@
 	    #IF {!$travelerror} {
 			26n4e;
 			where;
+			challenge area;
 	    };
 	    #ELSE {
 	        resettravel;
@@ -1801,6 +1879,8 @@
 		#IF {!$travelerror}
 		{
 			2es2u;open plant e;es;open door s;3s;open door w;ws3ene3n2en2en5esese4s;open door s;s;open door s;6s;open water e;en2e2s;open door s;2s2e;
+			where;
+			challenge area;
 		};
 		#ELSE {
 			resettravel;
@@ -1816,6 +1896,7 @@
 		#IF {!$travelerror} {
 			11s2wdnund2sundwun2d3ws;open hide;1w;
 			where;
+			challenge area;
 		};
 		#ELSE {
 			resettravel;
@@ -1831,6 +1912,7 @@
 		#IF {!$travelerror} {
 			11s2wdnund2sundwun2dw4n;move lizard;take key;unlock door e;open door e;drop key;e;
 			where;
+			challenge area;
 		};
 		#ELSE {
 			resettravel;
@@ -1846,6 +1928,7 @@
 		#IF {!$travelerror} {
 			6s2w4sedwun2dw4n;move lizard;get key;unlock door e;bash door e;open door e;drop key;2e2nes2en;enter arch;
 			where;
+			challenge area;
 		};
 		#ELSE {
 			resettravel;
@@ -1865,6 +1948,7 @@
         #IF {!$travelerror} {
        		5nu3w;enter pool;
 			where;
+			challenge area;
         };
         #ELSE {
             resettravel;
@@ -1880,6 +1964,7 @@
         #IF {!$travelerror} {
 			5n3u2n3e;enter pool;
 			where;
+			challenge area;
         };
         #ELSE {
             resettravel;
@@ -1898,6 +1983,7 @@
 				helpHeaven;{
 			};
 			where;
+			challenge area;
 
         };
         #ELSE {
@@ -1993,6 +2079,7 @@
         #IF {!$travelerror} {
 			 5wdes;enter pool;
 			 where;
+			challenge area;
         };
         #ELSE {
             resettravel;
@@ -2008,6 +2095,7 @@
 		#IF {!$travelerror} {
 		    2nu;open door west;w;read title73;
 			where;
+			challenge area;
 		};
 		#ELSE {
 			resettravel;
@@ -2024,6 +2112,7 @@
 			7e4ne;enter font;uw4nwu4s3wnwsws4w;
 			#SH {<FF00>Warning!<099> Lots of flows.};
 			where;
+			challenge area;
 		};
 		#ELSE {
 	        resettravel;
@@ -2039,6 +2128,7 @@
 	    #IF {!$travelerror}{
 			67w12seseds6wndnd;enter portal;
 			where;
+			challenge area;
 		};
 		#ELSE {
 	        resettravel;
@@ -2055,6 +2145,7 @@
 			7e4ne;enter font;uw4nwu4s3wnwsws18wd2s4w;
 			#SH {<FF00>Warning!<099> Lots of flows.};
 			where;
+			challenge area;
 		};
 		#ELSE {
 	        resettravel;
@@ -2070,6 +2161,7 @@
 	    #IF {!$travelerror}{
 			7e4ne;enter font;uw4nwu4s3wne;
 			where;
+			challenge area;
 		};
 		#ELSE {
 	        resettravel;
@@ -2085,6 +2177,7 @@
 	    #IF {!$travelerror}{
 			7e4ne;enter font;3ese;
 			where;
+			challenge area;
 		};
 		#ELSE {
         	resettravel;
@@ -2101,6 +2194,7 @@
 			7e4ne;enter font;uw4nwu4s3wnwsws13w;
 			#SH {<FF00>Warning!<099> Lots of flows.};
 			where;
+			challenge area;
 		};
 		#ELSE {
     	    resettravel;
@@ -2116,6 +2210,7 @@
 	    #IF {!$travelerror}{
 			7e3n2enw;enter sphere;
 			where;
+			challenge area;
 		};
 		#ELSE {
 	        resettravel;
@@ -2130,6 +2225,7 @@
     #DELAY {2} {
 	    #IF {!$travelerror}{
 			where;
+			challenge area;
 		};
 		#ELSE {
 	        resettravel;
@@ -2148,6 +2244,7 @@
 		#IF {!$travelerror} {
 			57w11n;
 			where;
+			challenge area;
 		};
 		#ELSE {
 			resettravel;
@@ -2163,6 +2260,7 @@
         #IF {!$travelerror} {
 			3w2swn;
 			where;
+			challenge area;
         };
         #ELSE {
             resettravel;
@@ -2178,6 +2276,7 @@
         #IF {!$travelerror} {
 			7n2w;open door w;2w;
 			where;
+			challenge area;
         };
         #ELSE {
             resettravel;
@@ -2193,6 +2292,7 @@
         #IF {!$travelerror} {
 			6e11s;open door s;3s;5u2s;#SH {Guildmaster wanders in this area.};
 			where;
+			challenge area;
         };
         #ELSE {
             resettravel;
@@ -2208,6 +2308,7 @@
         #IF {!$travelerror} {
 			4w2nws;login;
 			where;
+			challenge area;
         };
         #ELSE {
             resettravel;
@@ -2223,6 +2324,7 @@
         #IF {!$travelerror} {
 			2w2ne;
 			where;
+			challenge area;
         };
         #ELSE {
             resettravel;
@@ -2238,6 +2340,7 @@
         #IF {!$travelerror} {
 			2nunw;open tap;4wn3e;
 			where;
+			challenge area;
         };
         #ELSE {
             resettravel;
@@ -2253,6 +2356,7 @@
         #IF {!$travelerror} {
 			4nu;open door west;w;read title31;e;open door east;
 			where;
+			challenge area;
         };
         #ELSE {
             resettravel;
@@ -2268,6 +2372,7 @@
         #IF {!$travelerror} {
 			2d4e5nes;
 			where;
+			challenge area;
         };
         #ELSE {
             resettravel;
@@ -2283,6 +2388,7 @@
         #IF {!$travelerror} {
 			37e41n;open gate n;4n3w;open gate w;11w8ne3nws;
 			where;
+			challenge area;
         };
         #ELSE {
             resettravel;
@@ -2298,6 +2404,7 @@
         #IF {!$travelerror} {
 			3s2uswn;
 			where;
+			challenge area;
         };
         #ELSE {
             resettravel;
@@ -2311,8 +2418,9 @@
 	#SH {<cfa>Okay!<099> Travelling to the <FFF0>Psionic Guildmaster<099>!};
     #DELAY {2} {
         #IF {!$travelerror} {
-			 2nune;open tapestry;3w;open gate w;11w8ne3nws;
-			 where;
+			2nune;open tapestry;3w;open gate w;11w8ne3nws;
+			where;
+			challenge area;
         };
         #ELSE {
             resettravel;
@@ -2328,6 +2436,7 @@
         #IF {!$travelerror} {
 			nnune;open tapestry;ssswwse;
 			where;
+			challenge area;
         };
         #ELSE {
             resettravel;
@@ -2343,6 +2452,7 @@
         #IF {!$travelerror} {
 			4e;open portrait;2ene2s;open door e;8e;
 			where;
+			challenge area;
         };
         #ELSE {
             resettravel;
@@ -2361,6 +2471,7 @@
         #IF {!$travelerror} {
 			 3n1e;open door s;1s1w;
 			 where;
+			challenge area;
         };
         #ELSE {
             resettravel;
@@ -2376,6 +2487,7 @@
         #IF {!$travelerror} {
 			 2nunw;open tapestry;3e4ne;
 			 where;
+			challenge area;
         };
         #ELSE {
             resettravel;
@@ -2391,6 +2503,7 @@
         #IF {!$travelerror} {
 			nnwwww;open grate;dessesusseuswnw;#SH {<acf>Kill the Assassin and go two west!<000>};
 			where;
+			challenge area;
         };
         #ELSE {
             resettravel;
@@ -2406,6 +2519,7 @@
         #IF {!$travelerror} {
 			4nu;open door west;w;read title31;e;open door east;2e2n2ed4s2w;open door south;s;
 			where;
+			challenge area;
         };
         #ELSE {
             resettravel;
@@ -2421,6 +2535,7 @@
         #IF {!$travelerror} {
 			2nune;open tapestry;3nen;
 			where;
+			challenge area;
         };
         #ELSE {
             resettravel;
@@ -2436,6 +2551,7 @@
         #IF {!$travelerror} {
 			6e11s;open door s;3s1u2s1e;open door s;2s1w1u;
 			where;
+			challenge area;
         };
         #ELSE {
             resettravel;
@@ -2454,6 +2570,7 @@
     #DELAY {2} {
         #IF {!$travelerror} {
 			where;
+			challenge area;
         };
         #ELSE {
             resettravel;
@@ -2469,6 +2586,7 @@
         #IF {!$travelerror} {
 			22n4e9n3w;offer elvish;
 			where;
+			challenge area;
         };
         #ELSE {
             resettravel;
@@ -2483,6 +2601,7 @@
     #DELAY {2} {
         #IF {!$travelerror} {
 			where;
+			challenge area;
         };
         #ELSE {
             resettravel;
@@ -2498,6 +2617,7 @@
 		#IF {!$travelerror} {
 		    15e10s6e3n;open door north;2n;offer hobbish;
 			where;
+			challenge area;
 		};
 		#ELSE {
 			resettravel;
