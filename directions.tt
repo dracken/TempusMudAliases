@@ -122,11 +122,12 @@
 #ALIAS {travel %1 %2} {
 	#FORMAT {travelInput1} {%1} {%l};
 
-	#IF {{"$travelInput1"}  === {"past"} || {%1} === {1}} {
+	#IF {{"$travelInput1"}  === {"past"} || {%1} === {1}} 
+	{
 		#SWITCH {"%2"} {
 			#CASE {"1"} { gotoAbandonedKeep; };
 			#CASE {"2"} { gotoOldMonastery; };
-	        #CASE {"3"} { gotoCastleSlivendark; };
+		        #CASE {"3"} { gotoCastleSlivendark; };
 			#CASE {"4"} { gotoChessboardOfAraken; };
 			#CASE {"5"} { gotoDismalDelve; };
 			#CASE {"6"} { gotoDraconiansAndDragonHighlord; };
@@ -169,10 +170,10 @@
 			#CASE {"43"} { gotoZhengisCastle; };
 			#DEFAULT {
 				#VAR {travelerror} {1};
-			#SH {Invalid Destination Combination '<FF00>%1<099>' and '<FF00>%2<099>'};
+				#SH {Invalid Destination Combination '<FF00>%1<099>' and '<FF00>%2<099>'};
+				};
 			};
 		};
-	};
 
 	#ELSEIF {{"$travelInput1"} === {"future"} || {%1} === {2}} {
 		#SWITCH {"%2"} {
@@ -215,26 +216,30 @@
 		};
 	};
 
-	#ELSEIF {{"$travelInput1"} === {"planes"} || {%1} === {3}} {
-        #SWITCH {"%2"} {
-		    #CASE {"1"} { gotoAbyssUnholyModrian; };
-		    #CASE {"2"} { gotoAmoria; };
-		    #CASE {"3"} { gotoAvernusHell; };
-		    #CASE {"4"} { gotoElementalPlaneOfAir; };
-		    #CASE {"5"} { gotoElementalPlaneOfEarth; };
-		    #CASE {"6"} { gotoElementalPlaneOfFire; };
-		    #CASE {"7"} { gotoElementalPlaneOfIce; };
-		    #CASE {"8"} { gotoElementalPlaneOfOoze; };
-		    #CASE {"9"} { gotoElementalPlaneOfSmoke; };
-		    #CASE {"10"} { gotoElementalPlaneOfWater; };
-		    #CASE {"11"} { gotoLuniaHeaven };
-			#CASE {"12"} { gotoImmoth };
-			#CASE {"13"} { gotoCastleMahlhevik; };
-			#DEFAULT {
-				#VAR {travelerror} {1};
-			#SH {Invalid Destination Combination '<FF00>%1<099>' and '<FF00>%2<099>'};
-				};
-			};
+	#ELSEIF {{"$travelInput1"} === {"planes"} || {%1} === {3}} 
+	{
+        	#SWITCH {"%2"} 
+		{
+		    	#CASE {"1"} { gotoAbyssUnholyModrian; };
+		    	#CASE {"2"} { gotoAmoria; };
+		    	#CASE {"3"} { gotoAvernusHell; };
+		    	#CASE {"4"} { gotoElementalPlaneOfAir; };
+		    	#CASE {"5"} { gotoElementalPlaneOfEarth; };
+		    	#CASE {"6"} { gotoElementalPlaneOfFire; };
+		    	#CASE {"7"} { gotoElementalPlaneOfIce; };
+		    	#CASE {"8"} { gotoElementalPlaneOfOoze; };
+		    	#CASE {"9"} { gotoElementalPlaneOfSmoke; };
+		    	#CASE {"10"} { gotoElementalPlaneOfWater; };
+		    	#CASE {"11"} { gotoLuniaHeaven; };
+		    	#CASE {"12"} { gotoImmoth; };
+		   	#CASE {"13"} { gotoCastleMahlhevik; };
+			#CASE {"14"} { gotoGith; };
+		    	#DEFAULT 
+			{
+			    	#VAR {travelerror} {1};
+				#SH {Invalid Destination Combination '<FF00>%1<099>' and '<FF00>%2<099>'};
+		    	};
+		    };
 		};
 
 		#ELSEIF {{"$travelInput1"} === {"trainers"} || {%1} === {4}} {
@@ -311,22 +316,22 @@
 			#SH {Travel Destination: '$travelInput1'};
 			#SH {Travel Destination Upper: '$travelInput1Upper};
 		};
-        #IF {{"$travelInput1"} === {"help"} || {"$travelInput1"} === {"?"}}
+	        #IF {{"$travelInput1"} === {"help"} || {"$travelInput1"} === {"?"}}
 		{
-            #SH { <afc>******************************************************************************************<099> };
-            #SH { <afc>*                                Directions Help!                                        *<099> };
-            #SH { <afc>******************************************************************************************<099> };
-            #SH { <afc>*<099>                                                                                        <afc>*<099>};
-            #SH { <afc>*<F0FF> Usage:<099> travel <plane> <zone>                                                           <afc>*<099>};
-            #SH { <afc>*<FFF0> Example:<099> travel planes 9                                                               <afc>*<099>};
-            #SH { <afc>*<099>      Travel to the Elemental Plane of Smoke                                            <afc>*<099>};
-            #SH { <afc>*<FFF0> Example:<099> travel 2 15                                                                   <afc>*<099>};
-            #SH { <afc>*<099>      Travel to the Future's EC Universty                                               <afc>*<099>};
-            #SH { <afc>*<099>                                                                                        <afc>*<099>};
-            #SH { <afc>*<FF0F> Recommendations:<099> Make an alias in your own scriping config for locations you use       <afc>*<099> };
-            #SH { <afc>*<099>    regularly!                                                                          <afc>*<099> };
-            #SH { <afc>******************************************************************************************<099> };
-        };
+	            	#SH { <afc>******************************************************************************************<099> };
+	            	#SH { <afc>*                                Directions Help!                                        *<099> };
+	            	#SH { <afc>******************************************************************************************<099> };
+	            	#SH { <afc>*<099>                                                                                        <afc>*<099>};
+	            	#SH { <afc>*<F0FF> Usage:<099> travel <plane> <zone>                                                           <afc>*<099>};
+	            	#SH { <afc>*<FFF0> Example:<099> travel planes 9                                                               <afc>*<099>};
+	            	#SH { <afc>*<099>      Travel to the Elemental Plane of Smoke                                            <afc>*<099>};
+	            	#SH { <afc>*<FFF0> Example:<099> travel 2 15                                                                   <afc>*<099>};
+	            	#SH { <afc>*<099>      Travel to the Future's EC Universty                                               <afc>*<099>};
+	            	#SH { <afc>*<099>                                                                                        <afc>*<099>};
+	            	#SH { <afc>*<FF0F> Recommendations:<099> Make an alias in your own scriping config for locations you use       <afc>*<099> };
+	            	#SH { <afc>*<099>    regularly!                                                                          <afc>*<099> };
+	        	#SH { <afc>******************************************************************************************<099> };
+	        };
 
 		#ELSEIF {{"$travelInput1"}  === {"past"} || {%1} === {1}}
 		{
@@ -381,64 +386,64 @@
 			#SH { <acf>|  <F0FF>4)<099> Plane of Air        <F0FF>5)<099> Plane of Earth        <F0FF>6)<099> Plane of Fire            <acf>|<099> };
 			#SH { <acf>|  <F0FF>7)<099> Plane of Ice        <F0FF>8)<099> Plane of Ooze         <F0FF>9)<099> Plane of Smoke           <acf>|<099> };
 			#SH { <acf>| <F0FF>10)<099> Plane of Water     <F0FF>11)<099> Lunia, Heaven Level 1<F0FF>12)<099>Immoth                    <acf>|<099> };
-		#SH { <acf>| <F0FF>13)<099> Castle Mahlhevik   <F0FF><099>                         <F0FF><099>                             <acf>|<099> };
-		#SH { <acf>|                                                                              <acf>|<099> };
-		#SH { <acf>└------------------------------------------------------------------------------┘<099> };
-	};
+			#SH { <acf>| <F0FF>13)<099> Castle Mahlhevik   <F0FF>14) Githyanki Fortress<099>   <F0FF><099>                             <acf>|<099> };
+			#SH { <acf>|                                                                              <acf>|<099> };
+			#SH { <acf>└------------------------------------------------------------------------------┘<099> };
+		};
 	
-	#ELSEIF {{"$travelInput1"} === {"trainers"} || {%1} === {4}}
-	{
-		#SH { <acf>┌------------------------------------------------------------------------------┐<099> };
-		#SH { <acf>|                          <FFF0>Trainers Locations<099>                                  <acf>|<099> };
-		#SH { <acf>├------------------------------------------------------------------------------┤<099> };
-		#SH { <acf>|  <F0FF>1)<099> Charisma           <F0FF>2)<099> Constitution           <F0FF>3)<099> Dexterity                <acf>|<099> };
-		#SH { <acf>|  <F0FF>4)<099> Intelligence       <F0FF>5)<099> Strength               <F0FF>6)<099> Wisdom                   <acf>|<099> };
-		#SH { <acf>|  <F0FF>7)<099> Weapon Enhancer    <F0FF>8)<099> Weapon Specializer     <F0FF>9)<099> Weapon Un-Specializer    <acf>|<099> };
-		#SH { <acf>| <F0FF>10)<099> The Gainer        <F0FF>11)<099> Electronics School                                                       <acf>|<099> };
-		#SH { <acf>|                                                                              <acf>|<099> };
-		#SH { <acf>└------------------------------------------------------------------------------┘<099> };
-	};
+		#ELSEIF {{"$travelInput1"} === {"trainers"} || {%1} === {4}}
+		{
+			#SH { <acf>┌------------------------------------------------------------------------------┐<099> };
+			#SH { <acf>|                          <FFF0>Trainers Locations<099>                                  <acf>|<099> };
+			#SH { <acf>├------------------------------------------------------------------------------┤<099> };
+			#SH { <acf>|  <F0FF>1)<099> Charisma           <F0FF>2)<099> Constitution           <F0FF>3)<099> Dexterity                <acf>|<099> };
+			#SH { <acf>|  <F0FF>4)<099> Intelligence       <F0FF>5)<099> Strength               <F0FF>6)<099> Wisdom                   <acf>|<099> };
+			#SH { <acf>|  <F0FF>7)<099> Weapon Enhancer    <F0FF>8)<099> Weapon Specializer     <F0FF>9)<099> Weapon Un-Specializer    <acf>|<099> };
+			#SH { <acf>| <F0FF>10)<099> The Gainer        <F0FF>11)<099> Electronics School                                                       <acf>|<099> };
+			#SH { <acf>|                                                                              <acf>|<099> };
+			#SH { <acf>└------------------------------------------------------------------------------┘<099> };
+		};
 
-	#ELSEIF {{"$travelInput1"} === {"guilds"} || {%1} === {5}}
-	{
-        #SH { <acf>┌------------------------------------------------------------------------------┐<099> };
-        #SH { <acf>|                          <FF0F>Guilds Locations<099>                                    <acf>|<099> };
-        #SH { <acf>├------------------------------------------------------------------------------┤<099> };
-        #SH { <acf>|  <F0FF>1)<099> Barbarian         <F0FF>2)<099> Bard                    <F0FF>3)<099> Cleric (<FF00>Evil<099>)            <acf>|<099> };
-		#SH { <acf>|  <F0FF>4)<099> Cleric (<F00F>Good<099>)     <F0FF>5)<099> Cyborg                  <F0FF>6)<099> Knight (<FF00>Evil<099>)            <acf>|<099> };
-		#SH { <acf>|  <F0FF>7)<099> Knight (<F00F>Good<099>)     <F0FF>8)<099> Mage                    <F0FF>9)<099> Mercenary                <acf>|<099> };
-		#SH { <acf>| <F0FF>10)<099> Monk             <F0FF>11)<099> Physic                 <F0FF>12)<099> Psionicist               <acf>|<099> };
-		#SH { <acf>| <F0FF>13)<099> Ranger           <F0FF>14)<099> Thief                  <F0FF><099>                             <acf>|<099> };
-		#SH { <acf>|                                                                              <acf>|<099> };
-        #SH { <acf>└------------------------------------------------------------------------------┘<099> };
-	};
+		#ELSEIF {{"$travelInput1"} === {"guilds"} || {%1} === {5}}
+		{
+        		#SH { <acf>┌------------------------------------------------------------------------------┐<099> };
+		        #SH { <acf>|                          <FF0F>Guilds Locations<099>                                    <acf>|<099> };
+		        #SH { <acf>├------------------------------------------------------------------------------┤<099> };
+		        #SH { <acf>|  <F0FF>1)<099> Barbarian         <F0FF>2)<099> Bard                    <F0FF>3)<099> Cleric (<FF00>Evil<099>)            <acf>|<099> };
+			#SH { <acf>|  <F0FF>4)<099> Cleric (<F00F>Good<099>)     <F0FF>5)<099> Cyborg                  <F0FF>6)<099> Knight (<FF00>Evil<099>)            <acf>|<099> };
+			#SH { <acf>|  <F0FF>7)<099> Knight (<F00F>Good<099>)     <F0FF>8)<099> Mage                    <F0FF>9)<099> Mercenary                <acf>|<099> };
+			#SH { <acf>| <F0FF>10)<099> Monk             <F0FF>11)<099> Physic                 <F0FF>12)<099> Psionicist               <acf>|<099> };
+			#SH { <acf>| <F0FF>13)<099> Ranger           <F0FF>14)<099> Thief                  <F0FF><099>                             <acf>|<099> };
+			#SH { <acf>|                                                                              <acf>|<099> };
+        		#SH { <acf>└------------------------------------------------------------------------------┘<099> };
+		};
 
-	#ELSEIF {{"$travelInput1"} === {"underdark"} || {%1} === {6}}
-	{
-		#SH { <acf>┌------------------------------------------------------------------------------┐<099> };
-		#SH { <acf>|                        <007>Underdark<099>                                              <acf>|<099> };
-		#SH { <acf>├------------------------------------------------------------------------------┤<099> };
-		#SH { <acf>|  <F0FF>1)<099> Head Shrinker <F0FF>2)<099> Lizard Caverns  <F0FF>3)<099> Wyllowwood<099> };
-		#SH { <acf>|                                                                              <acf>|<099> };
-		#SH { <acf>└------------------------------------------------------------------------------┘<099> };
-	};
+		#ELSEIF {{"$travelInput1"} === {"underdark"} || {%1} === {6}}
+		{
+			#SH { <acf>┌------------------------------------------------------------------------------┐<099> };
+			#SH { <acf>|                        <007>Underdark<099>                                              <acf>|<099> };
+			#SH { <acf>├------------------------------------------------------------------------------┤<099> };
+			#SH { <acf>|  <F0FF>1)<099> Head Shrinker <F0FF>2)<099> Lizard Caverns  <F0FF>3)<099> Wyllowwood<099> };
+			#SH { <acf>|                                                                              <acf>|<099> };
+			#SH { <acf>└------------------------------------------------------------------------------┘<099> };
+		};
 
 
-	#ELSEIF {{"$travelInput1"} === {"all"} || {%1} === {7}}
-	{
-		#SH { <acf>┌------------------------------------------------------------------------------┐<099> };
-		#SH { <acf>|                          <179> ALL Locations<099>                                      <acf>|<099> };
-		#SH { <acf>├------------------------------------------------------------------------------┤<099> };
-		#SH { <acf>|                                                                              <acf>|<099> };
-		#SH { <acf>|                          <FF00>Under Construction<099>                                  <acf>|<099> };
-		#SH { <acf>|                                                                              <acf>|<099> };
-		#SH { <acf>└------------------------------------------------------------------------------┘<099> };
-	};
+		#ELSEIF {{"$travelInput1"} === {"all"} || {%1} === {7}}
+		{
+			#SH { <acf>┌------------------------------------------------------------------------------┐<099> };
+			#SH { <acf>|                          <179> ALL Locations<099>                                      <acf>|<099> };
+			#SH { <acf>├------------------------------------------------------------------------------┤<099> };
+			#SH { <acf>|                                                                              <acf>|<099> };
+			#SH { <acf>|                          <FF00>Under Construction<099>                                  <acf>|<099> };
+			#SH { <acf>|                                                                              <acf>|<099> };
+			#SH { <acf>└------------------------------------------------------------------------------┘<099> };
+		};
 
-	#ELSE {
-		#SH { <FF00>Travel Warning:<099> The value '<fac>%1<099>' is not a valid travel destination. };
+		#ELSE {
+			#SH { <FF00>Travel Warning:<099> The value '<fac>%1<099>' is not a valid travel destination. };
+		}
 	}
-}
 {4}
 
 #ALIAS {travel} {
@@ -1094,10 +1099,12 @@
     gotohs;
 	#SH {<cfa>Okay!<099> Travelling to the <FFF0>Shadow City of Shade<099>!};
 	#DELAY {2} {
-	    #IF {!$travelerror}{
+	    #IF {!$travelerror} {
 			61n2e2n8e;
 			where;
 			challenge area;
+		        #SHOWME {To Rebel Leader From Tiltin: d;e;s;d;d;d;s;e;n;n;n;n;bash stone d;d;s;w;w;d;w;n;n;w;w;n;d;w;s;d;s;u;w};
+	                #SHOWME {To Selset from Rebel Leader: e;d;n;u;e;bash cage n};
 		};
 		#ELSE {
 	        resettravel;
@@ -1993,6 +2000,43 @@
 }
 {5}
 
+#ALIAS {gotoGith} {
+    gotoastral;
+    #SH {<cfa>Okay!<099> Travelling to <FFF0>Gith<099>!};
+    #DELAY {2} {
+        #IF {!$travelerror} {
+            #VARIABLE {findGith}{1};
+            #VARIABLE {westCountMax} {8};
+            #VARIABLE {westCount} {0};
+            #VARIABLE {southCountMax} {8};
+            #VARIABLE {southCount} {0};
+            #VARIABLE {downCountMax} {8};
+            #VARIABLE {downCount} {0};
+            5n;
+            #ACTION {^A huge island of matter is floating here.} {#VAR {findGith}{0};#BREAK;enter island;where;challenges area;revoke} {1};
+            #WHILE {$findGith === 1 && $isFighting === 0}
+            {
+            #LOOP {0}{$downCountMax}{downCount}
+                {
+                    gt down $downCount;
+                    #LOOP {0}{$southCountMax}{southCount}
+                    {
+                        gt south $southCount;
+                        #LOOP {0}{$westCountMax}{westCount}
+                        {
+                            gt west $westCount;
+                        };
+                    };
+                };
+            };
+        };
+        #ELSE {
+            resettravel;
+        }
+    }
+}
+{5}
+
 #ALIAS {gotoLuniaHeaven} {
     gotoastral;
 	#SH {<cfa>Okay!<099> Travelling to the <FFF0>Lunia Heaven 1<099>!};
@@ -2089,6 +2133,118 @@
 			#SH {<FF00>Error<099>: You're not in the correct room 'A Garden Plateau'!};
 		};
 	};
+}
+{5}
+
+#ACTION {^A huge island of matter is floating here.}
+{
+    #IF {$findGith === 1}
+    {
+        #SHOWME {<FFF0>***** GITH FOUND! *****<099>};
+        revoke;
+        revoke;
+        #VAR {githFound}{1};
+        #VAR {findGith}{0};
+        enter island;
+        challenges area
+    };
+}
+{1};
+
+#ALIAS {gotoGith}
+{
+    #VARIABLE {githFound}{0};
+    #VARIABLE {findGith}{1};
+    #MATH githX 0;
+    #MATH githY 0;
+    #MATH githZ 0;
+    gotoastral;
+    #SH {<cfa>Okay!<099> Travelling to <FFF0>Gith<099>!};
+    #DELAY {2}
+    {
+        #IF {!$travelerror}
+        {
+            #5 north;exits;
+            #ACTION {^The Astral Plane}
+            {
+                #IF {$debug === 1}
+                {
+                    #SHOWME {<F0FF>Debug:<099> Astral Plane Action triggered.};
+                };
+                #IF {$findGith === 1 && !$isFighting}
+                {
+                    #IF {$debug === 1}
+                    {
+                        #SHOWME {<F0FF>Debug:<099> Find Gith is <cfa>ON<099>!};
+                    };
+                    #IF {$githX < 8}
+                    {
+                        #IF {$debug === 1}
+                        {
+                            #SHOWME {<F0FF>Debug:<099> Gith X = $githX};
+                        };
+                        #IF {$githFound === 0}
+                        {
+                            north;
+                            #MATH githX $githX + 1;
+                        };
+                        #ELSE
+                        {
+                            enter island;
+                            challenges area;
+                        };
+                        #IF {$githY < 8 && $githX == 7}
+                        {
+                            #MATH githX 0;
+                            #IF {$debug === 1}
+                            {
+                                #SHOWME {<F0FF>Debug:<099> Gith Y = $githY};
+                            };
+                            #IF {$githFound === 0}
+                            {
+                                west;
+                                #MATH githY $githY + 1;
+                            };
+                            #ELSE
+                            {
+                                enter island;
+                                challenges area;
+                            };
+                            #IF {$githZ < 8 && $githY === 7}
+                            {
+                                #IF {$debug === 1}
+                                {
+                                    #SHOWME {<F0FF>Debug:<099> Gith Z = $githZ};
+                                };
+                                #IF {$githFound === 0}
+                                {
+                                    up;
+                                    #MATH githZ $githZ + 1;
+                                    #MATH githY 0;
+                                    #MATH githX 0;
+                                };
+                                #ELSE
+                                {
+                                    enter island;
+                                    challenges area;
+                                };
+                            };
+                        };
+                    };
+                    #IF {$githZ === 8}
+                    {
+                        #SHOWME {<0F00>Warning!<099> Unable to locate the Githyanki Fortress!};
+                        #VAR {findGith} {0};
+                    };
+                };
+            };
+        #SHOWME {<F0FF>Warning!<099> Attacked, ceasing search.};
+        };
+        #ELSE
+        {
+            resettravel;
+        };
+    };
 }
 {5}
 
