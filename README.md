@@ -25,7 +25,7 @@ Easily navigate TempusMUD zones using a travel menu system. Originally written f
 | Client | Script File | Status |
 |---|---|---|
 | TinTin++ / Tinframe | `directions.tt` | ✅ Original |
-| ZMud | `directions.tt` | ✅ Compatible |
+| ZMud | `directions.txt` | ✅ Compatible |
 | Mudlet | `directions.lua` | ✅ Lua Port |
 
 ---
@@ -40,10 +40,16 @@ Easily navigate TempusMUD zones using a travel menu system. Originally written f
 
 ## Setup: ZMud
 
-1. Save `directions.tt` to your ZMud root directory.
-2. Load it with:
+1. Save `directions.txt` to your ZMud root directory.
+2. Load it with either:
+	a. Manually on the command line:
    ````
-   #read directions.tt
+   #read directions.txt
+   ````
+   
+   b. On the Import menu
+   ````
+   Navigate to `Settings` -> `Import Settings` -> select `directions.txt` and click 'ok'
    ````
 
 ## Setup: Mudlet (Lua)
@@ -289,6 +295,7 @@ Some zones also have dedicated helper aliases for multi-step navigation (e.g., `
 | File | Description |
 |---|---|
 | `directions.tt` | Original TinTin++ script |
+| `directions.txt` | ZMud/CMud port of the TinTin++ script |
 | `directions.lua` | Mudlet Lua port of the travel system |
 | `config.lua` | Configuration file (optional) - place in Mudlet home directory |
 | `LICENSE` | License file |

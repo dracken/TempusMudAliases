@@ -1,0 +1,3076 @@
+/* Directions File for TempusMUD by Dracken - derek@sanctuary.org dracken@drackenslair.com */
+/* https://github.com/dracken/TempusMudAliases/ */
+#ECHO { [%ansi(azure)]******************************************************************************************[%ansi(reset)] };
+#ECHO { [%ansi(azure)]*                            Directions Script Loaded!                                   *[%ansi(reset)] };
+#ECHO { [%ansi(azure)]******************************************************************************************[%ansi(reset)] };
+#ECHO { [%ansi(azure)]*[%ansi(reset)]                                                                                        [%ansi(azure)]*[%ansi(reset)]};
+#ECHO { [%ansi(azure)]*[%ansi(cyan)] Usage:[%ansi(reset)] travel <plane> <zone>                                                           [%ansi(azure)]*[%ansi(reset)]};
+#ECHO { [%ansi(azure)]*[%ansi(yellow)] Example:[%ansi(reset)] travel planes 9                                                               [%ansi(azure)]*[%ansi(reset)]};
+#ECHO { [%ansi(azure)]*[%ansi(reset)]      Travel to the Elemental Plane of Smoke                                            [%ansi(azure)]*[%ansi(reset)]};
+#ECHO { [%ansi(azure)]*[%ansi(yellow)] Example:[%ansi(reset)] travel 2 15                                                                   [%ansi(azure)]*[%ansi(reset)]};
+#ECHO { [%ansi(azure)]*[%ansi(reset)]      Travel to the Future's EC Universty                                               [%ansi(azure)]*[%ansi(reset)]};
+#ECHO { [%ansi(azure)]*[%ansi(reset)]                                                                                        [%ansi(azure)]*[%ansi(reset)]};
+#ECHO { [%ansi(azure)]*%ansi(purple) Recommendations:[%ansi(reset)] Make an alias in your own scriping config for locations you use       [%ansi(azure)]*[%ansi(reset)] };
+#ECHO { [%ansi(azure)]*[%ansi(reset)]    regularly!                                                                          [%ansi(azure)]*[%ansi(reset)] };
+#ECHO { [%ansi(azure)]******************************************************************************************[%ansi(reset)] };
+
+
+/* ----- vvvv EDIT THESE VARS ONLY! vvvv ----- */
+
+#VAR {myStartingRoomName} {The Beginning of Misery};
+#ALIAS {directionsToHolySquare} {north;look modrian;north;north};
+#ALIAS {directionsToStarPlaza} {north;look ec};
+#ALIAS {directionsToSlaveSquare} {north;look skullport};
+#ALIAS {directionsToAstralManse} {north;look astral};
+
+/* ----- ^^^^ EDIT THESE VARS ONLY! ^^^^ ----- */
+
+/* ----------------------------------------------------------------------------------------------   */
+/*                                    Display Possible Directions									*/
+
+
+#VAR {PastLocations[gotoAbandonedKeep]} {};
+#VAR {PastLocations[gotoOldMonastery]} {};
+#VAR {PastLocations[gotoCastleSilvendark]} {};
+#VAR {PastLocations[gotoChessboardOfAraken]} {};
+#VAR {PastLocations[gotoDismalDelve]} {};
+#VAR {PastLocations[gotoDraconiansAndDragonHighlord]} {};
+#VAR {PastLocations[gotoDukeAraken]} {};
+#VAR {PastLocations[gotoElvenVillage]} {};
+#VAR {PastLocations[gotoForgottenValley]} {};
+#VAR {PastLocations[gotoFontOfModrian]} {};
+#VAR {PastLocations[gotoFrozenTundras]} {};
+#VAR {PastLocations[gotoGlacialRift]} {};
+#VAR {PastLocations[gotoGreatPyramid]} {};
+#VAR {PastLocations[gotoGuiharianFestivalOfLights]} {};
+#VAR {PastLocations[gotoHalflingVillage]} {};
+#VAR {PastLocations[gotoHarpellHouse]} {};
+#VAR {PastLocations[gotoHighTowerOfMagic]} {};
+#VAR {PastLocations[gotoHillGiantSteadin]} {};
+#VAR {PastLocations[gotoHobgoblins]} {};
+#VAR {PastLocations[gotoHolyGrail]} {};
+#VAR {PastLocations[gotoIstan]} {};
+#VAR {PastLocations[gotoKoboldTunnels]} {};
+#VAR {PastLocations[gotoLearander]} {};
+#VAR {PastLocations[gotoCrystalFortress]} {};
+#VAR {PastLocations[gotoMalevolentCircle]} {};
+#VAR {PastLocations[gotoMavernal]} {};
+#VAR {PastLocations[gotoNeverwhere]} {};
+#VAR {PastLocations[gotoOgreEncampment]} {};
+#VAR {PastLocations[gotoOldThalos]} {};
+#VAR {PastLocations[gotoPitFiend]} {};
+#VAR {PastLocations[gotoPoolOfEvil]} {};
+#VAR {PastLocations[gotoReedSwamp]} {};
+#VAR {PastLocations[gotoSewersOfModrian]} {};
+#VAR {PastLocations[gotoShade]} {};
+#VAR {PastLocations[gotoSilverTower]} {};
+#VAR {PastLocations[gotoSolaceCove]} {};
+#VAR {PastLocations[gotoSkullport]} {};
+#VAR {PastLocations[gotoTempleOfAncients]} {};
+#VAR {PastLocations[gotoTowerOfTheRenegadeMage]} {};
+#VAR {PastLocations[gotoUndermountain]} {};
+#VAR {PastLocations[gotoWemicPlains]} {};
+#VAR {PastLocations[gotoZhengisCastle]} {};
+
+#VAR {FutureLocations[gotoAPollutedVillage]} {};
+#VAR {FutureLocations[gotoArcheologicalDig]} {};
+#VAR {FutureLocations[gotoBlastedSwamp]} {};
+#VAR {FutureLocations[gotoColony]} {};
+#VAR {FutureLocations[gotoCybertechLabs]} {};
+#VAR {FutureLocations[gotoCybertechPreparatorySchool]} {};
+#VAR {FutureLocations[gotoDeathRow]} {};
+#VAR {FutureLocations[gotoDracharnos]} {};
+#VAR {FutureLocations[gotoDrugDealer]} {};
+#VAR {FutureLocations[gotoECJunkyard]} {};
+#VAR {FutureLocations[gotoECMilitary]} {};
+#VAR {FutureLocations[gotoECVamps]} {};
+#VAR {FutureLocations[gotoECNuclearPower]} {};
+#VAR {FutureLocations[gotoECPowerAndPlumbing]} {};
+#VAR {FutureLocations[gotoECUniversity]} {};
+#VAR {FutureLocations[gotoElectronicsSchool]} {};
+#VAR {FutureLocations[gotoElectronicsShop]} {};
+#VAR {FutureLocations[gotoFailFamilyLegacy]} {};
+#VAR {FutureLocations[gotoFassanSlaveCompound]} {};
+#VAR {FutureLocations[gotoGenCloneBioMechanicalLabs]} {};
+#VAR {FutureLocations[gotoKiddieKandy]} {#LIST {directions} {add} {4n2wn;open gate n;n;}};
+#VAR {FutureLocations[gotoKromguard]} {};
+#VAR {FutureLocations[gotoLuxare]} {};
+#VAR {FutureLocations[gotoMerquryCity]} {};
+#VAR {FutureLocations[gotoNETWORKCommunicationsTower]} {};
+#VAR {FutureLocations[gotoReinforcer]} {};
+#VAR {FutureLocations[gotoRuinsOfHTOM]} {};
+#VAR {FutureLocations[gotoRuinsOfTheSilverTower]} {};
+#VAR {FutureLocations[gotoSimeonTheCybernetic]} {};
+#VAR {FutureLocations[gotoTriskinAsylum]} {};
+#VAR {FutureLocations[gotoVirtualWorldOfNETWORK]} {};
+#VAR {FutureLocations[gotoZulDane]} {};
+
+#VAR {PlanesLocations[gotoAbyssUnholyModrian]} {};
+#VAR {PlanesLocations[gotoAmoria]} {};
+#VAR {PlanesLocations[gotoAvernusHell]} {};
+#VAR {PlanesLocations[gotoElementalPlaneOfAir]} {};
+#VAR {PlanesLocations[gotoElementalPlaneOfEarth]} { };
+#VAR {PlanesLocations[gotoElementalPlaneOfFire]} {};
+#VAR {PlanesLocations[gotoElementalPlaneOfIce]} {};
+#VAR {PlanesLocations[gotoElementalPlaneOfOoze]} {};
+#VAR {PlanesLocations[gotoElementalPlaneOfSmoke]} {};
+#VAR {PlanesLocations[gotoElementalPlaneOfWater]} {};
+#VAR {PlanesLocations[gotoLuniaHeaven]} {};
+#VAR {PlanesLocations[gotoImmoth]} {};
+#VAR {PlanesLocations[gotoCastleMahlhevik]} {};
+
+
+#ALIAS {travel %1 %2} {
+	#VAR travelInput1 %format("%1", %l);
+
+	#IF {{"$travelInput1"}  === {"past"} || {%1} === {1}} 
+	{
+		#SWITCH {"%2"} {
+			{1} {gotoAbandonedKeep; };
+			{2} {gotoOldMonastery; };
+		    {3} {gotoCastleSlivendark; };
+			{4} {gotoChessboardOfAraken; };
+			{5} {gotoDismalDelve; };
+			{6} {gotoDraconiansAndDragonHighlord; };
+			{7} {gotoDukeAraken; };
+			{8} {gotoElvenVillage; };
+			{9} {gotoForgottenValley; };
+			{10} {gotoFontOfModrian; };
+			{11} {gotoFrozenTundras; };
+			{12} {gotoGlacialRift; };
+			{13} {gotoGreatPyramid };
+			{14} {gotoGuiharianFestivalOfLights; };
+			{15} {gotoHalflingVillage; };
+			{16} {gotoHarpellHouse; };
+			{17} {gotoHighTowerOfMagic; };
+			{18} {gotoHillGiantSteading; };
+			{19} {gotoHobgoblins; };
+			{20} {gotoHolyGrail; };
+			{21} {gotoIstan; };
+			{22} {gotoKoboldTunnels; };
+			{23} {gotoLearander; };
+			{24} {gotoCrystalFortress; };
+			{25} {gotoMalevolentCircle; };
+			{26} {gotoMavernal; };
+			{27} {gotoNeverwhere; };
+			{28} {gotoOgreEncampment; };
+			{29} {gotoOldThalos; };
+			{30} {gotoPitFiend; };
+			{31} {gotoPoolOfEvil; };
+			{32} {gotoReedSwamp; };
+			{33} {gotoSewersOfModrian; };
+			{34} {gotoShade; };
+			{35} {gotoSilverTower; };
+			{36} {gotoSolaceCove; };
+			{37} {gotoSkullport; };
+			{38} {gotoTempleOfAncients; };
+			{39} {gotoTowerOfTheRenegadeMage; };
+			{40} {gotoTheTreetopsOfArachna; };
+			{41} {gotoUndermountain; };
+			{42} {gotoWemicPlains; };
+			{43} {gotoZhengisCastle; };
+			{default} {
+				#VAR {travelerror} {1};
+				#ECHO {Invalid Destination Combination '[%ansi(red)]%1[%ansi(reset)]' and '[%ansi(red)]%2[%ansi(reset)]'};
+			};
+		};
+	};
+
+	#ELSEIF {{"$travelInput1"} === {"future"} || {%1} === {2}} {
+		#SWITCH {"%2"} {
+			{1} {gotoAPollutedVillage };
+			{2} {gotoArcheologicalDig };
+			{3} {gotoBlastedSwamp };
+			{4} {gotoColony };
+			{5} {gotoCybertechLabs };
+			{6} {gotoCybertechPreparatorySchool };
+			{7} {gotoDeathRow };
+			{8} {gotoDracharnos };
+			{9} {gotoDrugDealer };
+			{10} {gotoECJunkyard };
+			{11} {gotoECMilitary };
+			{12} {gotoECVamps };
+			{13} {gotoECNuclearPower };
+			{14} {gotoECPowerAndPlumbing };
+			{15} {gotoECSecurityCompound };
+			{16} {gotoECUniversity };
+			{17} {gotoElectronicsSchool };
+			{18} {gotoElectronicsShop };
+			{19} {gotoFailFamilyLegacy };
+			{20} {gotoFassanSlaveCompound };
+			{21} {gotoGenCloneBioMechanicalLabs };
+			{22} {gotoKiddieKandy };
+			{23} {gotoKromguard };
+			{24} {gotoLuxare };
+			{25} {gotoMerquryCity };
+			{26} {gotoNETWORKCommunicationsTower };
+			{27} {gotoReinforcer };
+			{28} {gotoRuinsOfHTOM };
+			{29} {gotoRuinsOfTheSilverTower };
+			{30} {gotoSimeonTheCybernetic };
+			{31} {gotoTriskinAsylum };
+			{32} {gotoVirtualWorldOfNETWORK };
+			{33} {gotoZulDane };
+			{default} {
+	            #VAR {travelerror} {1};
+				#ECHO {Invalid Destination Combination '[%ansi(red)]%1[%ansi(reset)]' and '[%ansi(red)]%2[%ansi(reset)]'};
+	        };
+		};
+	};
+
+	#ELSEIF {{"$travelInput1"} === {"planes"} || {%1} === {3}} 
+	{
+		#SWITCH {"%2"} 
+		{
+			{1} {gotoAbyssUnholyModrian; };
+			{2} {gotoAmoria; };
+			{3} {gotoAvernusHell; };
+			{4} {gotoElementalPlaneOfAir; };
+			{5} {gotoElementalPlaneOfEarth; };
+			{6} {gotoElementalPlaneOfFire; };
+			{7} {gotoElementalPlaneOfIce; };
+			{8} {gotoElementalPlaneOfOoze; };
+			{9} {gotoElementalPlaneOfSmoke; };
+			{10} {gotoElementalPlaneOfWater; };
+			{11} {gotoLuniaHeaven; };
+			{12} {gotoImmoth; };
+		   	{13} {gotoCastleMahlhevik; };
+			{14} {gotoGith; };
+		    {default} 
+			{
+				#VAR {travelerror} {1};
+				#ECHO {Invalid Destination Combination '[%ansi(red)]%1[%ansi(reset)]' and '[%ansi(red)]%2[%ansi(reset)]'};
+			};
+		};
+	};
+
+	#ELSEIF {{"$travelInput1"} === {"trainers"} || {%1} === {4}} {
+		#SWITCH {"%2"} {
+			{1} {gotoCharismaTrainer;};
+			{2} {gotoConstitutionTrainer; };
+			{3} {gotoDexterityTrainer; };
+			{4} {gotoIntelligenceTrainer; };
+			{5} {gotoStrengthTrainer; };
+			{6} {gotoWisdomTrainer; };
+			{7} {gotoWeaponEnhancer };
+			{8} {gotoWeaponSpecializer };
+			{9} {gotoWeaponUnSpecializer };
+			{10} {gotoGainer };
+			{11} {gotoElectronicsSchool };
+			{default} {
+				#VAR {travelerror} {1};
+		#ECHO {Invalid Destination Combination '[%ansi(red)]%1[%ansi(reset)]' and '[%ansi(red)]%2[%ansi(reset)]'};
+			};
+		};
+	};
+
+	#ELSEIF {{"$travelInput1"} === {"guilds"} || {%1} === {5}} {
+		#SWITCH {"%2"} {
+			{1} {gotoBarbarianGuildmsater;};
+			{2} {gotoBardGuildmaster; };
+			{3} {gotoClericEvilGuildmaster; };
+			{4} {gotoClericGoodGuildmaster; };
+			{5} {gotoCyborgGuildmaster; };
+			{6} {gotoKnightEvilGuildmaster; };
+			{7} {gotoKnightGoodGuildmaster; };
+			{8} {gotoMageGuildmaster; };
+			{9} {gotoMercenaryGuildmaster; };
+			{10} {gotoMonkGuildmaster; };
+			{11} {gotoPhysicGuildmaster; };
+			{12} {gotoPsionicistGuildmaster; };
+			{13} {gotoRangerGuildmaster; };
+			{14} {gotoThiefGuildmaster; };
+			{default} {
+				#VAR {travelerror} {1};
+		#ECHO {Invalid Destination Combination '[%ansi(red)]%1[%ansi(reset)]' and '[%ansi(red)]%2[%ansi(reset)]'};
+			};
+		};
+	};
+
+	#ELSEIF {{"$travelInput1"} === {"underdark"} || {%1} === {6}} {
+		#SWITCH {"%2"} {
+			{1} {gotoHeadShrinker };
+			{2} {gotoLizardCaverns };
+			{3} {gotoWyllowwood };
+			{default} {
+				#VAR {travelerror} {1};
+		#ECHO {Invalid Destination Combination '[%ansi(red)]%1[%ansi(reset)]' and '[%ansi(red)]%2[%ansi(reset)]'};
+			};
+		};
+	};
+
+
+	#ELSEIF {{"$travelInput1"} === {"all"} || {%1} === {7}} {
+		/* Todo - Use the different lists to formulate a list of available directions */
+	};
+
+	#ELSE {
+		#VARIABLE {travelerror} {1};
+	#ECHO {Invalid Planar Destination '[%ansi(red)]%1[%ansi(reset)]'};
+	};
+}
+{3}
+
+#ALIAS {travel %1} {
+	#VAR travelInput1 %format("%1", %l);
+	#VAR travelInput1Upper %upper("%1");
+	#IF {debug} {
+		#ECHO {Travel Destination: '$travelInput1'};
+		#ECHO {Travel Destination Upper: '$travelInput1Upper};
+	};
+	#IF {{"$travelInput1"} === {"help"} || {"$travelInput1"} === {"?"}}
+	{
+		#ECHO { [%ansi(azure)]******************************************************************************************[%ansi(reset)] };
+		#ECHO { [%ansi(azure)]*                                Directions Help!                                        *[%ansi(reset)] };
+		#ECHO { [%ansi(azure)]******************************************************************************************[%ansi(reset)] };
+		#ECHO { [%ansi(azure)]*[%ansi(reset)]                                                                                        [%ansi(azure)]*[%ansi(reset)]};
+		#ECHO { [%ansi(azure)]*[%ansi(cyan)] Usage:[%ansi(reset)] travel <plane> <zone>                                                           [%ansi(azure)]*[%ansi(reset)]};
+		#ECHO { [%ansi(azure)]*[%ansi(yellow)] Example:[%ansi(reset)] travel planes 9                                                               [%ansi(azure)]*[%ansi(reset)]};
+		#ECHO { [%ansi(azure)]*[%ansi(reset)]      Travel to the Elemental Plane of Smoke                                            [%ansi(azure)]*[%ansi(reset)]};
+		#ECHO { [%ansi(azure)]*[%ansi(yellow)] Example:[%ansi(reset)] travel 2 15                                                                   [%ansi(azure)]*[%ansi(reset)]};
+		#ECHO { [%ansi(azure)]*[%ansi(reset)]      Travel to the Future's EC Universty                                               [%ansi(azure)]*[%ansi(reset)]};
+		#ECHO { [%ansi(azure)]*[%ansi(reset)]                                                                                        [%ansi(azure)]*[%ansi(reset)]};
+		#ECHO { [%ansi(azure)]*%ansi(purple) Recommendations:[%ansi(reset)] Make an alias in your own scriping config for locations you use       [%ansi(azure)]*[%ansi(reset)] };
+		#ECHO { [%ansi(azure)]*[%ansi(reset)]    regularly!                                                                          [%ansi(azure)]*[%ansi(reset)] };
+		#ECHO { [%ansi(azure)]******************************************************************************************[%ansi(reset)] };
+	};
+
+	#ELSEIF {{"$travelInput1"}  === {"past"} || {%1} === {1}}
+	{
+		#ECHO { [%ansi(blue)]┌------------------------------------------------------------------------------┐[%ansi(reset)] };
+		#ECHO { [%ansi(blue)]|                           [%ansi(cyan)]Past Locations[%ansi(reset)]                                     [%ansi(blue)]|[%ansi(reset)] };
+		#ECHO { [%ansi(blue)]├------------------------------------------------------------------------------┤[%ansi(reset)] };
+		#ECHO { [%ansi(blue)]|  [%ansi(cyan)]1)[%ansi(reset)] Abandoned Keep       [%ansi(cyan)]2)[%ansi(reset)] Old Monastery        [%ansi(cyan)]3)[%ansi(reset)] Castle Slivendark        [%ansi(blue)]|[%ansi(reset)] };
+		#ECHO { [%ansi(blue)]|  [%ansi(cyan)]4)[%ansi(reset)] Chessboard of Araken [%ansi(cyan)]5)[%ansi(reset)] Dismal Delve         [%ansi(cyan)]6)[%ansi(reset)] Draconians and Highlords [%ansi(blue)]|[%ansi(reset)] };
+		#ECHO { [%ansi(blue)]|  [%ansi(cyan)]7)[%ansi(reset)] Duke Araken          [%ansi(cyan)]8)[%ansi(reset)] Elven Village        [%ansi(cyan)]9)[%ansi(reset)] Forgotten Valley         [%ansi(blue)]|[%ansi(reset)] };
+		#ECHO { [%ansi(blue)]| [%ansi(cyan)]10)[%ansi(reset)] Font of Modrian     [%ansi(cyan)]11)[%ansi(reset)] Frozen Tundras      [%ansi(cyan)]12)[%ansi(reset)] Glacial Rift             [%ansi(blue)]|[%ansi(reset)] };
+		#ECHO { [%ansi(blue)]| [%ansi(cyan)]13)[%ansi(reset)] Great Pyramid       [%ansi(cyan)]14)[%ansi(reset)] Guiharian Festival  [%ansi(cyan)]15)[%ansi(reset)] Halfling Village         [%ansi(blue)]|[%ansi(reset)] };
+		#ECHO { [%ansi(blue)]| [%ansi(cyan)]16)[%ansi(reset)] Harpell House       [%ansi(cyan)]17)[%ansi(reset)] High Tower of Magic [%ansi(cyan)]18)[%ansi(reset)] Hill Giant Steading      [%ansi(blue)]|[%ansi(reset)] };
+		#ECHO { [%ansi(blue)]| [%ansi(cyan)]19)[%ansi(reset)] Hobgoblins          [%ansi(cyan)]20)[%ansi(reset)] Holy Grail          [%ansi(cyan)]21)[%ansi(reset)] Istan                    [%ansi(blue)]|[%ansi(reset)] };
+		#ECHO { [%ansi(blue)]| [%ansi(cyan)]22)[%ansi(reset)] Kobold Tunnels      [%ansi(cyan)]23)[%ansi(reset)] Caves of Learander  [%ansi(cyan)]24)[%ansi(reset)] Crystal Fortress         [%ansi(blue)]|[%ansi(reset)] };
+		#ECHO { [%ansi(blue)]| [%ansi(cyan)]25)[%ansi(reset)] Malevolent Circle   [%ansi(cyan)]26)[%ansi(reset)] Mavernal            [%ansi(cyan)]27)[%ansi(reset)] Neverwhere               [%ansi(blue)]|[%ansi(reset)] };
+		#ECHO { [%ansi(blue)]| [%ansi(cyan)]28)[%ansi(reset)] Ogre Encampment     [%ansi(cyan)]29)[%ansi(reset)] Old Thalos          [%ansi(cyan)]30)[%ansi(reset)] Pit Fiend                [%ansi(blue)]|[%ansi(reset)] };
+		#ECHO { [%ansi(blue)]| [%ansi(cyan)]31)[%ansi(reset)] Pool of Evil        [%ansi(cyan)]32)[%ansi(reset)] Reed Swamp/Lizards  [%ansi(cyan)]33)[%ansi(reset)] Sewers of Modrian        [%ansi(blue)]|[%ansi(reset)] };
+		#ECHO { [%ansi(blue)]| [%ansi(cyan)]34)[%ansi(reset)] Shade               [%ansi(cyan)]35)[%ansi(reset)] Silver Tower        [%ansi(cyan)]36)[%ansi(reset)] Solace Cove              [%ansi(blue)]|[%ansi(reset)] };
+		#ECHO { [%ansi(blue)]| [%ansi(cyan)]37)[%ansi(reset)] Skullport (River)   [%ansi(cyan)]38)[%ansi(reset)] Temple of Ancients  [%ansi(cyan)]39)[%ansi(reset)] Tower of Renegade Mage   [%ansi(blue)]|[%ansi(reset)] };
+		#ECHO { [%ansi(blue)]| [%ansi(cyan)]40)[%ansi(reset)] Treetops of Arachna [%ansi(cyan)]41)[%ansi(reset)] Undermountain       [%ansi(cyan)]42)[%ansi(reset)] Wemic Plains             [%ansi(blue)]|[%ansi(reset)] };
+		#ECHO { [%ansi(blue)]| [%ansi(cyan)]43)[%ansi(reset)] Zhengi's Castle                                                          [%ansi(blue)]|[%ansi(reset)] };
+		#ECHO { [%ansi(blue)]|                                                                              [%ansi(blue)]|[%ansi(reset)] };
+		#ECHO { [%ansi(blue)]└------------------------------------------------------------------------------┘[%ansi(reset)] }; 
+	};
+
+	#ELSEIF {{"$travelInput1"} === {"future"} || {%1} === {2}}
+	{
+		#ECHO { [%ansi(blue)]┌------------------------------------------------------------------------------┐[%ansi(reset)] };
+		#ECHO { [%ansi(blue)]|                           [%ansi(azure)]Future Locations[%ansi(reset)]                                   [%ansi(blue)]|[%ansi(reset)] };
+		#ECHO { [%ansi(blue)]├------------------------------------------------------------------------------┤[%ansi(reset)] };
+		#ECHO { [%ansi(blue)]|  [%ansi(cyan)]1)[%ansi(reset)] Polluted Village    [%ansi(cyan)]2)[%ansi(reset)] Archeolgial Dig      [%ansi(cyan)]3)[%ansi(reset)] Blasted Swamp             [%ansi(blue)]|[%ansi(reset)] };
+		#ECHO { [%ansi(blue)]|  [%ansi(cyan)]4)[%ansi(reset)] Colony              [%ansi(cyan)]5)[%ansi(reset)] Cybertech Labs       [%ansi(cyan)]6)[%ansi(reset)] Cybertech Preparatory     [%ansi(blue)]|[%ansi(reset)] };
+		#ECHO { [%ansi(blue)]|  [%ansi(cyan)]7)[%ansi(reset)] Death Row           [%ansi(cyan)]8)[%ansi(reset)] Dracharnos           [%ansi(cyan)]9)[%ansi(reset)] Drug Dealer               [%ansi(blue)]|[%ansi(reset)] };
+		#ECHO { [%ansi(blue)]| [%ansi(cyan)]10)[%ansi(reset)] EC Junkyard        [%ansi(cyan)]11)[%ansi(reset)] EC Military          [%ansi(cyan)]12)[%ansi(reset)] EC Vampires              [%ansi(blue)]|[%ansi(reset)] };
+		#ECHO { [%ansi(blue)]| [%ansi(cyan)]13)[%ansi(reset)] EC Nuclear Power   [%ansi(cyan)]14)[%ansi(reset)] EC Power & Plubming  [%ansi(cyan)]15)[%ansi(reset)] EC Security Compound     [%ansi(blue)]|[%ansi(reset)] };
+		#ECHO { [%ansi(blue)]| [%ansi(cyan)]16)[%ansi(reset)] EC University      [%ansi(cyan)]17)[%ansi(reset)] Electronics School   [%ansi(cyan)]18)[%ansi(reset)] Electronics Shop         [%ansi(blue)]|[%ansi(reset)] };
+		#ECHO { [%ansi(blue)]| [%ansi(cyan)]19)[%ansi(reset)] Fail Family Legacy [%ansi(cyan)]20)[%ansi(reset)] Fassan Slave Compound[%ansi(cyan)]21)[%ansi(reset)] GenClone Bio Labs        [%ansi(blue)]|[%ansi(reset)] };
+		#ECHO { [%ansi(blue)]| [%ansi(cyan)]22)[%ansi(reset)] Kiddie Kandy, Inc. [%ansi(cyan)]23)[%ansi(reset)] Kromguard            [%ansi(cyan)]24)[%ansi(reset)] Luxare                   [%ansi(blue)]|[%ansi(reset)] };
+		#ECHO { [%ansi(blue)]| [%ansi(cyan)]25)[%ansi(reset)] Merqury City       [%ansi(cyan)]26)[%ansi(reset)] NETWORK  Tower       [%ansi(cyan)]27)[%ansi(reset)] Equipment Reinforcer     [%ansi(blue)]|[%ansi(reset)] };
+		#ECHO { [%ansi(blue)]| [%ansi(cyan)]28)[%ansi(reset)] Ruins of HTOM      [%ansi(cyan)]29)[%ansi(reset)] Silver Tower  Ruins  [%ansi(cyan)]30)[%ansi(reset)]Simeon the Cybernetic     [%ansi(blue)]|[%ansi(reset)] };
+		#ECHO { [%ansi(blue)]| [%ansi(cyan)]31)[%ansi(reset)] [%ansi(red)]Triskin Asylum[%ansi(reset)]     [%ansi(cyan)]32)[%ansi(reset)] Virtual  World       [%ansi(cyan)]33)[%ansi(reset)]Zul’Dane                  [%ansi(blue)]|[%ansi(reset)] };
+		#ECHO { [%ansi(blue)]|                                                                              [%ansi(blue)]|[%ansi(reset)] };
+		#ECHO { [%ansi(blue)]└------------------------------------------------------------------------------┘[%ansi(reset)] };
+	};
+
+	#ELSEIF {{"$travelInput1"} === {"planes"} || {%1} === {3}}
+	{
+		#ECHO { [%ansi(blue)]┌------------------------------------------------------------------------------┐[%ansi(reset)] };
+		#ECHO { [%ansi(blue)]|                           %ansi(pink)Planes Locations[%ansi(reset)]                                   [%ansi(blue)]|[%ansi(reset)] };
+		#ECHO { [%ansi(blue)]├------------------------------------------------------------------------------┤[%ansi(reset)] };
+		#ECHO { [%ansi(blue)]|  [%ansi(cyan)]1)[%ansi(reset)] Abyss/Unholy Mod    [%ansi(cyan)]2)[%ansi(reset)] Amoria                [%ansi(cyan)]3)[%ansi(reset)] Avernus, Hell Level 1    [%ansi(blue)]|[%ansi(reset)] };
+		#ECHO { [%ansi(blue)]|  [%ansi(cyan)]4)[%ansi(reset)] Plane of Air        [%ansi(cyan)]5)[%ansi(reset)] Plane of Earth        [%ansi(cyan)]6)[%ansi(reset)] Plane of Fire            [%ansi(blue)]|[%ansi(reset)] };
+		#ECHO { [%ansi(blue)]|  [%ansi(cyan)]7)[%ansi(reset)] Plane of Ice        [%ansi(cyan)]8)[%ansi(reset)] Plane of Ooze         [%ansi(cyan)]9)[%ansi(reset)] Plane of Smoke           [%ansi(blue)]|[%ansi(reset)] };
+		#ECHO { [%ansi(blue)]| [%ansi(cyan)]10)[%ansi(reset)] Plane of Water     [%ansi(cyan)]11)[%ansi(reset)] Lunia, Heaven Level 1[%ansi(cyan)]12)[%ansi(reset)]Immoth                    [%ansi(blue)]|[%ansi(reset)] };
+		#ECHO { [%ansi(blue)]| [%ansi(cyan)]13)[%ansi(reset)] Castle Mahlhevik   [%ansi(cyan)]14)[%ansi(reset)] Githyanki Fortress   [%ansi(cyan)][%ansi(reset)]                             [%ansi(blue)]|[%ansi(reset)] };
+		#ECHO { [%ansi(blue)]|                                                                              [%ansi(blue)]|[%ansi(reset)] };
+		#ECHO { [%ansi(blue)]└------------------------------------------------------------------------------┘[%ansi(reset)] };
+	};
+	
+	#ELSEIF {{"$travelInput1"} === {"trainers"} || {%1} === {4}}
+	{
+		#ECHO { [%ansi(blue)]┌------------------------------------------------------------------------------┐[%ansi(reset)] };
+		#ECHO { [%ansi(blue)]|                          [%ansi(yellow)]Trainers Locations[%ansi(reset)]                                  [%ansi(blue)]|[%ansi(reset)] };
+		#ECHO { [%ansi(blue)]├------------------------------------------------------------------------------┤[%ansi(reset)] };
+		#ECHO { [%ansi(blue)]|  [%ansi(cyan)]1)[%ansi(reset)] Charisma           [%ansi(cyan)]2)[%ansi(reset)] Constitution           [%ansi(cyan)]3)[%ansi(reset)] Dexterity                [%ansi(blue)]|[%ansi(reset)] };
+		#ECHO { [%ansi(blue)]|  [%ansi(cyan)]4)[%ansi(reset)] Intelligence       [%ansi(cyan)]5)[%ansi(reset)] Strength               [%ansi(cyan)]6)[%ansi(reset)] Wisdom                   [%ansi(blue)]|[%ansi(reset)] };
+		#ECHO { [%ansi(blue)]|  [%ansi(cyan)]7)[%ansi(reset)] Weapon Enhancer    [%ansi(cyan)]8)[%ansi(reset)] Weapon Specializer     [%ansi(cyan)]9)[%ansi(reset)] Weapon Un-Specializer    [%ansi(blue)]|[%ansi(reset)] };
+		#ECHO { [%ansi(blue)]| [%ansi(cyan)]10)[%ansi(reset)] The Gainer        [%ansi(cyan)]11)[%ansi(reset)] Electronics School                                                       [%ansi(blue)]|[%ansi(reset)] };
+		#ECHO { [%ansi(blue)]|                                                                              [%ansi(blue)]|[%ansi(reset)] };
+		#ECHO { [%ansi(blue)]└------------------------------------------------------------------------------┘[%ansi(reset)] };
+	};
+
+	#ELSEIF {{"$travelInput1"} === {"guilds"} || {%1} === {5}}
+	{
+			#ECHO { [%ansi(blue)]┌------------------------------------------------------------------------------┐[%ansi(reset)] };
+			#ECHO { [%ansi(blue)]|                          %ansi(purple)Guilds Locations[%ansi(reset)]                                    [%ansi(blue)]|[%ansi(reset)] };
+			#ECHO { [%ansi(blue)]├------------------------------------------------------------------------------┤[%ansi(reset)] };
+			#ECHO { [%ansi(blue)]|  [%ansi(cyan)]1)[%ansi(reset)] Barbarian         [%ansi(cyan)]2)[%ansi(reset)] Bard                    [%ansi(cyan)]3)[%ansi(reset)] Cleric ([%ansi(red)]Evil[%ansi(reset)])            [%ansi(blue)]|[%ansi(reset)] };
+		#ECHO { [%ansi(blue)]|  [%ansi(cyan)]4)[%ansi(reset)] Cleric ([%ansi(blue)]Good[%ansi(reset)])     [%ansi(cyan)]5)[%ansi(reset)] Cyborg                  [%ansi(cyan)]6)[%ansi(reset)] Knight ([%ansi(red)]Evil[%ansi(reset)])            [%ansi(blue)]|[%ansi(reset)] };
+		#ECHO { [%ansi(blue)]|  [%ansi(cyan)]7)[%ansi(reset)] Knight ([%ansi(blue)]Good[%ansi(reset)])     [%ansi(cyan)]8)[%ansi(reset)] Mage                    [%ansi(cyan)]9)[%ansi(reset)] Mercenary                [%ansi(blue)]|[%ansi(reset)] };
+		#ECHO { [%ansi(blue)]| [%ansi(cyan)]10)[%ansi(reset)] Monk             [%ansi(cyan)]11)[%ansi(reset)] Physic                 [%ansi(cyan)]12)[%ansi(reset)] Psionicist               [%ansi(blue)]|[%ansi(reset)] };
+		#ECHO { [%ansi(blue)]| [%ansi(cyan)]13)[%ansi(reset)] Ranger           [%ansi(cyan)]14)[%ansi(reset)] Thief                  [%ansi(cyan)][%ansi(reset)]                             [%ansi(blue)]|[%ansi(reset)] };
+		#ECHO { [%ansi(blue)]|                                                                              [%ansi(blue)]|[%ansi(reset)] };
+			#ECHO { [%ansi(blue)]└------------------------------------------------------------------------------┘[%ansi(reset)] };
+	};
+
+	#ELSEIF {{"$travelInput1"} === {"underdark"} || {%1} === {6}}
+	{
+		#ECHO { [%ansi(blue)]┌------------------------------------------------------------------------------┐[%ansi(reset)] };
+		#ECHO { [%ansi(blue)]|                        <color black white>]Underdark[%ansi(reset)]                                              [%ansi(blue)]|[%ansi(reset)] };
+		#ECHO { [%ansi(blue)]├------------------------------------------------------------------------------┤[%ansi(reset)] };
+		#ECHO { [%ansi(blue)]|  [%ansi(cyan)]1)[%ansi(reset)] Head Shrinker [%ansi(cyan)]2)[%ansi(reset)] Lizard Caverns  [%ansi(cyan)]3)[%ansi(reset)] Wyllowwood[%ansi(reset)] };
+		#ECHO { [%ansi(blue)]|                                                                              [%ansi(blue)]|[%ansi(reset)] };
+		#ECHO { [%ansi(blue)]└------------------------------------------------------------------------------┘[%ansi(reset)] };
+	};
+
+
+	#ELSEIF {{"$travelInput1"} === {"all"} || {%1} === {7}}
+	{
+		#ECHO { [%ansi(blue)]┌------------------------------------------------------------------------------┐[%ansi(reset)] };
+		#ECHO { [%ansi(blue)]|                          <179> ALL Locations[%ansi(reset)]                                      [%ansi(blue)]|[%ansi(reset)] };
+		#ECHO { [%ansi(blue)]├------------------------------------------------------------------------------┤[%ansi(reset)] };
+		#ECHO { [%ansi(blue)]|                                                                              [%ansi(blue)]|[%ansi(reset)] };
+		#ECHO { [%ansi(blue)]|                          [%ansi(red)]Under Construction[%ansi(reset)]                                  [%ansi(blue)]|[%ansi(reset)] };
+		#ECHO { [%ansi(blue)]|                                                                              [%ansi(blue)]|[%ansi(reset)] };
+		#ECHO { [%ansi(blue)]└------------------------------------------------------------------------------┘[%ansi(reset)] };
+	};
+
+	#ELSE {
+		#ECHO { [%ansi(red)]Travel Warning:[%ansi(reset)] The value '%ansi(pink)%1[%ansi(reset)]' is not a valid travel destination. };
+	}
+}
+{4}
+
+#ALIAS {travel} {
+	#ECHO { [%ansi(blue)]┌------------------------------------------------------------------------------┐[%ansi(reset)] };
+	#ECHO { [%ansi(blue)]|                          [%ansi(orange)] Where To Travel[%ansi(reset)]                                    [%ansi(blue)]|[%ansi(reset)] };
+	#ECHO { [%ansi(blue)]├------------------------------------------------------------------------------┤[%ansi(reset)] };
+	#ECHO { [%ansi(blue)]|                                                                              |[%ansi(reset)] };
+	#ECHO { [%ansi(blue)]|[%ansi(reset)]               1) [%ansi(cyan)]Past[%ansi(reset)]      2) [%ansi(azure)]Future[%ansi(reset)]      3) %ansi(pink)Planes[%ansi(reset)]                          [%ansi(blue)]|[%ansi(reset)] };
+	#ECHO { [%ansi(blue)]|[%ansi(reset)]               4) [%ansi(yellow)]Trainers[%ansi(reset)]  5) %ansi(purple)Guilds[%ansi(reset)]      6) <007>Underdark[%ansi(reset)]                       [%ansi(blue)]|[%ansi(reset)] }; 
+	#ECHO { [%ansi(blue)]|[%ansi(reset)]                               7) <179>All[%ansi(reset)]                                         [%ansi(blue)]|[%ansi(reset)] };
+	#ECHO { [%ansi(blue)]|                                                                              [%ansi(blue)]|[%ansi(reset)] };
+	#ECHO { [%ansi(blue)]└------------------------------------------------------------------------------┘[%ansi(reset)] };
+
+}
+{5}
+
+/* ----------------------------------------------------------------------------------------------   */
+/*                                      Anchor Start Locations										*/
+
+
+#ACTION {^You are located: %1}
+{
+	#VAR {currentRoom} {%1};
+}
+{1}
+
+#ALIAS {resettravel} {
+	#VAR {travelerror}{0};
+	#VAR {travelling}{0};
+}
+{5}
+
+#ALIAS {gotohs} {
+	fly;
+	where;
+	#WAIT 1000; {
+		#IF {{$currentRoom} === {$myStartingRoomName}}
+		{
+			#VAR {travelling} {1};
+			directionsToHolySquare;
+		};
+		#ELSE {
+			#ECHO {[%ansi(red)]Warning!<FBBB> The current starting room is [%ansi(red)]NOT<FBBB> your default start room '$myStartingRoomName'!};
+			#VAR {travelerror} {1};
+			#VAR {travelling} {0};
+		}
+	}
+}
+{5}
+
+#ALIAS {gotoskull} {
+	fly;
+    where;
+	#WAIT 1000; {
+		#IF {{$currentRoom} === {$myStartingRoomName}}
+		{
+			#VAR {travelling} {1};
+			directionsToSlaveSquare;
+		};
+	    #ELSE {
+	        #ECHO {[%ansi(red)]Warning!<FBBB> The current starting room is [%ansi(red)]NOT<FBBB> your default start room '$myStartingRoomName'!};
+			#VAR {travelerror} {1};
+			#VAR {travelling} {0};
+	    }
+	}
+}
+{5}
+
+#ALIAS {gotostar} {
+	fly;
+	where;
+	#WAIT 1000; {
+		#IF {{$currentRoom} === {$myStartingRoomName}}
+		{
+			#VAR {travelling} {1};
+			directionsToStarPlaza;
+		};
+		#ELSE {
+			#ECHO {[%ansi(red)]Warning!<FBBB> The current starting room is [%ansi(red)]NOT<FBBB> your default start room '$myStartingRoomName'!};
+			#VAR {travelerror} {1};
+			#VAR {travelling} {0};
+		}
+	}
+}
+{5}
+
+#ALIAS {gotoastral} {
+	fly;
+	where;
+	#WAIT 1000; {
+        #IF {{$currentRoom} === {$myStartingRoomName}}
+        {
+            #VAR {travelling} {1};
+			directionsToAstralManse;
+        };
+		#ELSE {
+    	#ECHO {[%ansi(red)]Warning!<FBBB> The current starting room is [%ansi(red)]NOT<FBBB> your default start room '$myStartingRoomName'!};
+            #VAR {travelerror} {1};
+            #VAR {travelling} {0};		
+		}
+	}
+}
+{5}
+
+/* ----------------------------------------------------------------------------------------------   */
+/*                                       Past Locations												*/
+
+#ALIAS {gotoAbandonedKeep} {
+	gotohs;
+	#ECHO {[%ansi(green)]Okay![%ansi(reset)] Travelling to the [%ansi(yellow)]Abandoned Keep[%ansi(reset)]!};
+	#WAIT 2000;{
+		#IF {!$travelerror}{
+			21w14s2w;wind winch;
+			where;
+			challenge area;
+		};
+		#ELSE {
+	        resettravel;
+	    };
+	};
+}
+{5}
+
+#ALIAS {gotoOldMonastery} {
+    gotohs;
+	#ECHO {[%ansi(green)]Okay![%ansi(reset)] Travelling to the [%ansi(yellow)]Old Monastery[%ansi(reset)]!};
+	#WAIT 2000;{
+	    #IF {!$travelerror}{
+			12n7en;
+			where;
+			challenge area;
+		};
+		#ELSE {
+	        resettravel;
+	    };
+	};
+}
+{5}
+
+#ALIAS {gotoCastleSlivendark} {
+	gotohs;
+	#ECHO {[%ansi(green)]Okay![%ansi(reset)] Travelling to the [%ansi(yellow)]Castle Slivendark[%ansi(reset)]!};
+	#WAIT 2000;{
+		#IF {!$travelerror}{
+			32w4sw2s2w3sese3sw3sd;
+			where;
+			challenge area;
+	    };
+		#ELSE {
+	        resettravel;
+	    };
+	};
+}
+{5}
+
+#ALIAS {gotoChessboardOfAraken} {
+    gotohs;
+	#ECHO {[%ansi(green)]Okay![%ansi(reset)] Travelling to the [%ansi(yellow)]Chessboard of Araken[%ansi(reset)]!};
+	#WAIT 2000;{
+	    #IF {!$travelerror}{
+			9w8s;open porticullis;s;open door;2swsw2se;
+			where;
+			challenge area;
+	    };
+		#ELSE {
+	        resettravel;
+    	};
+	};
+}
+{5}
+
+#ALIAS {gotoCrystalFortress} {
+	gotohs;
+	#ECHO {[%ansi(green)]Okay![%ansi(reset)] Travelling to the [%ansi(yellow)]Crystal Fortress[%ansi(reset)]!};
+	#WAIT 2000;{
+		#IF {!$travelerror} {
+			46w24su5s10w3s4d2en2n2wn2w2s;open rock;2se2swswsese;pull lever;2w3s
+			where;
+			challenge area;
+		};
+		#ELSE {
+			resettravel;
+		};
+	};
+}
+{5}
+
+#ALIAS {gotoDismalDelve} {
+	gotohs;
+	#ECHO {[%ansi(green)]Okay![%ansi(reset)] Travelling to the [%ansi(yellow)]Dismal Delve[%ansi(reset)]!};
+	#WAIT 2000;{
+	    #IF {!$travelerror}{
+			67w12seseds6wndnd;enter portal;nw2n2ed;
+			where;
+			challenge area;
+	    };
+		#ELSE {
+	        resettravel;
+		}
+    }	
+}
+{5}
+
+#ALIAS {gotoDraconiansAndDragonHighlord} {
+    gotohs;
+	#ECHO {[%ansi(green)]Okay![%ansi(reset)] Travelling to the [%ansi(yellow)]Draconians a:nd Dragon Highlords[%ansi(reset)]!};
+	#WAIT 2000;{
+	    #IF {!$travelerror}{
+			32wswsw2se2s2w2sw2sws2w4sws2w;
+			where;
+			challenge area;
+	    };
+		#ELSE {
+	        resettravel;
+		}
+    };
+}
+{5}
+
+#ALIAS {gotoDukeAraken} {
+	gotohs;
+	#ECHO {[%ansi(green)]Okay![%ansi(reset)] Travelling to the [%ansi(yellow)]Duke Araken[%ansi(reset)]!};
+	#WAIT 2000;{
+	    #IF {!$travelerror}{
+			9w8s;open porticullis;s;open door;2sese4sw2se3sw3u3s;
+			where;
+			challenge area;
+		};
+		#ELSE {
+    	    resettravel;
+		}
+    }	
+}
+{5}
+
+#ALIAS {gotoElvenVillage} {
+    gotohs;
+	#ECHO {[%ansi(green)]Okay![%ansi(reset)] Travelling to the [%ansi(yellow)]Elven Village[%ansi(reset)]!};
+	#WAIT 2000;{
+	    #IF {!$travelerror}{
+			22n4e5n;
+			where;
+			challenge area;
+		};
+		#ELSE {
+    	    resettravel;
+		}
+    };
+}
+{5}
+
+#ALIAS {gotoForgottenValley} {
+    gotohs;
+	#ECHO {[%ansi(green)]Okay![%ansi(reset)] Travelling to the [%ansi(yellow)]Forgotten Valley[%ansi(reset)]!};
+	#WAIT 2000;{
+	    #IF {!$travelerror}{
+			60n2e3nwnwn3e4s2d;
+			where;
+			challenge area;
+		};
+		#ELSE {
+	        resettravel;
+	    }
+	};
+}
+{5}
+
+#ALIAS {gotoFontOfModrian} {
+    gotohs;
+	#ECHO {[%ansi(green)]Okay![%ansi(reset)] Travelling to the [%ansi(yellow)]Font of Modrian[%ansi(reset)]!};
+	#WAIT 2000;{
+	    #IF {!$travelerror}{
+			7e4ne;enter font;
+			where;
+			challenge area;
+		};
+		#ELSE {
+    	    resettravel;
+	    }
+	};
+}
+{5}
+
+#ALIAS {gotoFrozenTundras} {
+    gotohs;
+	#ECHO {[%ansi(green)]Okay![%ansi(reset)] Travelling to the [%ansi(yellow)]Frozen Tundras[%ansi(reset)]!};
+	#WAIT 2000;{
+	    #IF {!$travelerror}{
+			37e41n;open gate;8n;open gate;17n3w2nw9n7e3nw2ue2wunwndw2nwue3n3w5ne2n;
+			where;
+			challenge area;
+		};
+		#ELSE {
+	        resettravel;
+    	}
+	};
+}
+{5}
+
+#ALIAS {gotoGlacialRift} {
+    gotohs;
+	#ECHO {[%ansi(green)]Okay![%ansi(reset)] Travelling to the [%ansi(yellow)]Glacial Rift[%ansi(reset)]!};
+	#WAIT 2000;{
+	    #IF {!$travelerror}{
+			/* 37e41n;open gate;8n;open gate;17n3w2nw9n7e3nw2ue2wunwndw2nwue3n3w5ne2n4n2wnwn2w3nd; */
+			n;n;u;n;e;open tapestry;n;n;n;n;open gate n;n;n;n;n;n;n;n;n;n;n;n;n;n;n;n;n;n;w;w;w;n;n;w;n;n;n;n;n;n;n;n;n;e;e;e;e;e;e;e;n;n;n;w;u;u;e;w;w;u;n;w;n;d;w;n;n;w;u;e;n;n;n;w;w;w;n;n;n;n;n;e;n;n;n;n;n;n;w;w;w;n;n;w;w;w;n;n;n;d;
+			where;
+			challenge area;
+		};
+		#ELSE {
+    	    resettravel;
+	    }
+	};
+}
+{5}
+
+#ALIAS {gotoGlaicialRiftPaingiver} {
+	#ECHO {[%ansi(green)]Okay![%ansi(reset)] Travelling to the [%ansi(yellow)]Glacial Rift Paingiver[%ansi(reset)]!};
+	/* gotoGlacialRift; */
+	n;n;u;n;e;open tapestry;n;n;n;n;open gate n;n;n;n;n;n;n;n;n;n;n;n;n;n;n;n;n;n;w;w;w;n;n;w;n;n;n;n;n;n;n;n;n;e;e;e;e;e;e;e;n;n;n;w;u;u;e;w;w;u;n;w;n;d;w;n;n;w;u;e;n;n;n;w;w;w;n;n;n;n;n;e;n;n;n;n;n;n;w;w;w;n;n;w;w;w;n;n;n;d;
+	w;w;n;n;n;u;e;e;u;n;e;s;s;e;e;n;n;n;e;e;s;s;s;s;s;s;s;s;w;w;w;w;w;w;s;s;e;e;n;e;e;e;s;s;s;e;
+}
+{5}
+
+#ALIAS {gotoGreatPyramid} {
+    gotohs;
+	#ECHO {[%ansi(green)]Okay![%ansi(reset)] Travelling to the [%ansi(yellow)]Great Pyramid[%ansi(reset)]!};
+	#WAIT 2000;{
+	    #IF {!$travelerror}{
+			74w7s3e9s3wuenu;
+			where;
+			challenge area;
+		};
+		#ELSE {
+	        resettravel;
+	    }
+	};
+}
+{5}
+
+#ALIAS {gotoGainer} {
+    gotohs;
+	#ECHO {[%ansi(green)]Okay![%ansi(reset)] Travelling to the [%ansi(yellow)]Gainer[%ansi(reset)]!};
+	#ECHO {Nohunger & Nothirst:	The portal to him is 1w of the Grand Mistress at the top of HTOM};
+	#WAIT 2000;{
+	    #IF {!$travelerror}{
+			where;
+			challenge area;
+		};
+		#ELSE {
+	        resettravel;
+	    }
+	};
+}
+{5}
+
+#ALIAS {gotoGuiharianFestivalOfLights} {
+    gotohs;
+	#ECHO {[%ansi(green)]Okay![%ansi(reset)] Travelling to the [%ansi(yellow)]Guiharian Festival of Lights[%ansi(reset)]!};
+	#WAIT 2000;{
+	    #IF {!$travelerror}{
+			4w3se4s;
+			where;
+			challenge area;
+		};
+		#ELSE {
+	        resettravel;
+	    }
+	};
+}
+{5}
+
+#ALIAS {gotoHalflingVillage} {
+    gotohs;
+	#ECHO {[%ansi(green)]Okay![%ansi(reset)] Travelling to the [%ansi(yellow)]Halfling Village[%ansi(reset)]!};
+	#WAIT 2000;{
+	    #IF {!$travelerror}{
+			15e10s4e;
+			where;
+			challenge area;
+		};
+		#ELSE {
+	        resettravel;
+	    }
+	};
+}
+{5}
+
+#ALIAS {gotoHarpellHouse} {
+    gotohs;
+	#ECHO {[%ansi(green)]Okay![%ansi(reset)] Travelling to the [%ansi(yellow)]Harpell House[%ansi(reset)]!};
+	#WAIT 2000;{
+	    #IF {!$travelerror}{
+			19e2n;enter house;
+			where;
+			challenge area;
+		};
+		#ELSE {
+	        resettravel;
+    	}
+	};
+}
+{5}
+
+#ALIAS {gotoHighTowerOfMagic} {
+    gotohs;
+	#ECHO {[%ansi(green)]Okay![%ansi(reset)] Travelling to the [%ansi(yellow)]High Tower of Magic[%ansi(reset)]!};
+	#WAIT 2000;{
+	    #IF {!$travelerror}{
+			34w3nw3n;
+			where;
+			challenge area;
+		};
+		#ELSE {
+	        resettravel;
+    	}
+	};
+}
+{5}
+
+#ALIAS {gotoHillGiantSteading} {
+    gotohs;
+	#ECHO {[%ansi(green)]Okay![%ansi(reset)] Travelling to the [%ansi(yellow)]Hill Giant Steading[%ansi(reset)]!};
+	#WAIT 2000;{
+	    #IF {!$travelerror}{
+			37e41n;open gate;8n;open gate;17nenw;open door w;w;
+			where;
+			challenge area;
+		};
+		#ELSE {
+	        resettravel;
+	    }
+	};
+}
+{5}
+
+#ALIAS {gotoHobgoblins} {
+    gotohs;
+	#ECHO {[%ansi(green)]Okay![%ansi(reset)] Travelling to the [%ansi(yellow)]Hobgolbin Tunnels[%ansi(reset)]!};
+	#WAIT 2000;{
+	    #IF {!$travelerror}{
+			15n2ese;open door n;n;
+			where;
+			challenge area;
+		};
+		#ELSE {
+	        resettravel;
+    	}
+	};
+}
+{5}
+
+#ALIAS {gotoHolyGrail} {
+    gotohs;
+	#ECHO {[%ansi(green)]Okay![%ansi(reset)] Travelling to the [%ansi(yellow)]Holy Grail[%ansi(reset)]!};
+	#WAIT 2000;{
+	    #IF {!$travelerror}{
+			38w2nw3nw8nw3n2wn3ed2nednd2ndn2e3n2e3nwu;
+			where;
+			challenge area;
+		};
+		#ELSE {
+    	    resettravel;
+	    }
+	};
+}
+{5}
+
+#ALIAS {gotoIstan} {
+    gotohs;
+	#ECHO {[%ansi(green)]Okay![%ansi(reset)] Travelling to the [%ansi(yellow)]City of Istan[%ansi(reset)]!};
+	#WAIT 2000;{
+	    #IF {!$travelerror}{
+			37e41n;
+			where;
+			challenge area;
+		};
+		#ELSE {
+	        resettravel;
+	    }
+	};
+}
+{5}
+
+#ALIAS {gotoKoboldTunnels} {
+    gotohs;
+	#ECHO {[%ansi(green)]Okay![%ansi(reset)] Travelling to the [%ansi(yellow)]Kobold Tunnels[%ansi(reset)]!};
+	#WAIT 2000;{
+	    #IF {!$travelerror}{
+			3w8swse10s3e2s4en;
+			where;
+			challenge area;
+		};
+		#ELSE {
+	        resettravel;
+	    }
+	};
+}
+{5}
+
+#ALIAS {gotoLearander} {
+    gotohs;
+	#ECHO {[%ansi(green)]Okay![%ansi(reset)] Travelling to the [%ansi(yellow)]Caves of Learander[%ansi(reset)]!};
+	#WAIT 2000;{
+	    #IF {!$travelerror}{
+			56w27s6ws10w3s4d2e;
+			where;
+			challenge area;
+		};
+		#ELSE {
+	        resettravel;
+	    }
+	};
+}
+{5}
+
+#ALIAS {gotoMalevolentCircle} {
+    gotohs;
+	#ECHO {[%ansi(green)]Okay![%ansi(reset)] Travelling to the [%ansi(yellow)]Malevolent Circle[%ansi(reset)]!};
+	#WAIT 2000;{
+	    #IF {!$travelerror}{
+			39e21s3es3es2eswses2e;
+			where;
+			challenge area;
+		};
+		#ELSE {
+	        resettravel;
+	    }
+	};
+}
+{5}
+
+#ALIAS {gotoMavernal} {
+    gotohs;
+	#ECHO {[%ansi(green)]Okay![%ansi(reset)] Travelling to the [%ansi(yellow)]City of Mavernal[%ansi(reset)]!};
+	#WAIT 2000;{
+	    #IF {!$travelerror}{
+			26n15e1n3e1n1e2n5es;open gate e;
+			where;
+			challenge area;
+		};
+		#ELSE {
+	        resettravel;
+	    }
+	};
+}
+{5}
+
+#ALIAS {gotoNeverwhere} {
+    gotohs;
+	#ECHO {[%ansi(green)]Okay![%ansi(reset)] Travelling to the [%ansi(yellow)]Realm of Neverwhere[%ansi(reset)]!};
+	#WAIT 2000;{
+	    #IF {!$travelerror}{
+			50w9s4w2s6w11s3e2s2e2und;
+			where;
+			challenge area;
+		};
+		#ELSE {
+	        resettravel;
+		}
+    };
+}
+{5}
+
+#ALIAS {gotoOgreEncampment} {
+    gotohs;
+	#ECHO {[%ansi(green)]Okay![%ansi(reset)] Travelling to the [%ansi(yellow)]Ogre Encampment[%ansi(reset)]!};
+	#WAIT 2000;{
+	    #IF {!$travelerror}{
+			7w4n17ws3w3ne2nene2nw3n7e5nw2n2w;
+			where;
+			challenge area;
+		};
+		#ELSE {
+	        resettravel;
+    	}
+	};
+}
+{5}
+
+#ALIAS {gotoOldThalos} {
+    gotohs;
+	#ECHO {[%ansi(green)]Okay![%ansi(reset)] Travelling to the [%ansi(yellow)]City of Old Thalos[%ansi(reset)]!};
+	#WAIT 2000;{
+	    #IF {!$travelerror}{
+			67w22s12w;
+			where;
+			challenge area;
+		};
+		#ELSE {
+	        resettravel;
+	    }
+	};
+}
+{5}
+
+#ALIAS {gotoPitFiend} {
+    gotohs;
+	#ECHO {[%ansi(green)]Okay![%ansi(reset)] Travelling to the [%ansi(yellow)]Pit Fiend[%ansi(reset)]!};
+	#WAIT 2000;{
+	    #IF {!$travelerror}{
+			13w4s2w2s3w;
+			where;
+			challenge area;
+		};
+		#ELSE {
+	        resettravel;
+	    }
+	};
+}
+{5}
+
+#ALIAS {gotoPoolOfEvil} {
+    gotohs;
+	#ECHO {[%ansi(green)]Okay![%ansi(reset)] Travelling to the [%ansi(yellow)]Pool of Evil[%ansi(reset)]!};
+	#WAIT 2000;{
+	    #IF {!$travelerror}{
+			3w8swse10s3e2s4e5nw3n2es;
+			where;
+			challenge area;
+		};
+		#ELSE {
+	        resettravel;
+    	}
+	};
+}
+{5}
+
+#ALIAS {gotoReedSwamp} {
+    gotohs;
+	#ECHO {[%ansi(green)]Okay![%ansi(reset)] Travelling to the [%ansi(yellow)]Reed Swamp[%ansi(reset)]!};
+	#WAIT 2000;{
+	    #IF {!$travelerror}{
+			32w4sws;
+			where;
+			challenge area;
+		};
+		#ELSE {
+	        resettravel;
+	    }
+	};
+}
+{5}
+
+#ALIAS {gotoSewersOfModrian} {
+    gotohs;
+	#ECHO {[%ansi(green)]Okay![%ansi(reset)] Travelling to the [%ansi(yellow)]Sewers of Modrian[%ansi(reset)]!};
+	#WAIT 2000;{
+	    #IF {!$travelerror}{
+			2n3w;open grate;d;
+			where;
+			challenge area;
+		};
+		#ELSE {
+	        resettravel;
+    	}
+	};
+}
+{5}
+
+#ALIAS {gotoShade} {
+    gotohs;
+	#ECHO {[%ansi(green)]Okay![%ansi(reset)] Travelling to the [%ansi(yellow)]Shadow City of Shade[%ansi(reset)]!};
+	#WAIT 2000;{
+	    #IF {!$travelerror} {
+			61n2e2n8e;
+			where;
+			challenge area;
+			helpShade;
+		};
+		#ELSE {
+	        resettravel;
+    	}
+	};
+}
+{5}
+
+#ALIAS {helpShade}
+{
+    #ECHO {[%ansi(orange)]************************[%ansi(cyan)] Help Shade [%ansi(orange)]************************[%ansi(reset)]};
+    #ECHO {[%ansi(orange)]gotoShadeRebel - To Rebel Leader From Tiltin[%ansi(reset)]: };
+    #ECHO {    d;e;s;d;d;d;s;e;n;n;n;n;bash stone d;d;s;w;w;d;w;n;n;w;w;n;d;w;s;d;s;u;w};
+    #ECHO {[%ansi(orange)]gotoShadeSelset - To Selset from Rebel Leader[%ansi(reset)]: e;d;n;u;e;bash cage n};
+    #ECHO {[%ansi(orange)]************************************************************[%ansi(reset)]};
+}
+{5}
+
+#ALIAS {gotoShadeRebel}
+{
+    where;
+    #WAIT 2000;
+    {
+        #IF {{$currentRoom} === {The Top of the Tower}}
+        {
+            #ECHO {[%ansi(green)]Okay![%ansi(reset)] Travelling to [%ansi(yellow)]Shade Rebel[%ansi(reset)]!};
+            fly;d;e;s;d;d;d;s;e;n;n;n;n;bash stone d;d;s;w;w;d;w;n;n;w;w;n;d;w;s;d;s;u;w;
+        };
+        #ELSE
+        {
+            #ECHO {[%ansi(red)]Error[%ansi(reset)]: You're not in the correct room 'The Top of the Tower'!}
+        };
+    };
+}
+{5}
+
+#ALIAS {gotoShadeSelset}
+{
+    where;
+        #WAIT 2000;
+    {
+        #IF {{$currentRoom} === {In the Catacombs}}
+        {
+            #ECHO {[%ansi(green)]Okay![%ansi(reset)] Travelling to [%ansi(yellow)]Shade Selset[%ansi(reset)]!};
+            fly;e;d;n;u;e;bash cage n;
+        };
+        #ELSE
+        {
+            #ECHO {[%ansi(red)]Error[%ansi(reset)]: You're not in the correct room 'In the Catacombs'!}
+        };
+    };
+}
+{5}
+
+#ACTION {This is the room of Tiltin, the Mage of Shade.  The walls, and} {
+
+    #ECHO {[%ansi(orange)]************************[%ansi(cyan)] Help Shade [%ansi(orange)]************************[%ansi(reset)]};
+    #ECHO {[%ansi(orange)]gotoShadeRebel[%ansi(reset)]:  To Rebel Leader From Tiltin};
+    #ECHO {[%ansi(orange)]gotoShadeSelset[%ansi(reset)]: To Selset from Rebel Leader};
+    #ECHO {[%ansi(orange)]************************************************************[%ansi(reset)]};
+}
+{5}
+
+#ALIAS {gotoSilverTower} {
+    gotohs;
+	#ECHO {[%ansi(green)]Okay![%ansi(reset)] Travelling to the [%ansi(yellow)]Silver Tower[%ansi(reset)]!};
+	#WAIT 2000;{
+	    #IF {!$travelerror}{
+			7e11s;
+			where;
+			challenge area;
+		};
+		#ELSE {
+	        resettravel;
+	    }
+	};
+}
+{5}
+
+#ALIAS {gotoSolaceCove} {
+    gotohs;
+	#ECHO {[%ansi(green)]Okay![%ansi(reset)] Travelling to the [%ansi(yellow)]City of Solace Cove[%ansi(reset)]!};
+	#WAIT 2000;{
+	    #IF {!$travelerror}{
+			104w;
+			where;
+			challenge area;
+		};
+		#ELSE {
+	        resettravel;
+    	}
+	};
+}
+{5}
+
+#ALIAS {gotoSkullport} {
+    gotohs;
+	#ECHO {[%ansi(green)]Okay![%ansi(reset)] Travelling to the [%ansi(yellow)]City of Skullport[%ansi(reset)]!};
+	#WAIT 2000;{
+	    #IF {!$travelerror}{
+			17e7s2w8sd6e7nen2e2nw3ne6ne6n4e7nw3n2wne5nse9n;
+			where;
+			challenge area;
+		};
+		#ELSE {
+	        resettravel;
+	    }
+	};
+}
+{5}
+
+#ALIAS {gotoTempleOfAncients} {
+    gotohs;
+	#ECHO {[%ansi(green)]Okay![%ansi(reset)] Travelling to the [%ansi(yellow)]Temple of Ancients[%ansi(reset)]!};
+	#WAIT 2000;{
+	    #IF {!$travelerror}{
+			39e25s;
+			where;
+			challenge area;
+		};
+		#ELSE {
+	        resettravel;
+	    }
+	};
+}
+{5}
+
+#ALIAS {gotoTowerOfTheRenegadeMage} {
+    gotohs;
+	#ECHO {[%ansi(green)]Okay![%ansi(reset)] Travelling to the [%ansi(yellow)]Tower of the Renegade Mage[%ansi(reset)]!};
+	#WAIT 2000;{
+	    #IF {!$travelerror}{
+			125w3n9ws4e;
+			where;
+			challenge area;
+		};
+		#ELSE {
+	        resettravel;
+    	}
+	};
+}
+{5}
+
+#ALIAS {gotoTowerOfTheRenegadeMageBlue} {
+	enter blue;
+	3w3s3ewwsw;
+	pull lever;
+	push blue library;
+	where;
+}
+{5}
+
+#ALIAS {gotoTheTreetopsOfArachna} {
+    gotohs;
+	#ECHO {[%ansi(green)]Okay![%ansi(reset)] Travelling to the [%ansi(yellow)]Treetops of Arachna[%ansi(reset)]!};
+	#WAIT 2000;{
+	    #IF {!$travelerror}{
+			7w2n2w2n13w2s2wn3wu;continue to the Drow area;2w2n1e1n1e1n1e1u;
+			where;
+			challenge area;
+		};
+		#ELSE {
+	        resettravel;
+	    }
+	};
+}
+{5}
+
+#ALIAS {gotoUndermountain} {
+    gotohs;
+	#ECHO {[%ansi(green)]Okay![%ansi(reset)] Travelling to the [%ansi(yellow)]Undermountain[%ansi(reset)]!};
+	#WAIT 2000;{
+	    #IF {!$travelerror}{
+			37e41n;open gate;3nesend;
+			where;
+			challenge area;
+		};
+		#ELSE {
+	        resettravel;
+    	}
+	};
+}
+{5}
+
+#ALIAS {gotoVaporRats} {
+    gotohs;
+	#ECHO {[%ansi(green)]Okay![%ansi(reset)] Travelling to the [%ansi(yellow)]Vapor Rats of EPOW[%ansi(reset)]!};
+	#WAIT 2000;{
+	    #IF {!$travelerror}{
+			8e4ne;enter font;3u;
+			where;
+			challenge area;
+		};
+		#ELSE {
+	        resettravel;
+    	}
+	};
+}
+{5}
+
+#ALIAS {gotoWemicPlains} {
+    gotohs;
+	#ECHO {[%ansi(green)]Okay![%ansi(reset)] Travelling to the [%ansi(yellow)]Wemic Plains[%ansi(reset)]!};
+	#WAIT 2000;{
+	    #IF {!$travelerror}{
+			81wn;
+			where;
+			challenge area;
+		};
+		#ELSE {
+	        resettravel;
+	    }
+	};
+}
+{5}
+
+#ALIAS {gotoZhengisCastle} {
+    gotohs;
+	#ECHO {[%ansi(green)]Okay![%ansi(reset)] Travelling to the [%ansi(yellow)]Zhengi's Castle[%ansi(reset)]!};
+	#WAIT 2000;{
+	    #IF {!$travelerror}{
+			39w3s3w4s1u2w2s9w;
+			where;
+			challenge area;
+		};
+		#ELSE {
+	        resettravel;
+	    }
+	};
+}
+{5}
+
+
+/* ----------------------------------------------------------------------------------------------   */
+/*                                     Future Directions											*/
+#ALIAS {gotoAPollutedVillage} {
+    gotostar;
+	#ECHO {[%ansi(green)]Okay![%ansi(reset)] Travelling to the [%ansi(yellow)]Polluted Village[%ansi(reset)]!};
+	#WAIT 2000;{
+	    #IF {!$travelerror}{
+			10w2sw2s5w;
+			where;
+			challenge area;
+	    };
+	    #ELSE {
+	        resettravel;
+	    }
+	};
+}
+{5}
+
+#ALIAS {gotoArcheologicalDig} {
+    gotostar;
+	#ECHO {[%ansi(green)]Okay![%ansi(reset)] Travelling to the [%ansi(yellow)]Archeological Dig[%ansi(reset)]!};
+	#WAIT 2000;{
+	    #IF {!$travelerror}{
+			22n8e5s;
+			where;
+			challenge area;
+	    };
+	    #ELSE {
+	        resettravel;
+	    }
+	};
+}
+{5}
+
+#ALIAS {gotoBlastedSwamp} {
+    gotostar;
+	#ECHO {[%ansi(green)]Okay![%ansi(reset)] Travelling to the [%ansi(yellow)]Blasted Swamp[%ansi(reset)]!};
+	#WAIT 2000;{
+	    #IF {!$travelerror}{
+			16w8n;
+			where;
+			challenge area;
+	    };
+	    #ELSE {
+	        resettravel;
+	    }
+	};
+}
+{5}
+
+#ALIAS {gotoColony} {
+    gotostar;
+	#ECHO {[%ansi(green)]Okay![%ansi(reset)] Travelling to the [%ansi(yellow)]Colony[%ansi(reset)]!};
+	#WAIT 2000;{
+	    #IF {!$travelerror}{
+			e4swe7s2e4sd13e2n;
+			where;
+			challenge area;
+	    };
+	    #ELSE {
+	        resettravel;
+	    }
+	};
+}
+{5}
+
+#ALIAS {gotoCybertechLabs} {
+    gotostar;
+	#ECHO {[%ansi(green)]Okay![%ansi(reset)] Travelling to the [%ansi(yellow)]Cybertech Labs[%ansi(reset)]!};
+	#WAIT 2000;{
+	    #IF {!$travelerror}{
+			5e3s2w1s;
+			where;
+			challenge area;
+	    };
+	    #ELSE {
+	        resettravel;
+	    }
+	};
+}
+{5}
+
+#ALIAS {gotoCybertechPreparatorySchool} {
+	gotostar;
+	#ECHO {[%ansi(green)]Okay![%ansi(reset)] Travelling to the [%ansi(yellow)]Cybertech Preparatory School[%ansi(reset)]!};
+    #WAIT 2000;{
+        #IF {!$travelerror}{
+            5e3s2w4n;look pedestal;
+			where;
+			challenge area;
+        };
+        #ELSE {
+            resettravel;
+        }
+    };
+}
+{5}
+
+#ALIAS {gotoDeathRow} {
+    gotostar;
+	#ECHO {[%ansi(green)]Okay![%ansi(reset)] Travelling to the [%ansi(yellow)]Death Row[%ansi(reset)]!};
+	#WAIT 2000;{
+	    #IF {!$travelerror}{
+			8n;w;duck tape;
+			where;
+			challenge area;
+	    };
+	    #ELSE {
+	        resettravel;
+	    }
+	};
+}
+{5}
+
+#ALIAS {gotoDracharnos} {
+    gotostar;
+	#ECHO {[%ansi(green)]Okay![%ansi(reset)] Travelling to the [%ansi(yellow)]Dracharnos[%ansi(reset)]!};
+	#WAIT 2000;{
+	    #IF {!$travelerror}{
+			25wnuwununend2n3ed2nw;open grate;u;
+			where;
+			challenge area;
+			helpDracharnos;
+	    };
+	    #ELSE {
+	        resettravel;
+	    }
+	};
+}
+{5}
+
+#ALIAS {helpDracharnos}
+{
+    #ECHO {[%ansi(yellow)]To Aged Dragon[%ansi(reset)]: enter tube n of Wzu; w;4n;drink stream;2swsw, Should be in 'A Rock Filled Tunnel'.  Remove adrenaline, rest, and wait for tick(s)};
+}
+{5}
+
+
+#ALIAS {gotoDrugDealer} {
+    gotostar;
+	#ECHO {[%ansi(green)]Okay![%ansi(reset)] Travelling to the [%ansi(yellow)]Drug Dealer[%ansi(reset)]!};
+	#WAIT 2000;{
+	    #IF {!$travelerror}{
+			8w5n4w;enter chevy;d3s2e;
+			where;
+			challenge area;
+	    };
+	    #ELSE {
+	        resettravel;
+	    }
+	};
+}
+{5}
+
+#ALIAS {gotoECJunkyard} {
+    gotostar;
+	#ECHO {[%ansi(green)]Okay![%ansi(reset)] Travelling to the [%ansi(yellow)]Junk Yard[%ansi(reset)]!};
+	#WAIT 2000;{
+	    #IF {!$travelerror}{
+			8w2n;
+			where;
+			challenge area;
+	    };
+	    #ELSE {
+	        resettravel;
+	    }
+	};
+}
+{5}
+
+#ALIAS {gotoECMilitary} {
+    gotostar;
+	#ECHO {[%ansi(green)]Okay![%ansi(reset)] Travelling to the [%ansi(yellow)]E.C. Military[%ansi(reset)]!};
+	#WAIT 2000;{
+	    #IF {!$travelerror}{
+			9w3sw;push button;e2se;
+			where;
+			challenge area;
+	    };
+	    #ELSE {
+	        resettravel;
+	    }
+	};
+}
+{5}
+
+#ALIAS {gotoECVamps} {
+    gotostar;
+	#ECHO {[%ansi(green)]Okay![%ansi(reset)] Travelling to the [%ansi(yellow)]E.C. Vampires[%ansi(reset)]!};
+	#WAIT 2000;{
+	    #IF {!$travelerror}{
+			5e11n;open door e;6es;open cub;s;look latch;2se2nwsw2n2e;look wall;e2nw;look book;2d3n;
+			where;
+			challenge area;
+	    };
+	    #ELSE {
+	        resettravel;
+    	}
+	};
+}
+{5}
+
+#ALIAS {gotoECNuclearPower} {
+    gotostar;
+	#ECHO {[%ansi(green)]Okay![%ansi(reset)] Travelling to the [%ansi(yellow)]E.C. Nuclear Power Plant[%ansi(reset)]!};
+	#WAIT 2000;{
+	    #IF {!$travelerror}{
+			17n3e;open gate e;e;
+			where;
+			challenge area;
+	    };
+	    #ELSE {
+	        resettravel;
+	    }
+	};
+}
+{5}
+
+#ALIAS {gotoECPowerAndPlumbing} {
+    gotostar;
+	#ECHO {[%ansi(green)]Okay![%ansi(reset)] Travelling to the [%ansi(yellow)]E.C. Power and Plumbing[%ansi(reset)]!};
+	#WAIT 2000;{
+	    #IF {!$travelerror}{
+			10en;
+			where;
+			challenge area;
+	    };
+	    #ELSE {
+	        resettravel;
+    	}
+	};
+}
+{5}
+
+#ALIAS {gotoECSecurityCompound} {
+	gotostar;
+	#ECHO {[%ansi(green)]Olay1[%ansi(reset)] Traveling to the [%ansi(yellow)]E.C. Security Compound[%ansi(reset)]!};
+	#WAIT 2000;{
+		#IF {!$travelerror}{
+			9w3s;
+			where;
+			challenge area;
+		};
+		#ELSE {
+			resettravel;
+		};
+	};
+}
+{5}
+
+#ALIAS {gotoECUniversity} {
+    gotostar;
+	#ECHO {[%ansi(green)]Okay![%ansi(reset)] Travelling to the [%ansi(yellow)]E.C. University[%ansi(reset)]!};
+	#WAIT 2000;{
+	    #IF {!$travelerror}{
+			4w6s2ws;
+			where;
+			challenge area;
+	    };
+	    #ELSE {
+    	    resettravel;
+	    }
+	};
+}
+{5}
+
+#ALIAS {gotoElectronicsSchool} {
+    gotostar;
+	#ECHO {[%ansi(green)]Okay![%ansi(reset)] Travelling to the [%ansi(yellow)]Electronics School[%ansi(reset)]!};
+	#WAIT 2000;{
+	    #IF {!$travelerror}{
+			4w4n1w1n;
+			where;
+			challenge area;
+    	};
+	    #ELSE {
+	        resettravel;
+	    }
+	};
+}
+{5}
+
+#ALIAS {gotoElectronicsShop} {
+    gotostar;
+	#ECHO {[%ansi(green)]Okay![%ansi(reset)] Travelling to the [%ansi(yellow)]Electronics Shop[%ansi(reset)]!};
+	#WAIT 2000;{
+	    #IF {!$travelerror}{
+			5nes;
+			where;
+			challenge area;
+	    };
+	    #ELSE {
+    	    resettravel;
+	    }
+	};
+}
+{5}
+
+#ALIAS {gotoFailFamilyLegacy} {
+    gotostar;
+	#ECHO {[%ansi(green)]Okay![%ansi(reset)] Travelling to the [%ansi(yellow)]Fail Family Legacy[%ansi(reset)]!};
+	#WAIT 2000;{
+	    #IF {!$travelerror}{
+			e9s3e;
+			where;
+			challenge area;
+			#ACTION {^Walkway to a Huge Mansion}
+			{
+				#ECHO {To get to Freddy: e;e;n;n;n;open door n;n;search coat;s;d;unlock door w;open door w;w;n;e;n;e;e;n;w;push button;n;n;w;u;push 11;listen;e;s;s;w;n;enter tube;push blue};
+				#ECHO {Use the alias 'gotoFailFamilyLegacyFreddy'};
+			}{5};
+	    };
+    	#ELSE {
+	        resettravel;
+	    }
+	};
+}
+{5}
+
+#ALIAS {gotoFailFamilyLegacyFreddy} {
+	where;
+	#WAIT 2000;{
+		#IF {{$currentRoom} === {Walkway to a Huge Mansion}}
+		{
+			#ECHO {[%ansi(green)]Okay![%ansi(reset)] Travelling to [%ansi(yellow)] Freddy Fail[%ansi(reset)]!};
+			e;e;n;n;n;open door n;n;search coat;s;d;unlock door w;open door w;w;n;e;n;e;e;n;w;push button;n;n;w;u;push 11;listen;e;s;s;w;n;enter tube;push blue;
+		};
+		#ELSE 
+		{
+			#ECHO {<FF))>Error[%ansi(reset)]: You're not in the correct room 'Walkway to a Huge Mansion'!};
+		};
+	}
+}
+{5}
+
+#ALIAS {gotoFassanSlaveCompound} {
+    gotostar;
+    #ECHO {[%ansi(green)]Okay![%ansi(reset)] Travelling to the [%ansi(yellow)]Fassan Slave Compound[%ansi(reset)]!};
+    #ECHO {[%ansi(red)]Warning![%ansi(reset)] Lots of flows, DT flow in the Air Ducts!};
+    #WAIT 2000;{
+        #IF {!$travelerror} {
+            2ds2dwd27wuwu3n4w3nwun;
+            where;
+            challenge area;
+        };
+        #ELSE {
+            resettravel;
+        };
+    }
+}
+{5}
+
+#ALIAS {gotoGenCloneBioMechanicalLabs} {
+	gotostar;
+	#ECHO {[%ansi(green)]Okay![%ansi(reset)] Travelling to the [%ansi(yellow)]GenClone BioMechanical Labs[%ansi(reset)]!};
+	#WAIT 2000;{
+		#IF {!$travelerror}{
+			16w9nen4w8n;
+			where;
+			challenge area;
+		};
+		#ELSE {
+			resettravel;
+		};
+	};
+}
+{5}
+
+#ALIAS {gotoHitpointIncreaser} {
+    gotostar;
+	#ECHO {[%ansi(green)]Okay![%ansi(reset)] Travelling to the [%ansi(yellow)]Hitpoints Increaser[%ansi(reset)]!};
+	#WAIT 2000;{
+	    #IF {!$travelerror}{
+			/* (Xrr!yth); */
+			3n1e;open door s;1s1u;
+			where;
+			challenge area;
+	    };
+	    #ELSE {
+	        resettravel;
+	    }
+	};
+}
+{5}
+
+#ALIAS {gotoImplantChamber} {
+    gotostar;
+	#ECHO {[%ansi(green)]Okay![%ansi(reset)] Travelling to the [%ansi(yellow)]Implant Chamber[%ansi(reset)]!};
+	#WAIT 2000;{
+	    #IF {!$travelerror}{
+			4w3n3w;
+			where;
+			challenge area;
+	    };
+	    #ELSE {
+	        resettravel;
+	    }
+	};
+}
+{5}
+
+#ALIAS {gotoKiddieKandy} {
+	gotostar;
+	#ECHO {[%ansi(green)]Okay![%ansi(reset)] Travelling to the [%ansi(yellow)]Kiddie Kandy Incorporated[%ansi(reset)]!};
+	#WAIT 2000;{
+		#IF {!$travelerror} {
+			4n2wn;open gate n;n;
+			where;
+			challenge area;
+		};
+		#ELSE {
+			resettravel;
+		}
+	}
+}
+{5}
+
+#ALIAS {gotoKromguard} {
+    gotostar;
+	#ECHO {[%ansi(green)]Okay![%ansi(reset)] Travelling to the [%ansi(yellow)]Kromguard[%ansi(reset)]!};
+	#WAIT 2000;{
+	    #IF {!$travelerror}{
+			19w3n;enter tube;4u;enter port;
+			where;
+			challenge area;
+	    };
+	    #ELSE {
+	        resettravel;
+    	}
+	};
+}
+{5}
+
+#ALIAS {gotoLuxare} {
+    gotostar;
+	#ECHO {[%ansi(green)]Okay![%ansi(reset)] Travelling to the [%ansi(yellow)]Luxare[%ansi(reset)]!};
+	#WAIT 2000;{
+	    #IF {!$travelerror}{
+			4w4nen;
+			where;
+			challenge area;
+	    };
+	    #ELSE {
+	        resettravel;
+    	}
+	};
+}
+{5}
+
+#ALIAS {gotoMerquryCity} {
+    gotostar;
+	#ECHO {[%ansi(green)]Okay![%ansi(reset)] Travelling to the [%ansi(yellow)]Merqury City[%ansi(reset)]!};
+	#WAIT 2000;{
+	    #IF {!$travelerror}{
+			19w3n;enter tube;
+			where;
+			challenge area;
+	    };
+	    #ELSE {
+	        resettravel;
+    	}
+	};
+}
+{5}
+
+#ALIAS {gotoNETWORKCommunicationsTower} {
+    gotostar;
+	#ECHO {[%ansi(green)]Okay![%ansi(reset)] Travelling to the [%ansi(yellow)]NETWORK Communications Tower[%ansi(reset)]!};
+	#WAIT 2000;{
+	    #IF {!$travelerror}{
+			4w4ne;open door s;s;
+			where;
+			challenge area;
+	    };
+	    #ELSE {
+    	    resettravel;
+	    }
+	};
+}
+{5}
+
+#ALIAS {gotoReinforcer} {
+    gotostar;
+	#ECHO {[%ansi(green)]Okay![%ansi(reset)] Travelling to the [%ansi(yellow)]Reinforcer[%ansi(reset)]!};
+	#WAIT 2000;{
+	    #IF {!$travelerror}{
+			4w5n2w;
+			where;
+			challenge area;
+	    };
+	    #ELSE {
+	        resettravel;
+    	}
+	};
+}
+{5}
+
+#ALIAS {gotoRuinsOfHTOM} {
+    gotostar;
+	#ECHO {[%ansi(green)]Okay![%ansi(reset)] Travelling to the [%ansi(yellow)]Ruins of the High Tower of Magic[%ansi(reset)]!};
+	#WAIT 2000;{
+	    #IF {!$travelerror}{
+			34w3n2w7n;
+			where;
+			challenge area;
+	    };
+	    #ELSE {
+	        resettravel;
+	    }
+	};
+}
+{5}
+
+#ALIAS {gotoRuinsOfTheSilverTower} {
+    gotostar;
+	#ECHO {[%ansi(green)]Okay![%ansi(reset)] Travelling to the [%ansi(yellow)]Ruins of the Silver Tower[%ansi(reset)]!};
+	#WAIT 2000;{
+	    #IF {!$travelerror}{
+			9e11s;
+			where;
+			challenge area;
+	    };
+	    #ELSE {
+	        resettravel;
+	    }
+	};
+}
+{5}
+
+#ALIAS {gotoSimeonTheCybernetic} {
+    gotostar;
+	#ECHO {[%ansi(green)]Okay![%ansi(reset)] Travelling to the [%ansi(yellow)]Simeon the Cybernetic[%ansi(reset)]!};
+	#WAIT 2000;{
+	    #IF {!$travelerror}{
+			4w3n1e;
+			where;
+			challenge area;
+	    };
+	    #ELSE {
+	        resettravel;
+    	}
+	};
+}
+{5}
+
+#ALIAS {gotoTriskinAsylum} {
+    gotostar;
+			#ECHOOME {ZONE CLOSED};
+	#WAIT 2000;{
+	    #IF {!$travelerror}{
+			where;
+	    };
+	    #ELSE {
+	        resettravel;
+	    }
+	};
+}
+{5}
+
+#ALIAS {gotoVirtualWorldOfNETWORK} {
+    gotostar;
+	#ECHO {[%ansi(green)]Okay![%ansi(reset)] Travelling to the [%ansi(yellow)]Virtual World of NETWORK[%ansi(reset)]!};
+	#WAIT 2000;{
+	    #IF {!$travelerror}{
+			4w4ne;open door s;3s;push 25;1n;kill secretary;push button;open door n;1n1e;push button;push 0316;1w1s;tweak nose;1e;pull latch;wear app;push button;
+			where;
+			challenge area;
+	    };
+	    #ELSE {
+	        resettravel;
+	    }
+	};
+}
+{5}
+
+#ALIAS {gotoWeaponEnhancer} {
+    gotostar;
+	#ECHO {[%ansi(green)]Okay![%ansi(reset)] Travelling to the [%ansi(yellow)]Weapons Enhancer[%ansi(reset)]!};
+	#WAIT 2000;{
+	    #IF {!$travelerror}{
+			5n2w1s1e;
+			where;
+	    };
+	    #ELSE {
+	        resettravel;
+	    }
+	};
+}
+{5}
+
+#ALIAS {gotoWeaponSpecializer} {
+    gotoskull;
+	#ECHO {[%ansi(green)]Okay![%ansi(reset)] Travelling to the [%ansi(yellow)]Weapon Specializer[%ansi(reset)]!};
+	#WAIT 2000;{
+	    #IF {!$travelerror}{
+			4sd2enen2e4nw3nen2w2n2e2n2e2un4eu;open ebony;ws2w;open door w;2w2ne2n2w;open door s;s;open tap;
+			where;
+	    };
+	    #ELSE {
+	        resettravel;
+	    }
+	};
+}
+{5}
+
+#ALIAS {gotoWeaponUnSpecializer} {
+    gotostar;
+	#ECHO {[%ansi(green)]Okay![%ansi(reset)] Travelling to the [%ansi(yellow)]Weapon UNSpecializer[%ansi(reset)]!};
+	#WAIT 2000;{
+	    #IF {!$travelerror}{
+			3n1e;open door s;1s1u1e;
+			where;
+	    };
+	    #ELSE {
+	        resettravel;
+	    }
+	};
+}
+{5}
+
+#ALIAS {gotoZulDane} {
+    gotostar;
+	#ECHO {[%ansi(green)]Okay![%ansi(reset)] Travelling to the [%ansi(yellow)]City of Zul'Dane[%ansi(reset)]!};
+	#WAIT 2000;{
+	    #IF {!$travelerror} {
+			26n4e;
+			where;
+			challenge area;
+	    };
+	    #ELSE {
+	        resettravel;
+	    };
+	};
+}
+{5}
+
+
+/* ----------------------------------------------------------------------------------------------   */
+/*                             Underdark Directions													*/
+
+#ALIAS {gotoUndeadShark} {
+	gotoskull;
+	/* from slave square: sharkskin pants -2es2u open plank e es open door s 3s open door w ws3ene3n2en2en5esese4s open door s s open door s 6s open water e en2e2s open door s 2s2e; */
+	#ECHO {[%ansi(green)]Okay![%ansi(reset)] Travelling to the [%ansi(yellow)]Undead Shark[%ansi(reset)]!};
+	#WAIT 2000;{
+		#IF {!$travelerror}
+		{
+			2es2u;open plant e;es;open door s;3s;open door w;ws3ene3n2en2en5esese4s;open door s;s;open door s;6s;open water e;en2e2s;open door s;2s2e;
+			where;
+			challenge area;
+		};
+		#ELSE {
+			resettravel;
+		};
+	}
+}
+{5}
+
+#ALIAS {gotoHeadShrinker} {
+	gotoskull;
+	#ECHO {[%ansi(green)]Okay![%ansi(reset)] Travelling to the [%ansi(yellow)]head Shrinker[%ansi(reset)]!};
+	#WAIT 2000;{
+		#IF {!$travelerror} {
+			11s2wdnund2sundwun2d3ws;open hide;1w;
+			where;
+			challenge area;
+		};
+		#ELSE {
+			resettravel;
+		};
+	};
+}
+{5}
+
+#ALIAS {gotoLizardCaverns} {
+	gotoskull;
+	#ECHO {[%ansi(green)]Okay![%ansi(reset)] Travelling to the [%ansi(yellow)]Lizard Caverns[%ansi(reset)]!};
+	#WAIT 2000;{
+		#IF {!$travelerror} {
+			11s2wdnund2sundwun2dw4n;move lizard;take key;unlock door e;open door e;drop key;e;
+			where;
+			challenge area;
+		};
+		#ELSE {
+			resettravel;
+		};
+	};
+}
+{5}
+
+#ALIAS {gotoWyllowwood} {
+	gotoskull;
+	#ECHO {[%ansi(green)]Okay![%ansi(reset)] Travelling to the [%ansi(yellow)]Wyllowwood[%ansi(reset)]!};
+	#WAIT 2000;{
+		#IF {!$travelerror} {
+			6s2w4sedwun2dw4n;move lizard;get key;unlock door e;bash door e;open door e;drop key;2e2nes2en;enter arch;
+			where;
+			challenge area;
+		};
+		#ELSE {
+			resettravel;
+		};
+	};
+}
+{5}
+
+
+/* ----------------------------------------------------------------------------------------------   */
+/*                                  Outer Planes Directions											*/
+
+#ALIAS {gotoAbyssUnholyModrian} {
+    gotoastral;
+	#ECHO {[%ansi(green)]Okay![%ansi(reset)] Travelling to the [%ansi(yellow)]City of Unholy Modrian[%ansi(reset)]!};
+    #WAIT 2000;{
+        #IF {!$travelerror} {
+       		5nu3w;enter pool;
+			where;
+			challenge area;
+        };
+        #ELSE {
+            resettravel;
+        };
+    };
+}
+{5}
+
+#ALIAS {gotoAmoria} {
+    gotoastral;
+	#ECHO {[%ansi(green)]Okay![%ansi(reset)] Travelling to the [%ansi(yellow)]Amoria[%ansi(reset)]!};
+    #WAIT 2000;{
+        #IF {!$travelerror} {
+			5n3u2n3e;enter pool;
+			where;
+			challenge area;
+        };
+        #ELSE {
+            resettravel;
+        };
+    };
+}
+{5}
+
+#ALIAS {gotoGith}
+{
+    #VARIABLE {githFound}{0};
+    #VARIABLE {findGith}{1};
+    #MATH githX 0;
+    #MATH githY 0;
+    #MATH githZ 0;
+    gotoastral;
+    #ECHO {[%ansi(green)]Okay![%ansi(reset)] Travelling to [%ansi(yellow)]Gith[%ansi(reset)]!};
+    #WAIT 2000;
+    {
+        #IF {!$travelerror}
+        {
+            #5 north;exits;
+            #ACTION {^The Astral Plane}
+            {
+                #IF {$debug === 1}
+                {
+                    #ECHO {[%ansi(cyan)]Debug:[%ansi(reset)] Astral Plane Action triggered.};
+                };
+                #IF {$findGith === 1 && !$isFighting}
+                {
+                    #IF {$debug === 1}
+                    {
+                        #ECHO {[%ansi(cyan)]Debug:[%ansi(reset)] Find Gith is [%ansi(green)]ON[%ansi(reset)]!};
+                    };
+                    #IF {$githX < 8}
+                    {
+                        #IF {$debug === 1}
+                        {
+                            #ECHO {[%ansi(cyan)]Debug:[%ansi(reset)] Gith X = $githX};
+                        };
+                        #IF {$githFound === 0}
+                        {
+                            north;
+                            #MATH githX $githX + 1;
+                        };
+                        #ELSE
+                        {
+                            enter island;
+                            challenges area;
+                        };
+                        #IF {$githY < 8 && $githX == 7}
+                        {
+                            #MATH githX 0;
+                            #IF {$debug === 1}
+                            {
+                                #ECHO {[%ansi(cyan)]Debug:[%ansi(reset)] Gith Y = $githY};
+                            };
+                            #IF {$githFound === 0}
+                            {
+                                west;
+                                #MATH githY $githY + 1;
+                            };
+                            #ELSE
+                            {
+                                enter island;
+                                challenges area;
+                            };
+                            #IF {$githZ < 8 && $githY === 7}
+                            {
+                                #IF {$debug === 1}
+                                {
+                                    #ECHO {[%ansi(cyan)]Debug:[%ansi(reset)] Gith Z = $githZ};
+                                };
+                                #IF {$githFound === 0}
+                                {
+                                    up;
+                                    #MATH githZ $githZ + 1;
+                                    #MATH githY 0;
+                                    #MATH githX 0;
+                                };
+                                #ELSE
+                                {
+                                    enter island;
+                                    challenges area;
+                                };
+                            };
+                        };
+                    };
+                    #IF {$githZ === 8}
+                    {
+                        #ECHO {[%ansi(red)]Warning![%ansi(reset)] Unable to locate the Githyanki Fortress!};
+                        #VAR {findGith} {0};
+                    };
+                };
+            };
+        #ECHO {[%ansi(red)]Warning![%ansi(reset)] Attacked, ceasing search.};
+        };
+        #ELSE
+        {
+            resettravel;
+        };
+    };
+}
+{5}
+
+#ALIAS {gotoLuniaHeaven} {
+    gotoastral;
+	#ECHO {[%ansi(green)]Okay![%ansi(reset)] Travelling to the [%ansi(yellow)]Lunia Heaven 1[%ansi(reset)]!};
+    #WAIT 2000;{
+        #IF {!$travelerror} {
+			5n3d2sw;enter pool;
+			#ACTION {^You step into a gold color pool.}
+				helpHeaven;{
+			};
+			where;
+			challenge area;
+
+        };
+        #ELSE {
+            resettravel;
+        };
+    };
+}
+{5}
+
+#ALIAS {helpHeaven}
+{
+	#ECHO { [%ansi(orange)]------------------------[%ansi(cyan)]Help Heaven[%ansi(orange)]---------------------------------[%ansi(reset)]};
+	#ECHO { [%ansi(orange)]To Thor[%ansi(reset)]: nenenu5wn2wse - Use [%ansi(gray)]gotoThor[%ansi(reset)]};
+    #ECHO { [%ansi(orange)]To Diancecht[%ansi(reset)]: 2w2n4esene3ne3nws - Use [%ansi(gray)]gotoDiancecht[%ansi(reset)]};
+    #ECHO { [%ansi(orange)]To Ptah[%ansi(reset)]: ne7s2edeu4w2n4u - Use [%ansi(gray)]gotoPtah[%ansi(reset)]};
+	#ECHO { [%ansi(orange)]To Ixlilton[%ansi(reset)]: 4d2s4edsu2e4n - Use [%ansi(gray)]gotoIxlilton[%ansi(reset)]};
+	#ECHO { [%ansi(orange)]To Ushas[%ansi(reset)]: 4s2wdwu3ws3w3sw3sw - Use [%ansi(gray)] gotoUshas[%ansi(reset)] };
+	#ECHO { [%ansi(orange)]To Fu-Hsiing[%ansi(reset)]: e3nenene - Use [%ansi(gray)] gotoFu[%ansi(reset)] };
+	#ECHO { [%ansi(orange)]To Ebisu[%ansi(reset)]: unnww - Use [%ansi(gray)]gotoEbisu[%ansi(reset)] };
+	#ECHO { [%ansi(orange)]To Castle Mahlhevik[%ansi(reset)]: e3s2enuseuene - Use [%ansi(gray)]gotoMahlhevik[%ansi(reset)] };
+	#ECHO { [%ansi(orange)]--------------------------------------------------------------------[%ansi(reset)]};
+
+}
+{5}
+
+#ALIAS {gotoThor} {
+	where;
+	#WAIT 2000;{
+		#IF {{$currentRoom} === {In the Silver Sea}}
+		{
+			#ECHO {[%ansi(green)]Okay![%ansi(reset)] Travelling to [%ansi(yellow)]Thor, God of Lightning[%ansi(reset)]!};
+			nenenu5wn2wse;
+		};
+		#ELSE
+		{
+			#ECHO {[%ansi(red)]Error[%ansi(reset)]: You're not in the correct room 'In the Silver Sea'!};
+		};
+	};
+}
+{5}A
+
+#ALIAS {gotoDiancecht}
+{
+	where;
+	#WAIT 2000;{
+		#IF {{$currentRoom} === {Before a Palatial Estate}}
+		{
+			#ECHO {[%ansi(green)]Okay![%ansi(reset)] Travelling to [%ansi(yellow)]Diancecht[%ansi(reset)]!};
+			2w2n4esene3ne3nws;
+		};
+		#ELSE
+		{
+			#ECHO {[%ansi(red)]Error[%ansi(reset)]: You're not in the correct room 'Before the Palatial Estate'!};
+		};
+	};
+}
+{5}
+
+#ALIAS {gotoPtah}
+{
+	where;
+	#WAIT 2000;{
+		#IF {{$currentRoom} === {Before a Spiraling Tower}}
+		{
+			#ECHO {[%ansi(green)]Okay![%ansi(reset)] Travelling to [%ansi(yellow)]Ptah[%ansi(reset)]!};
+			ne7s2edeu4w2n4u;
+		};
+		#ELSE
+		{
+			#ECHO {[%ansi(red)]Error[%ansi(reset)]: You're not in the correct room 'Before a Spiraling Tower'!}
+		};
+	};
+}
+{5}
+
+#ALIAS {gotoIxlilton}
+{
+	where;
+	#WAIT 2000;{
+		#IF {{$currentRoom} === {A Garden Plateau}}
+		{
+			#ECHO {[%ansi(green)]Okay![%ansi(reset)] Travelling to [%ansi(yellow)]Ixlilton[%ansi(reset)]!};
+			4d2s4edsu2e4n;
+		};
+		#ELSE
+		{
+			#ECHO {[%ansi(red)]Error[%ansi(reset)]: You're not in the correct room 'A Garden Plateau'!};
+		};
+	};
+}
+{5}
+
+#ACTION {^A huge island of matter is floating here.}
+{
+    #IF {$findGith === 1}
+    {
+        #ECHO {[%ansi(yellow)]***** GITH FOUND! *****[%ansi(reset)]};
+        revoke;
+        revoke;
+        #VAR {githFound}{1};
+        #VAR {findGith}{0};
+        enter island;
+        challenges area
+    };
+}
+{1};
+
+#ALIAS {gotoGith}
+{
+    #VARIABLE {githFound}{0};
+    #VARIABLE {findGith}{1};
+    #MATH githX 0;
+    #MATH githY 0;
+    #MATH githZ 0;
+    gotoastral;
+    #ECHO {[%ansi(green)]Okay![%ansi(reset)] Travelling to [%ansi(yellow)]Gith[%ansi(reset)]!};
+    #WAIT 2000;
+    {
+        #IF {!$travelerror}
+        {
+            #5 north;exits;
+            #ACTION {^The Astral Plane}
+            {
+                #IF {$debug === 1}
+                {
+                    #ECHO {[%ansi(cyan)]Debug:[%ansi(reset)] Astral Plane Action triggered.};
+                };
+                #IF {$findGith === 1 && !$isFighting}
+                {
+                    #IF {$debug === 1}
+                    {
+                        #ECHO {[%ansi(cyan)]Debug:[%ansi(reset)] Find Gith is [%ansi(green)]ON[%ansi(reset)]!};
+                    };
+                    #IF {$githX < 8}
+                    {
+                        #IF {$debug === 1}
+                        {
+                            #ECHO {[%ansi(cyan)]Debug:[%ansi(reset)] Gith X = $githX};
+                        };
+                        #IF {$githFound === 0}
+                        {
+                            north;
+                            #MATH githX $githX + 1;
+                        };
+                        #ELSE
+                        {
+                            enter island;
+                            challenges area;
+                        };
+                        #IF {$githY < 8 && $githX == 7}
+                        {
+                            #MATH githX 0;
+                            #IF {$debug === 1}
+                            {
+                                #ECHO {[%ansi(cyan)]Debug:[%ansi(reset)] Gith Y = $githY};
+                            };
+                            #IF {$githFound === 0}
+                            {
+                                west;
+                                #MATH githY $githY + 1;
+                            };
+                            #ELSE
+                            {
+                                enter island;
+                                challenges area;
+                            };
+                            #IF {$githZ < 8 && $githY === 7}
+                            {
+                                #IF {$debug === 1}
+                                {
+                                    #ECHO {[%ansi(cyan)]Debug:[%ansi(reset)] Gith Z = $githZ};
+                                };
+                                #IF {$githFound === 0}
+                                {
+                                    up;
+                                    #MATH githZ $githZ + 1;
+                                    #MATH githY 0;
+                                    #MATH githX 0;
+                                };
+                                #ELSE
+                                {
+                                    enter island;
+                                    challenges area;
+                                };
+                            };
+                        };
+                    };
+                    #IF {$githZ === 8}
+                    {
+                        #ECHO {[%ansi(red)]Warning![%ansi(reset)] Unable to locate the Githyanki Fortress!};
+                        #VAR {findGith} {0};
+                    };
+                };
+            };
+        #ECHO {[%ansi(cyan)]Warning![%ansi(reset)] Attacked, ceasing search.};
+        };
+        #ELSE
+        {
+            resettravel;
+        };
+    };
+}
+{5}
+
+#ALIAS {gotoAvernusHell} {
+    gotoastral;
+	#ECHO {[%ansi(green)]Okay![%ansi(reset)] Travelling to the [%ansi(yellow)]Level 1 Hell: Avernus[%ansi(reset)]!};
+    #WAIT 2000;{
+        #IF {!$travelerror} {
+			 5wdes;enter pool;
+			 where;
+			challenge area;
+        };
+        #ELSE {
+            resettravel;
+        };
+    };
+}
+{5}
+
+#ALIAS {gotoImmoth} {
+	gotohs;
+	#ECHO {[%ansi(green)]Okay![%ansi(reset)] Travelling to the [%ansi(yellow)]Immoth Hallow[%ansi(reset)]!};
+	#WAIT 2000;{
+		#IF {!$travelerror} {
+		    2nu;open door west;w;read title73;
+			where;
+			challenge area;
+		};
+		#ELSE {
+			resettravel;
+		};
+	};
+}
+{5}
+
+#ALIAS {gotoElementalPlaneOfAir} {
+	gotohs;
+	#ECHO {[%ansi(green)]Okay![%ansi(reset)] Travelling to the [%ansi(yellow)]Elemental Plane of Air[%ansi(reset)]!};
+	#WAIT 2000;{
+	    #IF {!$travelerror}{
+			7e4ne;enter font;uw4nwu4s3wnwsws4w;
+			#ECHO {[%ansi(red)]Warning![%ansi(reset)] Lots of flows.};
+			where;
+			challenge area;
+		};
+		#ELSE {
+	        resettravel;
+		}
+    }
+}
+{5}
+
+#ALIAS {gotoElementalPlaneOfEarth} {
+    gotohs;
+	#ECHO {[%ansi(green)]Okay![%ansi(reset)] Travelling to the [%ansi(yellow)]Elemental Plane of Earth[%ansi(reset)]!};
+	#WAIT 2000;{
+	    #IF {!$travelerror}{
+			67w12seseds6wndnd;enter portal;
+			where;
+			challenge area;
+		};
+		#ELSE {
+	        resettravel;
+		}
+    }
+}
+{5}
+
+#ALIAS {gotoElementalPlaneOfFire} {
+    gotohs;
+	#ECHO {[%ansi(green)]Okay![%ansi(reset)] Travelling to the [%ansi(yellow)]Elemental Plane of Fire[%ansi(reset)]!};
+	#WAIT 2000;{
+	    #IF {!$travelerror}{
+			7e4ne;enter font;uw4nwu4s3wnwsws18wd2s4w;
+			#ECHO {[%ansi(red)]Warning![%ansi(reset)] Lots of flows.};
+			where;
+			challenge area;
+		};
+		#ELSE {
+	        resettravel;
+		}
+    }
+}
+{5}
+
+#ALIAS {gotoElementalPlaneOfIce} {
+    gotohs;
+	#ECHO {[%ansi(green)]Okay![%ansi(reset)] Travelling to the [%ansi(yellow)]Elemental Plane of Ice[%ansi(reset)]!};
+	#WAIT 2000;{
+	    #IF {!$travelerror}{
+			7e4ne;enter font;uw4nwu4s3wne;
+			where;
+			challenge area;
+		};
+		#ELSE {
+	        resettravel;
+		}
+    }
+}
+{5}
+
+#ALIAS {gotoElementalPlaneOfOoze} {
+    gotohs;
+	#ECHO {[%ansi(green)]Okay![%ansi(reset)] Travelling to the [%ansi(yellow)]Elemental Plane of Ooze[%ansi(reset)]!};
+	#WAIT 2000;{
+	    #IF {!$travelerror}{
+			7e4ne;enter font;3ese;
+			where;
+			challenge area;
+		};
+		#ELSE {
+        	resettravel;
+	    }
+	}
+}
+{5}
+
+#ALIAS {gotoElementalPlaneOfSmoke} {
+    gotohs;
+	#ECHO {[%ansi(green)]Okay![%ansi(reset)] Travelling to the [%ansi(yellow)]Elemental Plane of Smoke[%ansi(reset)]!};
+	#WAIT 2000;{
+	    #IF {!$travelerror}{
+			7e4ne;enter font;uw4nwu4s3wnwsws13w;
+			#ECHO {[%ansi(red)]Warning![%ansi(reset)] Lots of flows.};
+			where;
+			challenge area;
+			#IF {{$currentRoom} === {The Border of the Para-Elemental Plane of Smoke}}
+			{
+				helpEPOS;
+			};
+		};
+		#ELSE {
+    	    resettravel;
+		}
+    }
+}
+{5}
+
+#ALIAS {helpEPOS}
+{
+	#ECHO { [%ansi(orange)]--------------[%ansi(cyan)]Help Elemental Plane of Smoke[%ansi(orange)]-----------------------[%ansi(reset)]};
+	#ECHO { [%ansi(orange)]Start All directions from[%ansi(reset)]: "Pitch Black"[%ansi(reset)]};
+    #ECHO { [%ansi(orange)]To Chocking Palace[%ansi(reset)]: 2dn;enter palace - Use [%ansi(gray)]gotoEPOSPalace[%ansi(reset)]};
+    #ECHO { [%ansi(orange)]To The Fortress[%ansi(reset)]: 3d2se;enter cloud - Use [%ansi(gray)]gotoEPOSFortress[%ansi(reset)]};
+	#ECHO { [%ansi(orange)]To The Camp[%ansi(reset)]: dwn;enter cloud - Use [%ansi(gray)]gotoEPOSCamp[%ansi(reset)]};
+	#ECHO { [%ansi(orange)]--------------------------------------------------------------------[%ansi(reset)]};
+}
+{5}
+
+#ALIAS {gotoEPOSPalace}
+{
+	where;
+	#WAIT 2000;{
+		#IF {{$currentRoom} === {Pitch Black}}
+		{
+			#ECHO {[%ansi(green)]Okay![%ansi(reset)] Travelling to [%ansi(yellow)]EPOS Palace[%ansi(reset)]!};
+			2dn;enter palace
+		};
+		#ELSE
+		{
+			#ECHO {[%ansi(red)]Error[%ansi(reset)]: You're not in the correct room 'Pitch Black'!};
+		};
+	};
+}
+{5}
+
+#ALIAS {gotoEPOSFortress}
+{
+	where;
+	#WAIT 2000;{
+		#IF {{$currentRoom} === {Pitch Black}}
+		{
+			#ECHO {[%ansi(green)]Okay![%ansi(reset)] Travelling to [%ansi(yellow)]EPOS Fortress[%ansi(reset)]!};
+			3d2se;enter cloud
+		};
+		#ELSE
+		{
+			#ECHO {[%ansi(red)]Error[%ansi(reset)]: You're not in the correct room 'Pitch Black'!};
+		};
+	};
+}
+{5}
+
+#ALIAS {gotoEPOSCamp}
+{
+	where;
+	#WAIT 2000;{
+		#IF {{$currentRoom} === {Pitch Black}}
+		{
+			#ECHO {[%ansi(green)]Okay![%ansi(reset)] Travelling to [%ansi(yellow)]EPOS Camp[%ansi(reset)]!};
+			dwn;enter cloud
+		};
+		#ELSE
+		{
+			#ECHO {[%ansi(red)]Error[%ansi(reset)]: You're not in the correct room 'Pitch Black'!};
+		};
+	};
+}
+{5}
+
+#ACTION {^A Large Workshop}
+{
+	helpEPOSCraftsman;
+}
+{5}
+
+#ALIAS {helpEPOSCraftsman}
+{
+	#ECHO { [%ansi(orange)]--------------[%ansi(cyan)]Elemental Plane of Smoke Craftsman[%ansi(orange)]-----------------------[%ansi(reset)]};
+	#ECHO { [%ansi(orange)]A smoking helm[%ansi(reset)]: some smoke dragon scales + a smokey potion};
+	#ECHO { [%ansi(orange)]Some scale-plated gauntlets[%ansi(reset)]: some smoke dragon scales + gauntlets of ogre power (Ogre Village)};
+	#ECHO { [%ansi(orange)]Some smoky colored scalemail[%ansi(reset)]: some smoke dragon scales + scalemail jacket };
+	#ECHO { [%ansi(orange)]Some scaled leggings[%ansi(reset)]: some smoke dragon scales + jeweled leggings (Malevolent Circle)};
+	#ECHO { [%ansi(orange)]A dragonshaped shield[%ansi(reset)]: some smoke dragon scales + heavy megal shield};
+	#ECHO { [%ansi(orange)]A dragon-hilted longsword[%ansi(reset)]: a dragon's claw + silver bastard sword};
+	#ECHO { [%ansi(orange)]A smoking dagger[%ansi(reset)]: a dragon's claw + flaming spear + vial of thick grey liquid};
+	#ECHO { [%ansi(orange)]A dragon's claw polearm[%ansi(reset)]: a dragon's claw + charred scroll + large smoked-steel halberd};
+	#ECHO { [%ansi(orange)]A set of dragon's talons[%ansi(reset)]: a dragon's claw + cat's claw gloves (Skullport) + smokey potion};
+	#ECHO { [%ansi(orange)]Some talon studded boots[%ansi(reset)]: a dragon's claw + hard leather boots (Modrian)};
+	#ECHO { [%ansi(orange)]--------------------------------------------------------------------[%ansi(reset)]};
+}
+{5}
+
+#ALIAS {gotoElementalPlaneOfWater} {
+    gotohs;
+	#ECHO {[%ansi(green)]Okay![%ansi(reset)] Travelling to the [%ansi(yellow)]Elemental Plane of Water[%ansi(reset)]!};
+	#WAIT 2000;{
+	    #IF {!$travelerror}{
+			7e3n2enw;enter sphere;
+			where;
+			challenge area;
+		};
+		#ELSE {
+	        resettravel;
+		}
+    };
+}
+{5}
+
+#ALIAS {gotoCastleMahlhevik} {
+    /* gotohs; */
+	#ECHO { Directions Pending. };
+    #WAIT 2000;{
+	    #IF {!$travelerror}{
+			where;
+			challenge area;
+		};
+		#ELSE {
+	        resettravel;
+		}
+    };
+}
+{5}
+
+/* ----------------------------------------------------------------------------------------------   */
+/*                                 Class Practice Teachers											*/
+
+#ALIAS {gotoBarbarianGuildmaster} {
+	gotohs;
+	#ECHO {[%ansi(green)]Okay![%ansi(reset)] Travelling to the [%ansi(yellow)]Barbarian Guildmaster[%ansi(reset)]!};
+	#WAIT 2000;{
+		#IF {!$travelerror} {
+			57w11n;
+			where;
+			challenge area;
+		};
+		#ELSE {
+			resettravel;
+		};
+	};
+}
+{5}
+
+#ALIAS {gotoBardGuildmaster} {
+    gotohs;
+	#ECHO {[%ansi(green)]Okay![%ansi(reset)] Travelling to the [%ansi(yellow)]Bard Guildmaster[%ansi(reset)]!};
+    #WAIT 2000;{
+        #IF {!$travelerror} {
+			3w2swn;
+			where;
+			challenge area;
+        };
+        #ELSE {
+            resettravel;
+        };
+    };
+}
+{5}
+
+#ALIAS {gotoClericEvilGuildmaster} {
+    gotoskull;
+	#ECHO {[%ansi(green)]Okay![%ansi(reset)] Travelling to the [%ansi(yellow)]Evil Cleric Guildmaster[%ansi(reset)]!};
+    #WAIT 2000;{
+        #IF {!$travelerror} {
+			7n2w;open door w;2w;
+			where;
+			challenge area;
+        };
+        #ELSE {
+            resettravel;
+        };
+    };
+}
+{5}
+
+#ALIAS {gotoClericGoodGuildmaster} {
+    gotohs;
+	#ECHO {[%ansi(green)]Okay![%ansi(reset)] Travelling to the [%ansi(yellow)]Good Cleric Guildmaster[%ansi(reset)]!};
+    #WAIT 2000;{
+        #IF {!$travelerror} {
+			6e11s;open door s;3s;5u2s;#ECHO {Guildmaster wanders in this area.};
+			where;
+			challenge area;
+        };
+        #ELSE {
+            resettravel;
+        };
+    };
+}
+{5}
+
+#ALIAS {gotoCyborgGuildmaster} {
+    gotostar;
+	#ECHO {[%ansi(green)]Okay![%ansi(reset)] Travelling to the [%ansi(yellow)]Cyborg Guildmaster[%ansi(reset)]!};
+    #WAIT 2000;{
+        #IF {!$travelerror} {
+			4w2nws;login;
+			where;
+			challenge area;
+        };
+        #ELSE {
+            resettravel;
+        };
+    };
+}
+{5}
+
+#ALIAS {gotoKnightEvilGuildmaster} {
+    gotoskull;
+	#ECHO {[%ansi(green)]Okay![%ansi(reset)] Travelling to the [%ansi(yellow)]Evil Knight Guildmaster[%ansi(reset)]!};
+    #WAIT 2000;{
+        #IF {!$travelerror} {
+			2w2ne;
+			where;
+			challenge area;
+        };
+        #ELSE {
+            resettravel;
+        };
+    };
+}
+{5}
+
+	#ALIAS {gotoKnightGoodGuildmaster} {
+    gotohs;
+	#ECHO {[%ansi(green)]Okay![%ansi(reset)] Travelling to the [%ansi(yellow)]Good Knight Guildmaster[%ansi(reset)]!};
+    #WAIT 2000;{
+        #IF {!$travelerror} {
+			2nunw;open tap;4wn3e;
+			where;
+			challenge area;
+        };
+        #ELSE {
+            resettravel;
+        };
+    };
+}
+{5}
+
+#ALIAS {gotoMageGuildmaster} {
+    gotohs;
+	#ECHO {[%ansi(green)]Okay![%ansi(reset)] Travelling to the [%ansi(yellow)]Mage Guildmaster[%ansi(reset)]!};
+    #WAIT 2000;{
+        #IF {!$travelerror} {
+			4nu;open door west;w;read title31;e;open door east;
+			where;
+			challenge area;
+        };
+        #ELSE {
+            resettravel;
+        };
+    };
+}
+{5}
+
+#ALIAS {gotoMercenaryGuildmaster} {
+    gotostar;
+	#ECHO {[%ansi(green)]Okay![%ansi(reset)] Travelling to the [%ansi(yellow)]Mercenary Guildmaster[%ansi(reset)]!};
+    #WAIT 2000;{
+        #IF {!$travelerror} {
+			2d4e5nes;
+			where;
+			challenge area;
+        };
+        #ELSE {
+            resettravel;
+        };
+    };
+}
+{5}
+
+#ALIAS {gotoMonkGuildmaster} {
+    gotohs;
+	#ECHO {[%ansi(green)]Okay![%ansi(reset)] Travelling to the [%ansi(yellow)]Monk Guildmaster[%ansi(reset)]!};
+    #WAIT 2000;{
+        #IF {!$travelerror} {
+			37e41n;open gate n;4n3w;open gate w;11w8ne3nws;
+			where;
+			challenge area;
+        };
+        #ELSE {
+            resettravel;
+        };
+    };
+}
+{5}
+
+#ALIAS {gotoPhysicGuildmaster} {
+    gotostar;
+	#ECHO {[%ansi(green)]Okay![%ansi(reset)] Travelling to the [%ansi(yellow)]Physics Guildmaster[%ansi(reset)]!};
+    #WAIT 2000;{
+        #IF {!$travelerror} {
+			3s2uswn;
+			where;
+			challenge area;
+        };
+        #ELSE {
+            resettravel;
+        };
+    };
+}
+{5}
+
+#ALIAS {gotoPsionicistGuildmaster} {
+    gotohs;
+	#ECHO {[%ansi(green)]Okay![%ansi(reset)] Travelling to the [%ansi(yellow)]Psionic Guildmaster[%ansi(reset)]!};
+    #WAIT 2000;{
+        #IF {!$travelerror} {
+			2nune;open tapestry;3w;open gate w;11w8ne3nws;
+			where;
+			challenge area;
+        };
+        #ELSE {
+            resettravel;
+        };
+    };
+}
+{5}
+
+#ALIAS {gotoRangerGuildmaster} {
+    gotohs;
+	#ECHO {[%ansi(green)]Okay![%ansi(reset)] Travelling to the [%ansi(yellow)]Ranger Guildmaster[%ansi(reset)]!};
+    #WAIT 2000;{
+        #IF {!$travelerror} {
+			nnune;open tapestry;ssswwse;
+			where;
+			challenge area;
+        };
+        #ELSE {
+            resettravel;
+        };
+    };
+}
+{5}
+
+#ALIAS {gotoThiefGuildmaster} {
+    gotoskull;
+	#ECHO {[%ansi(green)]Okay![%ansi(reset)] Travelling to the [%ansi(yellow)]Thief Guildmaster[%ansi(reset)]!};
+    #WAIT 2000;{
+        #IF {!$travelerror} {
+			4e;open portrait;2ene2s;open door e;8e;
+			where;
+			challenge area;
+        };
+        #ELSE {
+            resettravel;
+        };
+    };
+}
+{5}
+
+/* ----------------------------------------------------------------------------------------------   */
+/*                                    Stats Increaser												*/
+
+#ALIAS {gotoCharismaTrainer} {
+    gotostar;
+	#ECHO {[%ansi(green)]Okay![%ansi(reset)] Travelling to the [%ansi(yellow)]Charisma Trainer[%ansi(reset)]!};
+    #WAIT 2000;{
+        #IF {!$travelerror} {
+			 3n1e;open door s;1s1w;
+			 where;
+			challenge area;
+        };
+        #ELSE {
+            resettravel;
+        };
+    };
+}
+{5}
+
+#ALIAS {gotoConstitutionTrainer} {
+    gotohs;
+	#ECHO {[%ansi(green)]Okay![%ansi(reset)] Travelling to the [%ansi(yellow)]Constitution Trainer[%ansi(reset)]!};
+    #WAIT 2000;{
+        #IF {!$travelerror} {
+			 2nunw;open tapestry;3e4ne;
+			 where;
+			challenge area;
+        };
+        #ELSE {
+            resettravel;
+        };
+    };
+}
+{5}
+
+#ALIAS {gotoDexterityTrainer} {
+    gotohs;
+	#ECHO {[%ansi(green)]Okay![%ansi(reset)] Travelling to the [%ansi(yellow)]Dexterity Trainer[%ansi(reset)]!};
+    #WAIT 2000;{
+        #IF {!$travelerror} {
+			nnwwww;open grate;dessesusseuswnw;#ECHO {[%ansi(blue)]Kill the Assassin and go two west![%ansi(reset)]};
+			where;
+			challenge area;
+        };
+        #ELSE {
+            resettravel;
+        };
+    };
+}
+{5}
+
+#ALIAS {gotoIntelligenceTrainer} {
+    gotohs;
+	#ECHO {[%ansi(green)]Okay![%ansi(reset)] Travelling to the [%ansi(yellow)]Intelligence Trainer[%ansi(reset)]!};
+    #WAIT 2000;{
+        #IF {!$travelerror} {
+			2nu;open door west;w;read title31;e;open door east;2e2n2ed4s2w;open door south;s;
+			where;
+			challenge area;
+        };
+        #ELSE {
+            resettravel;
+        };
+    };
+}
+{5}
+
+#ALIAS {gotoStrengthTrainer} {
+    gotohs;
+		#ECHO {[%ansi(green)]Okay![%ansi(reset)] Travelling to the [%ansi(yellow)]Strength Trainer[%ansi(reset)]!};
+    #WAIT 2000;{
+        #IF {!$travelerror} {
+			2nune;open tapestry;3nen;
+			where;
+			challenge area;
+        };
+        #ELSE {
+            resettravel;
+        };
+    };
+}
+{5}
+
+#ALIAS {gotoWisdomTrainer} {
+    gotohs;
+		#ECHO {[%ansi(green)]Okay![%ansi(reset)] Travelling to the [%ansi(yellow)]Wisdom Trainer[%ansi(reset)]!};
+    #WAIT 2000;{
+        #IF {!$travelerror} {
+			6e11s;open door s;3s1u2s1e;open door s;2s1w1u;
+			where;
+			challenge area;
+        };
+        #ELSE {
+            resettravel;
+        };
+    };
+}
+{5}
+
+
+/* ----------------------------------------------------------------------------------------------   */
+/*                                 Language Trainers												*/
+
+#ALIAS {gotoModriadicTrainer} {
+    gotohs;
+		#ECHO {[%ansi(green)]Okay![%ansi(reset)] Travelling to the [%ansi(yellow)]Modriadic Trainer[%ansi(reset)]!};
+    #WAIT 2000;{
+        #IF {!$travelerror} {
+			where;
+			challenge area;
+        };
+        #ELSE {
+            resettravel;
+        };
+    };
+}
+{5}
+
+#ALIAS {gotoElvishTrainer} {
+    gotohs;
+		#ECHO {[%ansi(green)]Okay![%ansi(reset)] Travelling to the [%ansi(yellow)]Elvish Trainer[%ansi(reset)]!};
+    #WAIT 2000;{
+        #IF {!$travelerror} {
+			22n4e9n3w;offer elvish;
+			where;
+			challenge area;
+        };
+        #ELSE {
+            resettravel;
+        };
+    };
+}
+{5}
+
+#ALIAS {gotoOrcishTrainer} {
+    gotostar;
+		#ECHO {[%ansi(green)]Okay![%ansi(reset)] Travelling to the [%ansi(yellow)]Orcish Trainer[%ansi(reset)]!};
+    #WAIT 2000;{
+        #IF {!$travelerror} {
+			where;
+			challenge area;
+        };
+        #ELSE {
+            resettravel;
+        };
+    };
+}
+{5}
+
+#ALIAS {gotoHobbishTrainer} {
+	gotohs;
+		#ECHO {[%ansi(green)]Okay![%ansi(reset)] Travelling to the [%ansi(yellow)]Hobbish Trainer[%ansi(reset)]!};
+	#WAIT 2000;{
+		#IF {!$travelerror} {
+		    15e10s6e3n;open door north;2n;offer hobbish;
+			where;
+			challenge area;
+		};
+		#ELSE {
+			resettravel;
+		};
+	};
+}
+{5}
+
+/* Template for future directions
+ #ALIAS {goto} {
+    goto;
+    #WAIT 2000;{
+        #IF {!$travelerror} {
+		#ECHO {[%ansi(green)]Okay![%ansi(reset)] Travelling to the [%ansi(yellow)][%ansi(reset)]!};
+        };
+        #ELSE {
+            resettravel;
+        };
+    };
+ }
+ {5} */
+
+
+
+/* ----------------------------------------------------------------------------------------------   */
+
+/* ----------------------------------------------------------------------------------------------   */
+/*                                    Utilities														*/
+
+#ALIAS {showcolors} {#ECHO [%ansi(red)]'FF00' Red <F0F0>'F0F0' Green [%ansi(blue)]'F00F' Blue [%ansi(yellow)]'FFF0' Yellow [%ansi(cyan)]'F0FF' Cyan %ansi(purple)'FF0F' Purple [%ansi(blue)]'acf' Azure [%ansi(azure)]'afc' Jade <caf>'caf' Violet [%ansi(green)]'cfa' Lime %ansi(pink)'fac' Pink [%ansi(orange)]'fca' Orange<000>}
+#ACTION {^In the area: %1}
+{
+	#VAR {travelling}{0};
+}
+{5}
+#VAR {travelerror} {0}
+#VAR {travelling} {0};
