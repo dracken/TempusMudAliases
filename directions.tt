@@ -702,7 +702,7 @@
 	#SH {<cfa>Okay!<099> Travelling to the <FFF0>Forgotten Valley<099>!};
 	#DELAY {2} {
 	    #IF {!$travelerror}{
-			60n2e3nwnwn3e4s2d;
+			62n2e3nwnwn3e4s2d;
 			where;
 			challenge area;
 		};
@@ -1786,7 +1786,7 @@
 	#SH {<cfa>Okay!<099> Travelling to the <FFF0>Luxare<099>!};
 	#DELAY {2} {
 	    #IF {!$travelerror}{
-			4w4nen;
+			4ne3n;open door e;e;
 			where;
 			challenge area;
 	    };
