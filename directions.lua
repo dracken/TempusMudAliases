@@ -242,7 +242,7 @@ function gotoDismalDelve() travelTo("hs", "Dismal Delve", "67w12seseds6wndnd;ent
 function gotoDraconiansAndDragonHighlord() travelTo("hs", "Draconians and Dragon Highlords", "32wswsw2se2s2w2sw2sws2w4sws2w") end
 function gotoDukeAraken() travelTo("hs", "Duke Araken", "9w8s;open porticullis;s;open door;2sese4sw2se3sw3u3s") end
 function gotoElvenVillage() travelTo("hs", "Elven Village", "22n4e5n") end
-function gotoForgottenValley() travelTo("hs", "Forgotten Valley", "60n2e3nwnwn3e4s2d") end
+function gotoForgottenValley() travelTo("hs", "Forgotten Valley", "62n2e3nwnwn3e4s2d") end
 function gotoFontOfModrian() travelTo("hs", "Font of Modrian", "7e4ne;enter font") end
 function gotoFrozenTundras() travelTo("hs", "Frozen Tundras", "37e41n;open gate;8n;open gate;17n3w2nw9n7e3nw2ue2wunwndw2nwue3n3w5ne2n") end
 function gotoGlacialRift() travelTo("hs", "Glacial Rift", "37e41n;open gate;8n;open gate;17n3w2nw9n7e3nw2ue2wunwndw2nwue3n3w5ne2n4n2wnwn2w3nd") end
@@ -420,7 +420,7 @@ end
 
 function gotoKiddieKandy() travelTo("star", "Kiddie Kandy Incorporated", "4n2wn;open gate n;n") end
 function gotoKromguard() travelTo("star", "Kromguard", "19w3n;enter fortress") end
-function gotoLuxare() travelTo("star", "Luxare", "4w4nen") end
+function gotoLuxare() travelTo("star", "Luxare", "4n3en;open door e;e") end
 function gotoMerquryCity() travelTo("star", "Merqury City", "19w3n;enter fortress") end
 function gotoNETWORKCommunicationsTower() travelTo("star", "NETWORK Communications Tower", "4w4ne;open door s;s") end
 function gotoReinforcer() travelTo("star", "Reinforcer", "4w5n2w") end
