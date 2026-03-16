@@ -558,7 +558,7 @@
 	#ECHO {[%ansi(green)]Okay![%ansi(reset)] Travelling to the [%ansi(yellow)]Abandoned Keep[%ansi(reset)]!};
 	#WAIT 2000;{
 		#IF {!$travelerror}{
-			21w14s2w;wind winch;
+			.21w14s2w;wind winch;
 			where;
 			challenge area;
 		};
@@ -574,7 +574,7 @@
 	#ECHO {[%ansi(green)]Okay![%ansi(reset)] Travelling to the [%ansi(yellow)]Old Monastery[%ansi(reset)]!};
 	#WAIT 2000;{
 	    #IF {!$travelerror}{
-			12n7en;
+			.12n7en;
 			where;
 			challenge area;
 		};
@@ -590,7 +590,7 @@
 	#ECHO {[%ansi(green)]Okay![%ansi(reset)] Travelling to the [%ansi(yellow)]Castle Slivendark[%ansi(reset)]!};
 	#WAIT 2000;{
 		#IF {!$travelerror}{
-			32w4sw2s2w3sese3sw3sd;
+			.32w4sw2s2w3sese3sw3sd;
 			where;
 			challenge area;
 	    };
@@ -606,7 +606,7 @@
 	#ECHO {[%ansi(green)]Okay![%ansi(reset)] Travelling to the [%ansi(yellow)]Chessboard of Araken[%ansi(reset)]!};
 	#WAIT 2000;{
 	    #IF {!$travelerror}{
-			9w8s;open porticullis;s;open door;2swsw2se;
+			.9w8s;open porticullis;s;open door;2swsw2se;
 			where;
 			challenge area;
 	    };
@@ -622,7 +622,7 @@
 	#ECHO {[%ansi(green)]Okay![%ansi(reset)] Travelling to the [%ansi(yellow)]Crystal Fortress[%ansi(reset)]!};
 	#WAIT 2000;{
 		#IF {!$travelerror} {
-			46w24su5s10w3s4d2en2n2wn2w2s;open rock;2se2swswsese;pull lever;2w3s
+			.46w24su5s10w3s4d2en2n2wn2w2s;open rock;2se2swswsese;pull lever;2w3s
 			where;
 			challenge area;
 		};
@@ -638,7 +638,7 @@
 	#ECHO {[%ansi(green)]Okay![%ansi(reset)] Travelling to the [%ansi(yellow)]Dismal Delve[%ansi(reset)]!};
 	#WAIT 2000;{
 	    #IF {!$travelerror}{
-			67w12seseds6wndnd;enter portal;nw2n2ed;
+			.67w12seseds6wndnd;enter portal;nw2n2ed;
 			where;
 			challenge area;
 	    };
@@ -654,7 +654,7 @@
 	#ECHO {[%ansi(green)]Okay![%ansi(reset)] Travelling to the [%ansi(yellow)]Draconians a:nd Dragon Highlords[%ansi(reset)]!};
 	#WAIT 2000;{
 	    #IF {!$travelerror}{
-			32wswsw2se2s2w2sw2sws2w4sws2w;
+			.32wswsw2se2s2w2sw2sws2w4sws2w;
 			where;
 			challenge area;
 	    };
@@ -670,7 +670,7 @@
 	#ECHO {[%ansi(green)]Okay![%ansi(reset)] Travelling to the [%ansi(yellow)]Duke Araken[%ansi(reset)]!};
 	#WAIT 2000;{
 	    #IF {!$travelerror}{
-			9w8s;open porticullis;s;open door;2sese4sw2se3sw3u3s;
+			.9w8s;open porticullis;s;open door;2sese4sw2se3sw3u3s;
 			where;
 			challenge area;
 		};
@@ -686,7 +686,7 @@
 	#ECHO {[%ansi(green)]Okay![%ansi(reset)] Travelling to the [%ansi(yellow)]Elven Village[%ansi(reset)]!};
 	#WAIT 2000;{
 	    #IF {!$travelerror}{
-			22n4e5n;
+			.22n4e5n;
 			where;
 			challenge area;
 		};
@@ -702,7 +702,7 @@
 	#ECHO {[%ansi(green)]Okay![%ansi(reset)] Travelling to the [%ansi(yellow)]Forgotten Valley[%ansi(reset)]!};
 	#WAIT 2000;{
 	    #IF {!$travelerror}{
-			60n2e3nwnwn3e4s2d;
+			.60n2e3nwnwn3e4s2d;
 			where;
 			challenge area;
 		};
@@ -718,7 +718,7 @@
 	#ECHO {[%ansi(green)]Okay![%ansi(reset)] Travelling to the [%ansi(yellow)]Font of Modrian[%ansi(reset)]!};
 	#WAIT 2000;{
 	    #IF {!$travelerror}{
-			7e4ne;enter font;
+			.7e4ne;enter font;
 			where;
 			challenge area;
 		};
@@ -734,7 +734,7 @@
 	#ECHO {[%ansi(green)]Okay![%ansi(reset)] Travelling to the [%ansi(yellow)]Frozen Tundras[%ansi(reset)]!};
 	#WAIT 2000;{
 	    #IF {!$travelerror}{
-			37e41n;open gate;8n;open gate;17n3w2nw9n7e3nw2ue2wunwndw2nwue3n3w5ne2n;
+			.37e41n;open gate;8n;open gate;17n3w2nw9n7e3nw2ue2wunwndw2nwue3n3w5ne2n;
 			where;
 			challenge area;
 		};
@@ -751,7 +751,7 @@
 	#WAIT 2000;{
 	    #IF {!$travelerror}{
 			/* 37e41n;open gate;8n;open gate;17n3w2nw9n7e3nw2ue2wunwndw2nwue3n3w5ne2n4n2wnwn2w3nd; */
-			n;n;u;n;e;open tapestry;n;n;n;n;open gate n;n;n;n;n;n;n;n;n;n;n;n;n;n;n;n;n;n;w;w;w;n;n;w;n;n;n;n;n;n;n;n;n;e;e;e;e;e;e;e;n;n;n;w;u;u;e;w;w;u;n;w;n;d;w;n;n;w;u;e;n;n;n;w;w;w;n;n;n;n;n;e;n;n;n;n;n;n;w;w;w;n;n;w;w;w;n;n;n;d;
+			.n;n;u;n;e;open tapestry;n;n;n;n;open gate n;n;n;n;n;n;n;n;n;n;n;n;n;n;n;n;n;n;w;w;w;n;n;w;n;n;n;n;n;n;n;n;n;e;e;e;e;e;e;e;n;n;n;w;u;u;e;w;w;u;n;w;n;d;w;n;n;w;u;e;n;n;n;w;w;w;n;n;n;n;n;e;n;n;n;n;n;n;w;w;w;n;n;w;w;w;n;n;n;d;
 			where;
 			challenge area;
 		};
@@ -765,7 +765,7 @@
 #ALIAS {gotoGlaicialRiftPaingiver} {
 	#ECHO {[%ansi(green)]Okay![%ansi(reset)] Travelling to the [%ansi(yellow)]Glacial Rift Paingiver[%ansi(reset)]!};
 	/* gotoGlacialRift; */
-	n;n;u;n;e;open tapestry;n;n;n;n;open gate n;n;n;n;n;n;n;n;n;n;n;n;n;n;n;n;n;n;w;w;w;n;n;w;n;n;n;n;n;n;n;n;n;e;e;e;e;e;e;e;n;n;n;w;u;u;e;w;w;u;n;w;n;d;w;n;n;w;u;e;n;n;n;w;w;w;n;n;n;n;n;e;n;n;n;n;n;n;w;w;w;n;n;w;w;w;n;n;n;d;
+	.n;n;u;n;e;open tapestry;n;n;n;n;open gate n;n;n;n;n;n;n;n;n;n;n;n;n;n;n;n;n;n;w;w;w;n;n;w;n;n;n;n;n;n;n;n;n;e;e;e;e;e;e;e;n;n;n;w;u;u;e;w;w;u;n;w;n;d;w;n;n;w;u;e;n;n;n;w;w;w;n;n;n;n;n;e;n;n;n;n;n;n;w;w;w;n;n;w;w;w;n;n;n;d;
 	w;w;n;n;n;u;e;e;u;n;e;s;s;e;e;n;n;n;e;e;s;s;s;s;s;s;s;s;w;w;w;w;w;w;s;s;e;e;n;e;e;e;s;s;s;e;
 }
 {5}
@@ -775,7 +775,7 @@
 	#ECHO {[%ansi(green)]Okay![%ansi(reset)] Travelling to the [%ansi(yellow)]Great Pyramid[%ansi(reset)]!};
 	#WAIT 2000;{
 	    #IF {!$travelerror}{
-			74w7s3e9s3wuenu;
+			.74w7s3e9s3wuenu;
 			where;
 			challenge area;
 		};
@@ -807,7 +807,7 @@
 	#ECHO {[%ansi(green)]Okay![%ansi(reset)] Travelling to the [%ansi(yellow)]Guiharian Festival of Lights[%ansi(reset)]!};
 	#WAIT 2000;{
 	    #IF {!$travelerror}{
-			4w3se4s;
+			.4w3se4s;
 			where;
 			challenge area;
 		};
@@ -823,7 +823,7 @@
 	#ECHO {[%ansi(green)]Okay![%ansi(reset)] Travelling to the [%ansi(yellow)]Halfling Village[%ansi(reset)]!};
 	#WAIT 2000;{
 	    #IF {!$travelerror}{
-			15e10s4e;
+			.15e10s4e;
 			where;
 			challenge area;
 		};
@@ -839,7 +839,7 @@
 	#ECHO {[%ansi(green)]Okay![%ansi(reset)] Travelling to the [%ansi(yellow)]Harpell House[%ansi(reset)]!};
 	#WAIT 2000;{
 	    #IF {!$travelerror}{
-			19e2n;enter house;
+			.19e2n;enter house;
 			where;
 			challenge area;
 		};
@@ -855,7 +855,7 @@
 	#ECHO {[%ansi(green)]Okay![%ansi(reset)] Travelling to the [%ansi(yellow)]High Tower of Magic[%ansi(reset)]!};
 	#WAIT 2000;{
 	    #IF {!$travelerror}{
-			34w3nw3n;
+			.34w3nw3n;
 			where;
 			challenge area;
 		};
@@ -871,7 +871,7 @@
 	#ECHO {[%ansi(green)]Okay![%ansi(reset)] Travelling to the [%ansi(yellow)]Hill Giant Steading[%ansi(reset)]!};
 	#WAIT 2000;{
 	    #IF {!$travelerror}{
-			37e41n;open gate;8n;open gate;17nenw;open door w;w;
+			.37e41n;open gate;8n;open gate;17nenw;open door w;w;
 			where;
 			challenge area;
 		};
@@ -887,7 +887,7 @@
 	#ECHO {[%ansi(green)]Okay![%ansi(reset)] Travelling to the [%ansi(yellow)]Hobgolbin Tunnels[%ansi(reset)]!};
 	#WAIT 2000;{
 	    #IF {!$travelerror}{
-			15n2ese;open door n;n;
+			.15n2ese;open door n;n;
 			where;
 			challenge area;
 		};
@@ -903,7 +903,7 @@
 	#ECHO {[%ansi(green)]Okay![%ansi(reset)] Travelling to the [%ansi(yellow)]Holy Grail[%ansi(reset)]!};
 	#WAIT 2000;{
 	    #IF {!$travelerror}{
-			38w2nw3nw8nw3n2wn3ed2nednd2ndn2e3n2e3nwu;
+			.38w2nw3nw8nw3n2wn3ed2nednd2ndn2e3n2e3nwu;
 			where;
 			challenge area;
 		};
@@ -919,7 +919,7 @@
 	#ECHO {[%ansi(green)]Okay![%ansi(reset)] Travelling to the [%ansi(yellow)]City of Istan[%ansi(reset)]!};
 	#WAIT 2000;{
 	    #IF {!$travelerror}{
-			37e41n;
+			.37e41n;
 			where;
 			challenge area;
 		};
@@ -935,7 +935,7 @@
 	#ECHO {[%ansi(green)]Okay![%ansi(reset)] Travelling to the [%ansi(yellow)]Kobold Tunnels[%ansi(reset)]!};
 	#WAIT 2000;{
 	    #IF {!$travelerror}{
-			3w8swse10s3e2s4en;
+			.3w8swse10s3e2s4en;
 			where;
 			challenge area;
 		};
@@ -951,7 +951,7 @@
 	#ECHO {[%ansi(green)]Okay![%ansi(reset)] Travelling to the [%ansi(yellow)]Caves of Learander[%ansi(reset)]!};
 	#WAIT 2000;{
 	    #IF {!$travelerror}{
-			56w27s6ws10w3s4d2e;
+			.56w27s6ws10w3s4d2e;
 			where;
 			challenge area;
 		};
@@ -967,7 +967,7 @@
 	#ECHO {[%ansi(green)]Okay![%ansi(reset)] Travelling to the [%ansi(yellow)]Malevolent Circle[%ansi(reset)]!};
 	#WAIT 2000;{
 	    #IF {!$travelerror}{
-			39e21s3es3es2eswses2e;
+			.39e21s3es3es2eswses2e;
 			where;
 			challenge area;
 		};
@@ -983,7 +983,7 @@
 	#ECHO {[%ansi(green)]Okay![%ansi(reset)] Travelling to the [%ansi(yellow)]City of Mavernal[%ansi(reset)]!};
 	#WAIT 2000;{
 	    #IF {!$travelerror}{
-			26n15e1n3e1n1e2n5es;open gate e;
+			.26n15e1n3e1n1e2n5es;open gate e;
 			where;
 			challenge area;
 		};
@@ -999,7 +999,7 @@
 	#ECHO {[%ansi(green)]Okay![%ansi(reset)] Travelling to the [%ansi(yellow)]Realm of Neverwhere[%ansi(reset)]!};
 	#WAIT 2000;{
 	    #IF {!$travelerror}{
-			50w9s4w2s6w11s3e2s2e2und;
+			.50w9s4w2s6w11s3e2s2e2und;
 			where;
 			challenge area;
 		};
@@ -1031,7 +1031,7 @@
 	#ECHO {[%ansi(green)]Okay![%ansi(reset)] Travelling to the [%ansi(yellow)]City of Old Thalos[%ansi(reset)]!};
 	#WAIT 2000;{
 	    #IF {!$travelerror}{
-			67w22s12w;
+			.67w22s12w;
 			where;
 			challenge area;
 		};
@@ -1047,7 +1047,7 @@
 	#ECHO {[%ansi(green)]Okay![%ansi(reset)] Travelling to the [%ansi(yellow)]Pit Fiend[%ansi(reset)]!};
 	#WAIT 2000;{
 	    #IF {!$travelerror}{
-			13w4s2w2s3w;
+			.13w4s2w2s3w;
 			where;
 			challenge area;
 		};
@@ -1063,7 +1063,7 @@
 	#ECHO {[%ansi(green)]Okay![%ansi(reset)] Travelling to the [%ansi(yellow)]Pool of Evil[%ansi(reset)]!};
 	#WAIT 2000;{
 	    #IF {!$travelerror}{
-			3w8swse10s3e2s4e5nw3n2es;
+			.3w8swse10s3e2s4e5nw3n2es;
 			where;
 			challenge area;
 		};
@@ -1079,7 +1079,7 @@
 	#ECHO {[%ansi(green)]Okay![%ansi(reset)] Travelling to the [%ansi(yellow)]Reed Swamp[%ansi(reset)]!};
 	#WAIT 2000;{
 	    #IF {!$travelerror}{
-			32w4sws;
+			.32w4sws;
 			where;
 			challenge area;
 		};
@@ -1095,7 +1095,7 @@
 	#ECHO {[%ansi(green)]Okay![%ansi(reset)] Travelling to the [%ansi(yellow)]Sewers of Modrian[%ansi(reset)]!};
 	#WAIT 2000;{
 	    #IF {!$travelerror}{
-			2n3w;open grate;d;
+			.2n3w;open grate;d;
 			where;
 			challenge area;
 		};
@@ -1111,7 +1111,7 @@
 	#ECHO {[%ansi(green)]Okay![%ansi(reset)] Travelling to the [%ansi(yellow)]Shadow City of Shade[%ansi(reset)]!};
 	#WAIT 2000;{
 	    #IF {!$travelerror} {
-			61n2e2n8e;
+			.61n2e2n8e;
 			where;
 			challenge area;
 			helpShade;
@@ -1141,7 +1141,7 @@
         #IF {{$currentRoom} === {The Top of the Tower}}
         {
             #ECHO {[%ansi(green)]Okay![%ansi(reset)] Travelling to [%ansi(yellow)]Shade Rebel[%ansi(reset)]!};
-            fly;d;e;s;d;d;d;s;e;n;n;n;n;bash stone d;d;s;w;w;d;w;n;n;w;w;n;d;w;s;d;s;u;w;
+            .fly;d;e;s;d;d;d;s;e;n;n;n;n;bash stone d;d;s;w;w;d;w;n;n;w;w;n;d;w;s;d;s;u;w;
         };
         #ELSE
         {
@@ -1159,7 +1159,7 @@
         #IF {{$currentRoom} === {In the Catacombs}}
         {
             #ECHO {[%ansi(green)]Okay![%ansi(reset)] Travelling to [%ansi(yellow)]Shade Selset[%ansi(reset)]!};
-            fly;e;d;n;u;e;bash cage n;
+            .fly;e;d;n;u;e;bash cage n;
         };
         #ELSE
         {
@@ -1183,7 +1183,7 @@
 	#ECHO {[%ansi(green)]Okay![%ansi(reset)] Travelling to the [%ansi(yellow)]Silver Tower[%ansi(reset)]!};
 	#WAIT 2000;{
 	    #IF {!$travelerror}{
-			7e11s;
+			.7e11s;
 			where;
 			challenge area;
 		};
@@ -1199,7 +1199,7 @@
 	#ECHO {[%ansi(green)]Okay![%ansi(reset)] Travelling to the [%ansi(yellow)]City of Solace Cove[%ansi(reset)]!};
 	#WAIT 2000;{
 	    #IF {!$travelerror}{
-			104w;
+			.104w;
 			where;
 			challenge area;
 		};
@@ -1215,7 +1215,7 @@
 	#ECHO {[%ansi(green)]Okay![%ansi(reset)] Travelling to the [%ansi(yellow)]City of Skullport[%ansi(reset)]!};
 	#WAIT 2000;{
 	    #IF {!$travelerror}{
-			17e7s2w8sd6e7nen2e2nw3ne6ne6n4e7nw3n2wne5nse9n;
+			.17e7s2w8sd6e7nen2e2nw3ne6ne6n4e7nw3n2wne5nse9n;
 			where;
 			challenge area;
 		};
@@ -1231,7 +1231,7 @@
 	#ECHO {[%ansi(green)]Okay![%ansi(reset)] Travelling to the [%ansi(yellow)]Temple of Ancients[%ansi(reset)]!};
 	#WAIT 2000;{
 	    #IF {!$travelerror}{
-			39e25s;
+			.39e25s;
 			where;
 			challenge area;
 		};
@@ -1247,7 +1247,7 @@
 	#ECHO {[%ansi(green)]Okay![%ansi(reset)] Travelling to the [%ansi(yellow)]Tower of the Renegade Mage[%ansi(reset)]!};
 	#WAIT 2000;{
 	    #IF {!$travelerror}{
-			125w3n9ws4e;
+			.125w3n9ws4e;
 			where;
 			challenge area;
 		};
@@ -1260,7 +1260,7 @@
 
 #ALIAS {gotoTowerOfTheRenegadeMageBlue} {
 	enter blue;
-	3w3s3ewwsw;
+	.3w3s3ewwsw;
 	pull lever;
 	push blue library;
 	where;
@@ -1272,7 +1272,7 @@
 	#ECHO {[%ansi(green)]Okay![%ansi(reset)] Travelling to the [%ansi(yellow)]Treetops of Arachna[%ansi(reset)]!};
 	#WAIT 2000;{
 	    #IF {!$travelerror}{
-			7w2n2w2n13w2s2wn3wu;continue to the Drow area;2w2n1e1n1e1n1e1u;
+			.7w2n2w2n13w2s2wn3wu;continue to the Drow area;2w2n1e1n1e1n1e1u;
 			where;
 			challenge area;
 		};
@@ -1288,7 +1288,7 @@
 	#ECHO {[%ansi(green)]Okay![%ansi(reset)] Travelling to the [%ansi(yellow)]Undermountain[%ansi(reset)]!};
 	#WAIT 2000;{
 	    #IF {!$travelerror}{
-			37e41n;open gate;3nesend;
+			.37e41n;open gate;3nesend;
 			where;
 			challenge area;
 		};
@@ -1304,7 +1304,7 @@
 	#ECHO {[%ansi(green)]Okay![%ansi(reset)] Travelling to the [%ansi(yellow)]Vapor Rats of EPOW[%ansi(reset)]!};
 	#WAIT 2000;{
 	    #IF {!$travelerror}{
-			8e4ne;enter font;3u;
+			.8e4ne;enter font;3u;
 			where;
 			challenge area;
 		};
@@ -1320,7 +1320,7 @@
 	#ECHO {[%ansi(green)]Okay![%ansi(reset)] Travelling to the [%ansi(yellow)]Wemic Plains[%ansi(reset)]!};
 	#WAIT 2000;{
 	    #IF {!$travelerror}{
-			81wn;
+			.81wn;
 			where;
 			challenge area;
 		};
@@ -1355,7 +1355,7 @@
 	#ECHO {[%ansi(green)]Okay![%ansi(reset)] Travelling to the [%ansi(yellow)]Polluted Village[%ansi(reset)]!};
 	#WAIT 2000;{
 	    #IF {!$travelerror}{
-			10w2sw2s5w;
+			.10w2sw2s5w;
 			where;
 			challenge area;
 	    };
@@ -1371,7 +1371,7 @@
 	#ECHO {[%ansi(green)]Okay![%ansi(reset)] Travelling to the [%ansi(yellow)]Archeological Dig[%ansi(reset)]!};
 	#WAIT 2000;{
 	    #IF {!$travelerror}{
-			22n8e5s;
+			.22n8e5s;
 			where;
 			challenge area;
 	    };
@@ -1387,7 +1387,7 @@
 	#ECHO {[%ansi(green)]Okay![%ansi(reset)] Travelling to the [%ansi(yellow)]Blasted Swamp[%ansi(reset)]!};
 	#WAIT 2000;{
 	    #IF {!$travelerror}{
-			16w8n;
+			.16w8n;
 			where;
 			challenge area;
 	    };
@@ -1403,7 +1403,7 @@
 	#ECHO {[%ansi(green)]Okay![%ansi(reset)] Travelling to the [%ansi(yellow)]Colony[%ansi(reset)]!};
 	#WAIT 2000;{
 	    #IF {!$travelerror}{
-			e4swe7s2e4sd13e2n;
+			.e4swe7s2e4sd13e2n;
 			where;
 			challenge area;
 	    };
@@ -1419,7 +1419,7 @@
 	#ECHO {[%ansi(green)]Okay![%ansi(reset)] Travelling to the [%ansi(yellow)]Cybertech Labs[%ansi(reset)]!};
 	#WAIT 2000;{
 	    #IF {!$travelerror}{
-			5e3s2w1s;
+			.5e3s2w1s;
 			where;
 			challenge area;
 	    };
@@ -1435,7 +1435,7 @@
 	#ECHO {[%ansi(green)]Okay![%ansi(reset)] Travelling to the [%ansi(yellow)]Cybertech Preparatory School[%ansi(reset)]!};
     #WAIT 2000;{
         #IF {!$travelerror}{
-            5e3s2w4n;look pedestal;
+            .5e3s2w4n;look pedestal;
 			where;
 			challenge area;
         };
@@ -1451,7 +1451,7 @@
 	#ECHO {[%ansi(green)]Okay![%ansi(reset)] Travelling to the [%ansi(yellow)]Death Row[%ansi(reset)]!};
 	#WAIT 2000;{
 	    #IF {!$travelerror}{
-			8n;w;duck tape;
+			.8n;w;duck tape;
 			where;
 			challenge area;
 	    };
@@ -1467,7 +1467,7 @@
 	#ECHO {[%ansi(green)]Okay![%ansi(reset)] Travelling to the [%ansi(yellow)]Dracharnos[%ansi(reset)]!};
 	#WAIT 2000;{
 	    #IF {!$travelerror}{
-			25wnuwununend2n3ed2nw;open grate;u;
+			.25wnuwununend2n3ed2nw;open grate;u;
 			where;
 			challenge area;
 			helpDracharnos;
@@ -1491,7 +1491,7 @@
 	#ECHO {[%ansi(green)]Okay![%ansi(reset)] Travelling to the [%ansi(yellow)]Drug Dealer[%ansi(reset)]!};
 	#WAIT 2000;{
 	    #IF {!$travelerror}{
-			8w5n4w;enter chevy;d3s2e;
+			.8w5n4w;enter chevy;d3s2e;
 			where;
 			challenge area;
 	    };
@@ -1507,7 +1507,7 @@
 	#ECHO {[%ansi(green)]Okay![%ansi(reset)] Travelling to the [%ansi(yellow)]Junk Yard[%ansi(reset)]!};
 	#WAIT 2000;{
 	    #IF {!$travelerror}{
-			8w2n;
+			.8w2n;
 			where;
 			challenge area;
 	    };
@@ -1523,7 +1523,7 @@
 	#ECHO {[%ansi(green)]Okay![%ansi(reset)] Travelling to the [%ansi(yellow)]E.C. Military[%ansi(reset)]!};
 	#WAIT 2000;{
 	    #IF {!$travelerror}{
-			9w3sw;push button;e2se;
+			.9w3sw;push button;e2se;
 			where;
 			challenge area;
 	    };
@@ -1539,7 +1539,7 @@
 	#ECHO {[%ansi(green)]Okay![%ansi(reset)] Travelling to the [%ansi(yellow)]E.C. Vampires[%ansi(reset)]!};
 	#WAIT 2000;{
 	    #IF {!$travelerror}{
-			5e11n;open door e;6es;open cub;s;look latch;2se2nwsw2n2e;look wall;e2nw;look book;2d3n;
+			.5e11n;open door e;6es;open cub;s;look latch;2se2nwsw2n2e;look wall;e2nw;look book;2d3n;
 			where;
 			challenge area;
 	    };
@@ -1555,7 +1555,7 @@
 	#ECHO {[%ansi(green)]Okay![%ansi(reset)] Travelling to the [%ansi(yellow)]E.C. Nuclear Power Plant[%ansi(reset)]!};
 	#WAIT 2000;{
 	    #IF {!$travelerror}{
-			17n3e;open gate e;e;
+			.17n3e;open gate e;e;
 			where;
 			challenge area;
 	    };
@@ -1571,7 +1571,7 @@
 	#ECHO {[%ansi(green)]Okay![%ansi(reset)] Travelling to the [%ansi(yellow)]E.C. Power and Plumbing[%ansi(reset)]!};
 	#WAIT 2000;{
 	    #IF {!$travelerror}{
-			10en;
+			.10en;
 			where;
 			challenge area;
 	    };
@@ -1587,7 +1587,7 @@
 	#ECHO {[%ansi(green)]Olay1[%ansi(reset)] Traveling to the [%ansi(yellow)]E.C. Security Compound[%ansi(reset)]!};
 	#WAIT 2000;{
 		#IF {!$travelerror}{
-			9w3s;
+			.9w3s;
 			where;
 			challenge area;
 		};
@@ -1603,7 +1603,7 @@
 	#ECHO {[%ansi(green)]Okay![%ansi(reset)] Travelling to the [%ansi(yellow)]E.C. University[%ansi(reset)]!};
 	#WAIT 2000;{
 	    #IF {!$travelerror}{
-			4w6s2ws;
+			.4w6s2ws;
 			where;
 			challenge area;
 	    };
@@ -1619,7 +1619,7 @@
 	#ECHO {[%ansi(green)]Okay![%ansi(reset)] Travelling to the [%ansi(yellow)]Electronics School[%ansi(reset)]!};
 	#WAIT 2000;{
 	    #IF {!$travelerror}{
-			4w4n1w1n;
+			.4w4n1w1n;
 			where;
 			challenge area;
     	};
@@ -1635,7 +1635,7 @@
 	#ECHO {[%ansi(green)]Okay![%ansi(reset)] Travelling to the [%ansi(yellow)]Electronics Shop[%ansi(reset)]!};
 	#WAIT 2000;{
 	    #IF {!$travelerror}{
-			5nes;
+			.5nes;
 			where;
 			challenge area;
 	    };
@@ -1651,7 +1651,7 @@
 	#ECHO {[%ansi(green)]Okay![%ansi(reset)] Travelling to the [%ansi(yellow)]Fail Family Legacy[%ansi(reset)]!};
 	#WAIT 2000;{
 	    #IF {!$travelerror}{
-			e9s3e;
+			.e9s3e;
 			where;
 			challenge area;
 			#ACTION {^Walkway to a Huge Mansion}
@@ -1673,7 +1673,7 @@
 		#IF {{$currentRoom} === {Walkway to a Huge Mansion}}
 		{
 			#ECHO {[%ansi(green)]Okay![%ansi(reset)] Travelling to [%ansi(yellow)] Freddy Fail[%ansi(reset)]!};
-			e;e;n;n;n;open door n;n;search coat;s;d;unlock door w;open door w;w;n;e;n;e;e;n;w;push button;n;n;w;u;push 11;listen;e;s;s;w;n;enter tube;push blue;
+			.e;e;n;n;n;open door n;n;search coat;s;d;unlock door w;open door w;w;n;e;n;e;e;n;w;push button;n;n;w;u;push 11;listen;e;s;s;w;n;enter tube;push blue;
 		};
 		#ELSE 
 		{
@@ -1689,7 +1689,7 @@
     #ECHO {[%ansi(red)]Warning![%ansi(reset)] Lots of flows, DT flow in the Air Ducts!};
     #WAIT 2000;{
         #IF {!$travelerror} {
-            2ds2dwd27wuwu3n4w3nwun;
+            .2ds2dwd27wuwu3n4w3nwun;
             where;
             challenge area;
         };
@@ -1705,7 +1705,7 @@
 	#ECHO {[%ansi(green)]Okay![%ansi(reset)] Travelling to the [%ansi(yellow)]GenClone BioMechanical Labs[%ansi(reset)]!};
 	#WAIT 2000;{
 		#IF {!$travelerror}{
-			16w9nen4w8n;
+			.16w9nen4w8n;
 			where;
 			challenge area;
 		};
@@ -1722,7 +1722,7 @@
 	#WAIT 2000;{
 	    #IF {!$travelerror}{
 			/* (Xrr!yth); */
-			3n1e;open door s;1s1u;
+			.3n1e;open door s;1s1u;
 			where;
 			challenge area;
 	    };
@@ -1738,7 +1738,7 @@
 	#ECHO {[%ansi(green)]Okay![%ansi(reset)] Travelling to the [%ansi(yellow)]Implant Chamber[%ansi(reset)]!};
 	#WAIT 2000;{
 	    #IF {!$travelerror}{
-			4w3n3w;
+			.4w3n3w;
 			where;
 			challenge area;
 	    };
@@ -1754,7 +1754,7 @@
 	#ECHO {[%ansi(green)]Okay![%ansi(reset)] Travelling to the [%ansi(yellow)]Kiddie Kandy Incorporated[%ansi(reset)]!};
 	#WAIT 2000;{
 		#IF {!$travelerror} {
-			4n2wn;open gate n;n;
+			.4n2wn;open gate n;n;
 			where;
 			challenge area;
 		};
@@ -1770,7 +1770,7 @@
 	#ECHO {[%ansi(green)]Okay![%ansi(reset)] Travelling to the [%ansi(yellow)]Kromguard[%ansi(reset)]!};
 	#WAIT 2000;{
 	    #IF {!$travelerror}{
-			19w3n;enter tube;4u;enter port;
+			.19w3n;enter tube;4u;enter port;
 			where;
 			challenge area;
 	    };
@@ -1786,7 +1786,7 @@
 	#ECHO {[%ansi(green)]Okay![%ansi(reset)] Travelling to the [%ansi(yellow)]Luxare[%ansi(reset)]!};
 	#WAIT 2000;{
 	    #IF {!$travelerror}{
-			4w4nen;
+			.4n3wn;open door e;e;
 			where;
 			challenge area;
 	    };
@@ -1802,7 +1802,7 @@
 	#ECHO {[%ansi(green)]Okay![%ansi(reset)] Travelling to the [%ansi(yellow)]Merqury City[%ansi(reset)]!};
 	#WAIT 2000;{
 	    #IF {!$travelerror}{
-			19w3n;enter tube;
+			.19w3n;enter tube;
 			where;
 			challenge area;
 	    };
@@ -1818,7 +1818,7 @@
 	#ECHO {[%ansi(green)]Okay![%ansi(reset)] Travelling to the [%ansi(yellow)]NETWORK Communications Tower[%ansi(reset)]!};
 	#WAIT 2000;{
 	    #IF {!$travelerror}{
-			4w4ne;open door s;s;
+			.4w4ne;open door s;s;
 			where;
 			challenge area;
 	    };
@@ -1834,7 +1834,7 @@
 	#ECHO {[%ansi(green)]Okay![%ansi(reset)] Travelling to the [%ansi(yellow)]Reinforcer[%ansi(reset)]!};
 	#WAIT 2000;{
 	    #IF {!$travelerror}{
-			4w5n2w;
+			.4w5n2w;
 			where;
 			challenge area;
 	    };
@@ -1850,7 +1850,7 @@
 	#ECHO {[%ansi(green)]Okay![%ansi(reset)] Travelling to the [%ansi(yellow)]Ruins of the High Tower of Magic[%ansi(reset)]!};
 	#WAIT 2000;{
 	    #IF {!$travelerror}{
-			34w3n2w7n;
+			.34w3n2w7n;
 			where;
 			challenge area;
 	    };
@@ -1866,7 +1866,7 @@
 	#ECHO {[%ansi(green)]Okay![%ansi(reset)] Travelling to the [%ansi(yellow)]Ruins of the Silver Tower[%ansi(reset)]!};
 	#WAIT 2000;{
 	    #IF {!$travelerror}{
-			9e11s;
+			.9e11s;
 			where;
 			challenge area;
 	    };
@@ -1912,7 +1912,7 @@
 	#ECHO {[%ansi(green)]Okay![%ansi(reset)] Travelling to the [%ansi(yellow)]Virtual World of NETWORK[%ansi(reset)]!};
 	#WAIT 2000;{
 	    #IF {!$travelerror}{
-			4w4ne;open door s;3s;push 25;1n;kill secretary;push button;open door n;1n1e;push button;push 0316;1w1s;tweak nose;1e;pull latch;wear app;push button;
+			.4w4ne;open door s;3s;push 25;1n;kill secretary;push button;open door n;1n1e;push button;push 0316;1w1s;tweak nose;1e;pull latch;wear app;push button;
 			where;
 			challenge area;
 	    };
@@ -1928,7 +1928,7 @@
 	#ECHO {[%ansi(green)]Okay![%ansi(reset)] Travelling to the [%ansi(yellow)]Weapons Enhancer[%ansi(reset)]!};
 	#WAIT 2000;{
 	    #IF {!$travelerror}{
-			5n2w1s1e;
+			.5n2w1s1e;
 			where;
 	    };
 	    #ELSE {
@@ -1943,7 +1943,7 @@
 	#ECHO {[%ansi(green)]Okay![%ansi(reset)] Travelling to the [%ansi(yellow)]Weapon Specializer[%ansi(reset)]!};
 	#WAIT 2000;{
 	    #IF {!$travelerror}{
-			4sd2enen2e4nw3nen2w2n2e2n2e2un4eu;open ebony;ws2w;open door w;2w2ne2n2w;open door s;s;open tap;
+			.4sd2enen2e4nw3nen2w2n2e2n2e2un4eu;open ebony;ws2w;open door w;2w2ne2n2w;open door s;s;open tap;
 			where;
 	    };
 	    #ELSE {
@@ -1958,7 +1958,7 @@
 	#ECHO {[%ansi(green)]Okay![%ansi(reset)] Travelling to the [%ansi(yellow)]Weapon UNSpecializer[%ansi(reset)]!};
 	#WAIT 2000;{
 	    #IF {!$travelerror}{
-			3n1e;open door s;1s1u1e;
+			.3n1e;open door s;1s1u1e;
 			where;
 	    };
 	    #ELSE {
@@ -1973,7 +1973,7 @@
 	#ECHO {[%ansi(green)]Okay![%ansi(reset)] Travelling to the [%ansi(yellow)]City of Zul'Dane[%ansi(reset)]!};
 	#WAIT 2000;{
 	    #IF {!$travelerror} {
-			26n4e;
+			.26n4e;
 			where;
 			challenge area;
 	    };
@@ -1995,7 +1995,7 @@
 	#WAIT 2000;{
 		#IF {!$travelerror}
 		{
-			2es2u;open plant e;es;open door s;3s;open door w;ws3ene3n2en2en5esese4s;open door s;s;open door s;6s;open water e;en2e2s;open door s;2s2e;
+			.2es2u;open plant e;es;open door s;3s;open door w;ws3ene3n2en2en5esese4s;open door s;s;open door s;6s;open water e;en2e2s;open door s;2s2e;
 			where;
 			challenge area;
 		};
@@ -2011,7 +2011,7 @@
 	#ECHO {[%ansi(green)]Okay![%ansi(reset)] Travelling to the [%ansi(yellow)]head Shrinker[%ansi(reset)]!};
 	#WAIT 2000;{
 		#IF {!$travelerror} {
-			11s2wdnund2sundwun2d3ws;open hide;1w;
+			.11s2wdnund2sundwun2d3ws;open hide;1w;
 			where;
 			challenge area;
 		};
@@ -2027,7 +2027,7 @@
 	#ECHO {[%ansi(green)]Okay![%ansi(reset)] Travelling to the [%ansi(yellow)]Lizard Caverns[%ansi(reset)]!};
 	#WAIT 2000;{
 		#IF {!$travelerror} {
-			11s2wdnund2sundwun2dw4n;move lizard;take key;unlock door e;open door e;drop key;e;
+			.11s2wdnund2sundwun2dw4n;move lizard;take key;unlock door e;open door e;drop key;e;
 			where;
 			challenge area;
 		};
@@ -2043,7 +2043,7 @@
 	#ECHO {[%ansi(green)]Okay![%ansi(reset)] Travelling to the [%ansi(yellow)]Wyllowwood[%ansi(reset)]!};
 	#WAIT 2000;{
 		#IF {!$travelerror} {
-			6s2w4sedwun2dw4n;move lizard;get key;unlock door e;bash door e;open door e;drop key;2e2nes2en;enter arch;
+			.6s2w4sedwun2dw4n;move lizard;get key;unlock door e;bash door e;open door e;drop key;2e2nes2en;enter arch;
 			where;
 			challenge area;
 		};
@@ -2063,7 +2063,7 @@
 	#ECHO {[%ansi(green)]Okay![%ansi(reset)] Travelling to the [%ansi(yellow)]City of Unholy Modrian[%ansi(reset)]!};
     #WAIT 2000;{
         #IF {!$travelerror} {
-       		5nu3w;enter pool;
+       		.5nu3w;enter pool;
 			where;
 			challenge area;
         };
@@ -2079,7 +2079,7 @@
 	#ECHO {[%ansi(green)]Okay![%ansi(reset)] Travelling to the [%ansi(yellow)]Amoria[%ansi(reset)]!};
     #WAIT 2000;{
         #IF {!$travelerror} {
-			5n3u2n3e;enter pool;
+			.5n3u2n3e;enter pool;
 			where;
 			challenge area;
         };
@@ -2192,7 +2192,7 @@
 	#ECHO {[%ansi(green)]Okay![%ansi(reset)] Travelling to the [%ansi(yellow)]Lunia Heaven 1[%ansi(reset)]!};
     #WAIT 2000;{
         #IF {!$travelerror} {
-			5n3d2sw;enter pool;
+			.5n3d2sw;enter pool;
 			#ACTION {^You step into a gold color pool.}
 				helpHeaven;{
 			};
@@ -2229,7 +2229,7 @@
 		#IF {{$currentRoom} === {In the Silver Sea}}
 		{
 			#ECHO {[%ansi(green)]Okay![%ansi(reset)] Travelling to [%ansi(yellow)]Thor, God of Lightning[%ansi(reset)]!};
-			nenenu5wn2wse;
+			.nenenu5wn2wse;
 		};
 		#ELSE
 		{
@@ -2246,7 +2246,7 @@
 		#IF {{$currentRoom} === {Before a Palatial Estate}}
 		{
 			#ECHO {[%ansi(green)]Okay![%ansi(reset)] Travelling to [%ansi(yellow)]Diancecht[%ansi(reset)]!};
-			2w2n4esene3ne3nws;
+			.2w2n4esene3ne3nws;
 		};
 		#ELSE
 		{
@@ -2263,7 +2263,7 @@
 		#IF {{$currentRoom} === {Before a Spiraling Tower}}
 		{
 			#ECHO {[%ansi(green)]Okay![%ansi(reset)] Travelling to [%ansi(yellow)]Ptah[%ansi(reset)]!};
-			ne7s2edeu4w2n4u;
+			.ne7s2edeu4w2n4u;
 		};
 		#ELSE
 		{
@@ -2280,7 +2280,7 @@
 		#IF {{$currentRoom} === {A Garden Plateau}}
 		{
 			#ECHO {[%ansi(green)]Okay![%ansi(reset)] Travelling to [%ansi(yellow)]Ixlilton[%ansi(reset)]!};
-			4d2s4edsu2e4n;
+			.4d2s4edsu2e4n;
 		};
 		#ELSE
 		{
@@ -2407,7 +2407,7 @@
 	#ECHO {[%ansi(green)]Okay![%ansi(reset)] Travelling to the [%ansi(yellow)]Level 1 Hell: Avernus[%ansi(reset)]!};
     #WAIT 2000;{
         #IF {!$travelerror} {
-			 5wdes;enter pool;
+			 .5wdes;enter pool;
 			 where;
 			challenge area;
         };
@@ -2423,7 +2423,7 @@
 	#ECHO {[%ansi(green)]Okay![%ansi(reset)] Travelling to the [%ansi(yellow)]Immoth Hallow[%ansi(reset)]!};
 	#WAIT 2000;{
 		#IF {!$travelerror} {
-		    2nu;open door west;w;read title73;
+		    .2nu;open door west;w;read title73;
 			where;
 			challenge area;
 		};
@@ -2439,7 +2439,7 @@
 	#ECHO {[%ansi(green)]Okay![%ansi(reset)] Travelling to the [%ansi(yellow)]Elemental Plane of Air[%ansi(reset)]!};
 	#WAIT 2000;{
 	    #IF {!$travelerror}{
-			7e4ne;enter font;uw4nwu4s3wnwsws4w;
+			.7e4ne;enter font;uw4nwu4s3wnwsws4w;
 			#ECHO {[%ansi(red)]Warning![%ansi(reset)] Lots of flows.};
 			where;
 			challenge area;
@@ -2456,7 +2456,7 @@
 	#ECHO {[%ansi(green)]Okay![%ansi(reset)] Travelling to the [%ansi(yellow)]Elemental Plane of Earth[%ansi(reset)]!};
 	#WAIT 2000;{
 	    #IF {!$travelerror}{
-			67w12seseds6wndnd;enter portal;
+			.67w12seseds6wndnd;enter portal;
 			where;
 			challenge area;
 		};
@@ -2472,7 +2472,7 @@
 	#ECHO {[%ansi(green)]Okay![%ansi(reset)] Travelling to the [%ansi(yellow)]Elemental Plane of Fire[%ansi(reset)]!};
 	#WAIT 2000;{
 	    #IF {!$travelerror}{
-			7e4ne;enter font;uw4nwu4s3wnwsws18wd2s4w;
+			.7e4ne;enter font;uw4nwu4s3wnwsws18wd2s4w;
 			#ECHO {[%ansi(red)]Warning![%ansi(reset)] Lots of flows.};
 			where;
 			challenge area;
@@ -2489,7 +2489,7 @@
 	#ECHO {[%ansi(green)]Okay![%ansi(reset)] Travelling to the [%ansi(yellow)]Elemental Plane of Ice[%ansi(reset)]!};
 	#WAIT 2000;{
 	    #IF {!$travelerror}{
-			7e4ne;enter font;uw4nwu4s3wne;
+			.7e4ne;enter font;uw4nwu4s3wne;
 			where;
 			challenge area;
 		};
@@ -2505,7 +2505,7 @@
 	#ECHO {[%ansi(green)]Okay![%ansi(reset)] Travelling to the [%ansi(yellow)]Elemental Plane of Ooze[%ansi(reset)]!};
 	#WAIT 2000;{
 	    #IF {!$travelerror}{
-			7e4ne;enter font;3ese;
+			.7e4ne;enter font;3ese;
 			where;
 			challenge area;
 		};
@@ -2521,7 +2521,7 @@
 	#ECHO {[%ansi(green)]Okay![%ansi(reset)] Travelling to the [%ansi(yellow)]Elemental Plane of Smoke[%ansi(reset)]!};
 	#WAIT 2000;{
 	    #IF {!$travelerror}{
-			7e4ne;enter font;uw4nwu4s3wnwsws13w;
+			.7e4ne;enter font;uw4nwu4s3wnwsws13w;
 			#ECHO {[%ansi(red)]Warning![%ansi(reset)] Lots of flows.};
 			where;
 			challenge area;
@@ -2555,7 +2555,7 @@
 		#IF {{$currentRoom} === {Pitch Black}}
 		{
 			#ECHO {[%ansi(green)]Okay![%ansi(reset)] Travelling to [%ansi(yellow)]EPOS Palace[%ansi(reset)]!};
-			2dn;enter palace
+			.2dn;enter palace
 		};
 		#ELSE
 		{
@@ -2572,7 +2572,7 @@
 		#IF {{$currentRoom} === {Pitch Black}}
 		{
 			#ECHO {[%ansi(green)]Okay![%ansi(reset)] Travelling to [%ansi(yellow)]EPOS Fortress[%ansi(reset)]!};
-			3d2se;enter cloud
+			.3d2se;enter cloud
 		};
 		#ELSE
 		{
@@ -2589,7 +2589,7 @@
 		#IF {{$currentRoom} === {Pitch Black}}
 		{
 			#ECHO {[%ansi(green)]Okay![%ansi(reset)] Travelling to [%ansi(yellow)]EPOS Camp[%ansi(reset)]!};
-			dwn;enter cloud
+			.dwn;enter cloud
 		};
 		#ELSE
 		{
@@ -2627,7 +2627,7 @@
 	#ECHO {[%ansi(green)]Okay![%ansi(reset)] Travelling to the [%ansi(yellow)]Elemental Plane of Water[%ansi(reset)]!};
 	#WAIT 2000;{
 	    #IF {!$travelerror}{
-			7e3n2enw;enter sphere;
+			.7e3n2enw;enter sphere;
 			where;
 			challenge area;
 		};
@@ -2661,7 +2661,7 @@
 	#ECHO {[%ansi(green)]Okay![%ansi(reset)] Travelling to the [%ansi(yellow)]Barbarian Guildmaster[%ansi(reset)]!};
 	#WAIT 2000;{
 		#IF {!$travelerror} {
-			57w11n;
+			.57w11n;
 			where;
 			challenge area;
 		};
@@ -2677,7 +2677,7 @@
 	#ECHO {[%ansi(green)]Okay![%ansi(reset)] Travelling to the [%ansi(yellow)]Bard Guildmaster[%ansi(reset)]!};
     #WAIT 2000;{
         #IF {!$travelerror} {
-			3w2swn;
+			.3w2swn;
 			where;
 			challenge area;
         };
@@ -2693,7 +2693,7 @@
 	#ECHO {[%ansi(green)]Okay![%ansi(reset)] Travelling to the [%ansi(yellow)]Evil Cleric Guildmaster[%ansi(reset)]!};
     #WAIT 2000;{
         #IF {!$travelerror} {
-			7n2w;open door w;2w;
+			.7n2w;open door w;2w;
 			where;
 			challenge area;
         };
@@ -2709,7 +2709,7 @@
 	#ECHO {[%ansi(green)]Okay![%ansi(reset)] Travelling to the [%ansi(yellow)]Good Cleric Guildmaster[%ansi(reset)]!};
     #WAIT 2000;{
         #IF {!$travelerror} {
-			6e11s;open door s;3s;5u2s;#ECHO {Guildmaster wanders in this area.};
+			.6e11s;open door s;3s;5u2s;#ECHO {Guildmaster wanders in this area.};
 			where;
 			challenge area;
         };
@@ -2725,7 +2725,7 @@
 	#ECHO {[%ansi(green)]Okay![%ansi(reset)] Travelling to the [%ansi(yellow)]Cyborg Guildmaster[%ansi(reset)]!};
     #WAIT 2000;{
         #IF {!$travelerror} {
-			4w2nws;login;
+			.4w2nws;login;
 			where;
 			challenge area;
         };
@@ -2741,7 +2741,7 @@
 	#ECHO {[%ansi(green)]Okay![%ansi(reset)] Travelling to the [%ansi(yellow)]Evil Knight Guildmaster[%ansi(reset)]!};
     #WAIT 2000;{
         #IF {!$travelerror} {
-			2w2ne;
+			.2w2ne;
 			where;
 			challenge area;
         };
@@ -2757,7 +2757,7 @@
 	#ECHO {[%ansi(green)]Okay![%ansi(reset)] Travelling to the [%ansi(yellow)]Good Knight Guildmaster[%ansi(reset)]!};
     #WAIT 2000;{
         #IF {!$travelerror} {
-			2nunw;open tap;4wn3e;
+			.2nunw;open tap;4wn3e;
 			where;
 			challenge area;
         };
@@ -2773,7 +2773,7 @@
 	#ECHO {[%ansi(green)]Okay![%ansi(reset)] Travelling to the [%ansi(yellow)]Mage Guildmaster[%ansi(reset)]!};
     #WAIT 2000;{
         #IF {!$travelerror} {
-			4nu;open door west;w;read title31;e;open door east;
+			.4nu;open door west;w;read title31;e;open door east;
 			where;
 			challenge area;
         };
@@ -2789,7 +2789,7 @@
 	#ECHO {[%ansi(green)]Okay![%ansi(reset)] Travelling to the [%ansi(yellow)]Mercenary Guildmaster[%ansi(reset)]!};
     #WAIT 2000;{
         #IF {!$travelerror} {
-			2d4e5nes;
+			.2d4e5nes;
 			where;
 			challenge area;
         };
@@ -2805,7 +2805,7 @@
 	#ECHO {[%ansi(green)]Okay![%ansi(reset)] Travelling to the [%ansi(yellow)]Monk Guildmaster[%ansi(reset)]!};
     #WAIT 2000;{
         #IF {!$travelerror} {
-			37e41n;open gate n;4n3w;open gate w;11w8ne3nws;
+			.37e41n;open gate n;4n3w;open gate w;11w8ne3nws;
 			where;
 			challenge area;
         };
@@ -2821,7 +2821,7 @@
 	#ECHO {[%ansi(green)]Okay![%ansi(reset)] Travelling to the [%ansi(yellow)]Physics Guildmaster[%ansi(reset)]!};
     #WAIT 2000;{
         #IF {!$travelerror} {
-			3s2uswn;
+			.3s2uswn;
 			where;
 			challenge area;
         };
@@ -2837,7 +2837,7 @@
 	#ECHO {[%ansi(green)]Okay![%ansi(reset)] Travelling to the [%ansi(yellow)]Psionic Guildmaster[%ansi(reset)]!};
     #WAIT 2000;{
         #IF {!$travelerror} {
-			2nune;open tapestry;3w;open gate w;11w8ne3nws;
+			.2nune;open tapestry;3w;open gate w;11w8ne3nws;
 			where;
 			challenge area;
         };
@@ -2853,7 +2853,7 @@
 	#ECHO {[%ansi(green)]Okay![%ansi(reset)] Travelling to the [%ansi(yellow)]Ranger Guildmaster[%ansi(reset)]!};
     #WAIT 2000;{
         #IF {!$travelerror} {
-			nnune;open tapestry;ssswwse;
+			.nnune;open tapestry;ssswwse;
 			where;
 			challenge area;
         };
@@ -2869,7 +2869,7 @@
 	#ECHO {[%ansi(green)]Okay![%ansi(reset)] Travelling to the [%ansi(yellow)]Thief Guildmaster[%ansi(reset)]!};
     #WAIT 2000;{
         #IF {!$travelerror} {
-			4e;open portrait;2ene2s;open door e;8e;
+			.4e;open portrait;2ene2s;open door e;8e;
 			where;
 			challenge area;
         };
@@ -2888,7 +2888,7 @@
 	#ECHO {[%ansi(green)]Okay![%ansi(reset)] Travelling to the [%ansi(yellow)]Charisma Trainer[%ansi(reset)]!};
     #WAIT 2000;{
         #IF {!$travelerror} {
-			 3n1e;open door s;1s1w;
+			 .3n1e;open door s;1s1w;
 			 where;
 			challenge area;
         };
@@ -2904,7 +2904,7 @@
 	#ECHO {[%ansi(green)]Okay![%ansi(reset)] Travelling to the [%ansi(yellow)]Constitution Trainer[%ansi(reset)]!};
     #WAIT 2000;{
         #IF {!$travelerror} {
-			 2nunw;open tapestry;3e4ne;
+			 .2nunw;open tapestry;3e4ne;
 			 where;
 			challenge area;
         };
@@ -2920,7 +2920,7 @@
 	#ECHO {[%ansi(green)]Okay![%ansi(reset)] Travelling to the [%ansi(yellow)]Dexterity Trainer[%ansi(reset)]!};
     #WAIT 2000;{
         #IF {!$travelerror} {
-			nnwwww;open grate;dessesusseuswnw;#ECHO {[%ansi(blue)]Kill the Assassin and go two west![%ansi(reset)]};
+			.nnwwww;open grate;dessesusseuswnw;#ECHO {[%ansi(blue)]Kill the Assassin and go two west![%ansi(reset)]};
 			where;
 			challenge area;
         };
@@ -2936,7 +2936,7 @@
 	#ECHO {[%ansi(green)]Okay![%ansi(reset)] Travelling to the [%ansi(yellow)]Intelligence Trainer[%ansi(reset)]!};
     #WAIT 2000;{
         #IF {!$travelerror} {
-			2nu;open door west;w;read title31;e;open door east;2e2n2ed4s2w;open door south;s;
+			.2nu;open door west;w;read title31;e;open door east;2e2n2ed4s2w;open door south;s;
 			where;
 			challenge area;
         };
@@ -2952,7 +2952,7 @@
 		#ECHO {[%ansi(green)]Okay![%ansi(reset)] Travelling to the [%ansi(yellow)]Strength Trainer[%ansi(reset)]!};
     #WAIT 2000;{
         #IF {!$travelerror} {
-			2nune;open tapestry;3nen;
+			.2nune;open tapestry;3nen;
 			where;
 			challenge area;
         };
@@ -2968,7 +2968,7 @@
 		#ECHO {[%ansi(green)]Okay![%ansi(reset)] Travelling to the [%ansi(yellow)]Wisdom Trainer[%ansi(reset)]!};
     #WAIT 2000;{
         #IF {!$travelerror} {
-			6e11s;open door s;3s1u2s1e;open door s;2s1w1u;
+			.6e11s;open door s;3s1u2s1e;open door s;2s1w1u;
 			where;
 			challenge area;
         };
@@ -3003,7 +3003,7 @@
 		#ECHO {[%ansi(green)]Okay![%ansi(reset)] Travelling to the [%ansi(yellow)]Elvish Trainer[%ansi(reset)]!};
     #WAIT 2000;{
         #IF {!$travelerror} {
-			22n4e9n3w;offer elvish;
+			.22n4e9n3w;offer elvish;
 			where;
 			challenge area;
         };
@@ -3034,7 +3034,7 @@
 		#ECHO {[%ansi(green)]Okay![%ansi(reset)] Travelling to the [%ansi(yellow)]Hobbish Trainer[%ansi(reset)]!};
 	#WAIT 2000;{
 		#IF {!$travelerror} {
-		    15e10s6e3n;open door north;2n;offer hobbish;
+		    .15e10s6e3n;open door north;2n;offer hobbish;
 			where;
 			challenge area;
 		};
